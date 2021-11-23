@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="105cb761-ef9f-4a8c-bb7f-b7bc1fe63cb7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Django_Lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/css/nucleo-icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/css/nucleo-svg.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/css/soft-design-system.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/css/util.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/datta/datta-icon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/datta/fonts/pct.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/datta/fonts/pct.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/datta/fonts/pct.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/datta/fonts/pct.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/feather/css/feather.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/feather/fonts/feather.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/feather/fonts/feather.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/feather/fonts/feather.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/feather/fonts/feather.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/HELP-US-OUT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/less/screen-reader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/font-awesome-4.7.0/scss/font-awesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/fontawesome/css/fontawesome-all.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/fontawesome/webfonts/fa-brands-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/fontawesome/webfonts/fa-brands-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/fontawesome/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/fontawesome/webfonts/fa-brands-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/fontawesome/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/fontawesome/webfonts/fa-regular-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/fontawesome/webfonts/fa-regular-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/fontawesome/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/fontawesome/webfonts/fa-regular-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/fontawesome/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/fontawesome/webfonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/fontawesome/webfonts/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/fontawesome/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/fontawesome/webfonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/fontawesome/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/Montserrat-Black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/Montserrat-BlackItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/Montserrat-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/Montserrat-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/Montserrat-ExtraBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/Montserrat-ExtraBoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/Montserrat-ExtraLight.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/Montserrat-ExtraLightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/Montserrat-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/Montserrat-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/Montserrat-LightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/Montserrat-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/Montserrat-MediumItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/Montserrat-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/Montserrat-SemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/Montserrat-SemiBoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/Montserrat-Thin.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/Montserrat-ThinItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/montserrat/OFL.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/nucleo-icons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/nucleo-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/nucleo-icons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/nucleo-icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/nucleo-icons.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/nucleo.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/nucleo.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/nucleo.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/nucleo.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/poppins/Poppins-Black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/poppins/Poppins-BlackItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/poppins/Poppins-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/poppins/Poppins-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/poppins/Poppins-ExtraBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/poppins/Poppins-ExtraBoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/poppins/Poppins-ExtraLight.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/poppins/Poppins-ExtraLightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/poppins/Poppins-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/poppins/Poppins-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/poppins/Poppins-LightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/poppins/Poppins-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/poppins/Poppins-MediumItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/poppins/Poppins-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/poppins/Poppins-SemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/poppins/Poppins-SemiBoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/poppins/Poppins-Thin.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/fonts/poppins/Poppins-ThinItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/bg-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/browser/chrome.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/browser/firefox.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/browser/ie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/browser/opera.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/browser/safari.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/icons/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/icons/icon-google.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/icons/map-marker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/icons/symbol-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/logo-dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/logo-thumb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/slider/img-slide-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/slider/img-slide-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/slider/img-slide-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/slider/img-slide-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/slider/img-slide-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/slider/img1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/slider/img2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/slider/img3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/user/avatar-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/user/avatar-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/user/avatar-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/user/avatar-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/user/avatar-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/user/user-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/user/user-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/widget/dashborad-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/widget/dashborad-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/widget/dashborad-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/widget/dashborad-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/widget/dashborad-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/widget/dashborad-6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/images/widget/emoticon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/Error 404.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/anastasia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/annie-spratt.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/apple-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/blog7-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/blog7-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/blog7-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/brooke.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/bruce-mars.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/card-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/card-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/charles.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/curved-images/curved-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/curved-images/curved-11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/curved-images/curved-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/curved-images/curved-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/curved-images/curved.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/curved-images/curved1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/curved-images/curved11-small.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/curved-images/curved11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/curved-images/curved13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/curved-images/curved14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/curved-images/curved2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/curved-images/curved5-small.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/curved-images/curved5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/curved-images/curved6-small.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/curved-images/curved6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/curved-images/curved8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/down-arrow-dark.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/down-arrow-white.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/down-arrow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/illustrations/chat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/illustrations/sign-up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/ivana-square.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/ivana.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/ivancik.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/jordan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/kal-visuals-square.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/kal-visuals.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/gray-logos/logo-apple.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/gray-logos/logo-behance.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/gray-logos/logo-coinbase.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/gray-logos/logo-digitalocean.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/gray-logos/logo-facebook.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/gray-logos/logo-nasa.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/gray-logos/logo-netflix.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/gray-logos/logo-pinterest.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/gray-logos/logo-spotify.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/gray-logos/logo-vodafone.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/medium-logos/logo-apple.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/medium-logos/logo-behance.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/medium-logos/logo-coinbase.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/medium-logos/logo-facebook.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/medium-logos/logo-google.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/medium-logos/logo-mailchimp.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/medium-logos/logo-nasa.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/medium-logos/logo-netflix.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/medium-logos/logo-pinterest.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/medium-logos/logo-spotify.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/small-logos/logo-apple.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/small-logos/logo-asana.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/small-logos/logo-atlassian.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/small-logos/logo-google-drive.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/small-logos/logo-invision.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/small-logos/logo-jira.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/small-logos/logo-shopify.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/small-logos/logo-slack.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/small-logos/logo-spotify.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/small-logos/logo-weave.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/small-logos/logo-webdev.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/small-logos/logo-xd.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/white-logos/logo-google-white.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/logos/white-logos/logo-spotify-white.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/main_background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/marie.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/meeting.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/nastuh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/office-dark.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/shapes/pattern-lines.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/shapes/waves-gray.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/shapes/waves-white.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/team-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/team-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/team-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/team-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/toa-heftiba.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/img/wave-1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/js/core/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/js/core/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/js/pages/chart-morris-custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/js/pages/google-maps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/js/pcoded.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/js/soft-design-system.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/js/soft-design-system.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/js/vendor-all.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/plugins/choices.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/plugins/countup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/plugins/flatpickr.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/plugins/moment.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/plugins/parallax.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/plugins/perfect-scrollbar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/plugins/prism.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/plugins/rellax.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/plugins/tilt.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/plugins/typedjs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/animate/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/animsition/css/animsition.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/animsition/css/animsition.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/animsition/js/animsition.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/animsition/js/animsition.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/bootstrap/js/popper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/bootstrap/js/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/bootstrap/js/tooltip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/countdowntime/countdowntime.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/css-hamburgers/hamburgers.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/css-hamburgers/hamburgers.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/daterangepicker/daterangepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/daterangepicker/daterangepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/daterangepicker/moment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/daterangepicker/moment.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/jquery/jquery-3.2.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/perfect-scrollbar/perfect-scrollbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/select2/select2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/select2/select2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/select2/select2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/static/assets/vendor/select2/select2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/templates/accounts/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/templates/home/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/templates/home/temp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/templates/includes/travel_footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/templates/includes/travel_navigation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/templates/includes/travel_scripts.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/templates/layouts/base-auth.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/templates/layouts/base-presentation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/templates/layouts/base-travel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/makeatrip.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/makeatrip.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/css/nucleo-icons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/css/nucleo-svg.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/css/soft-design-system.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/css/soft-design-system.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/datta/datta-icon.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/datta/fonts/pct.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/datta/fonts/pct.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/datta/fonts/pct.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/datta/fonts/pct.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/feather/css/feather.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/feather/fonts/feather.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/feather/fonts/feather.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/feather/fonts/feather.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/feather/fonts/feather.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/fontawesome/css/fontawesome-all.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/fontawesome/webfonts/fa-brands-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/fontawesome/webfonts/fa-brands-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/fontawesome/webfonts/fa-brands-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/fontawesome/webfonts/fa-brands-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/fontawesome/webfonts/fa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/fontawesome/webfonts/fa-regular-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/fontawesome/webfonts/fa-regular-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/fontawesome/webfonts/fa-regular-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/fontawesome/webfonts/fa-regular-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/fontawesome/webfonts/fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/fontawesome/webfonts/fa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/fontawesome/webfonts/fa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/fontawesome/webfonts/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/fontawesome/webfonts/fa-solid-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/fontawesome/webfonts/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/nucleo-icons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/nucleo-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/nucleo-icons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/nucleo-icons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/nucleo-icons.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/nucleo.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/nucleo.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/nucleo.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/fonts/nucleo.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/browser/chrome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/browser/firefox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/browser/ie.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/browser/opera.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/browser/safari.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/logo-dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/logo-thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/slider/img-slide-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/slider/img-slide-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/slider/img-slide-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/slider/img-slide-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/slider/img-slide-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/slider/img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/slider/img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/slider/img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/user/avatar-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/user/avatar-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/user/avatar-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/user/avatar-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/user/avatar-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/user/user-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/user/user-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/widget/dashborad-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/widget/dashborad-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/widget/dashborad-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/widget/dashborad-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/widget/dashborad-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/widget/dashborad-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/images/widget/emoticon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/Error 404.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/anastasia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/annie-spratt.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/apple-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/blog7-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/blog7-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/blog7-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/brooke.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/bruce-mars.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/card-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/card-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/charles.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/curved-images/curved-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/curved-images/curved-11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/curved-images/curved-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/curved-images/curved-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/curved-images/curved.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/curved-images/curved1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/curved-images/curved11-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/curved-images/curved11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/curved-images/curved13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/curved-images/curved14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/curved-images/curved2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/curved-images/curved5-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/curved-images/curved5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/curved-images/curved6-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/curved-images/curved6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/curved-images/curved8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/down-arrow-dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/down-arrow-white.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/down-arrow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/illustrations/chat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/illustrations/sign-up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/ivana-square.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/ivana.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/ivancik.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/jordan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/kal-visuals-square.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/kal-visuals.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/gray-logos/logo-apple.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/gray-logos/logo-behance.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/gray-logos/logo-coinbase.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/gray-logos/logo-digitalocean.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/gray-logos/logo-facebook.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/gray-logos/logo-nasa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/gray-logos/logo-netflix.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/gray-logos/logo-pinterest.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/gray-logos/logo-spotify.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/gray-logos/logo-vodafone.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/medium-logos/logo-apple.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/medium-logos/logo-behance.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/medium-logos/logo-coinbase.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/medium-logos/logo-facebook.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/medium-logos/logo-google.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/medium-logos/logo-mailchimp.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/medium-logos/logo-nasa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/medium-logos/logo-netflix.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/medium-logos/logo-pinterest.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/medium-logos/logo-spotify.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/small-logos/logo-apple.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/small-logos/logo-asana.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/small-logos/logo-atlassian.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/small-logos/logo-google-drive.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/small-logos/logo-invision.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/small-logos/logo-jira.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/small-logos/logo-shopify.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/small-logos/logo-slack.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/small-logos/logo-spotify.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/small-logos/logo-weave.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/small-logos/logo-webdev.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/small-logos/logo-xd.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/white-logos/logo-google-white.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/logos/white-logos/logo-spotify-white.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/main_background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/marie.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/meeting.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/nastuh.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/office-dark.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/shapes/pattern-lines.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/shapes/waves-gray.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/shapes/waves-white.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/team-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/team-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/team-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/team-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/toa-heftiba.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/img/wave-1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/js/core/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/js/core/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/js/pages/chart-morris-custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/js/pages/google-maps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/js/pcoded.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/js/plugins/choices.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/js/plugins/countup.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/js/plugins/flatpickr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/js/plugins/moment.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/js/plugins/parallax.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/js/plugins/perfect-scrollbar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/js/plugins/prism.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/js/plugins/rellax.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/js/plugins/tilt.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/js/plugins/typedjs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/js/soft-design-system.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/js/soft-design-system.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/js/vendor-all.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/amchart/js/amcharts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/amchart/js/ammap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/amchart/js/gauge.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/amchart/js/images/dragIconRoundBig.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/amchart/js/images/lens.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/amchart/js/light.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/amchart/js/pie.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/amchart/js/radar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/amchart/js/serial.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/amchart/js/usaLow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/amchart/js/worldLow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/animation/css/animate.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/bootstrap/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/bootstrap/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/bootstrap/js/popover.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/chart-morris/css/morris.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/chart-morris/js/morris.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/chart-morris/js/raphael.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/google-maps/js/gmaps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/jquery-scrollbar/css/jquery.scrollbar.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/jquery-scrollbar/js/jquery.scrollbar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/jquery-ui/js/jquery-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/plugins/jquery/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/_alert.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/_cards.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/_dropdown.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/_footer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/_gradients.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/_header.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/_info-areas.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/_misc.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/_nav.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/_navbar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/_pagination.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/_popovers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/_progress.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/_tooltips.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/_typography.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/_utilities.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/avatars/_avatar-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/avatars/_avatar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_accordion.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_alert.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_badge.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_breadcrumb.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_button-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_card.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_carousel.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_close.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_containers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_dropdown.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_functions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_helpers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_images.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_list-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_modal.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_nav.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_navbar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_pagination.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_popover.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_progress.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_reboot.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_root.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_spinners.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_tables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_toasts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_tooltip.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_transitions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_type.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_utilities.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/bootstrap-grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/bootstrap-reboot.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/bootstrap-utilities.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/bootstrap.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/forms/_floating-labels.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/forms/_form-check.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/forms/_form-control.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/forms/_form-range.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/forms/_form-select.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/forms/_form-text.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/forms/_input-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/forms/_labels.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/forms/_validation.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/helpers/_clearfix.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/helpers/_colored-links.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/helpers/_position.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/helpers/_ratio.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/helpers/_stretched-link.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/helpers/_text-truncation.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/helpers/_visually-hidden.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_alert.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_border-radius.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_box-shadow.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_breakpoints.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_caret.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_clearfix.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_container.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_deprecate.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_gradients.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_image.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_list-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_lists.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_pagination.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_reset-text.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_resize.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_table-variants.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_text-truncate.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_transition.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_utilities.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/mixins/_visually-hidden.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/utilities/_api.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/bootstrap/vendor/_rfs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/cards/card-background.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/custom/_styles.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/custom/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/forms/_form-check.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/forms/_form-select.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/forms/_form-switch.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/forms/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/forms/_input-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/forms/_inputs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/forms/_labels.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/mixins/_hover.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/mixins/mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/theme.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/variables/_animations.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/variables/_avatars.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/variables/_cards.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/variables/_choices.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/variables/_dropdowns.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/variables/_form-switch.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/variables/_header.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/variables/_info-areas.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/variables/_misc.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/variables/_navbar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/variables/_pagination.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/variables/_utilities.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/vendor/_choices.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/vendor/_flatpickr.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/vendor/_nouislider.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/vendor/_prism.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/assets/scss/soft-design-system/vendor/plugins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/static/sitemap.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/accounts/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/accounts/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/includes/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/includes/navigation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/includes/scripts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/layouts/base-auth.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/layouts/base-fullscreen.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/layouts/base-presentation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/layouts/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/page-403.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/page-404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/page-500.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gunicorn-cfg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/django-soft-ui-free-screen-blocks.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/django-soft-ui-free-screen-buttons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/django-soft-ui-free-screen-contact.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/django-soft-ui-free-screen-login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/django-soft-ui-free-screen-product.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/django-soft-ui-free-screen-sample-pages.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/django-soft-ui-free-screen-subscribe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/django-soft-ui-free-screen-team.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/django-soft-ui-free-screen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx/appseed-app.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticfiles/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="21JQcOKnkvHsZ9nsjPqEHeyMn05" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/apps/templates/home" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\OneDrive\GitHub\makeatrip\apps\templates\home" />
+      <recent name="E:\OneDrive\GitHub\makeatrip\apps\templates\travel" />
+      <recent name="E:\OneDrive\GitHub\makeatrip\apps\static\assets\js" />
+      <recent name="E:\OneDrive\GitHub\makeatrip\apps\static\assets\css" />
+      <recent name="E:\OneDrive\GitHub\makeatrip\apps\templates\layouts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\OneDrive\GitHub\makeatrip\apps\templates\home" />
+      <recent name="E:\OneDrive\GitHub\makeatrip\apps\static\assets\js" />
+      <recent name="E:\OneDrive\GitHub\makeatrip\apps\static\assets\plugins" />
+      <recent name="E:\OneDrive\GitHub\makeatrip\apps\static\assets\js\pages" />
+      <recent name="E:\OneDrive\GitHub\makeatrip\apps\static\assets" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="makeatrip" type="Python.DjangoServer" factoryName="Django server">
+      <module name="makeatrip" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="105cb761-ef9f-4a8c-bb7f-b7bc1fe63cb7" name="Changes" comment="" />
+      <created>1637656789167</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637656789167</updated>
+      <workItem from="1637656790489" duration="22199000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
