@@ -1,4 +1,4 @@
-# [AdminLTE Django](https://appseed.us/admin-dashboards/django-dashboard-adminlte)
+# [Make A Trip](https://www.makeatrip.live)
 
 Frontend based on (https://appseed.us) Tamplates.  
 Admin dashboard - [AdminLTE Django](https://appseed.us/admin-dashboards/django-dashboard-adminlte) 
