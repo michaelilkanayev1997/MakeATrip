@@ -119,7 +119,7 @@ The project is coded using a simple and intuitive structure presented below:
    |         |
    |         |-- layouts/                   # Master pages
    |         |    |-- base-fullscreen.html  # Used by Authentication pages
-   |         |    |-- base.html             # Used by common pages
+   |         |    |-- base_dashboard.html             # Used by common pages
    |         |
    |         |-- accounts/                  # Authentication pages
    |         |    |-- login.html            # Login page
