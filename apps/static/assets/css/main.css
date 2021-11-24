@@ -7,22 +7,22 @@
 
 @font-face {
   font-family: Poppins-Regular;
-  src: url('/static/assets/fonts/poppins/Poppins-Regular.ttf');
+  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-Medium;
-  src: url('/static/assets/fonts/poppins/Poppins-Medium.ttf');
+  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
 }
 
 @font-face {
   font-family: Montserrat-Medium;
-  src: url('/static/assets/fonts/montserrat/Montserrat-Medium.ttf');
+  src: url('../fonts/montserrat/Montserrat-Medium.ttf'); 
 }
 
 @font-face {
   font-family: Montserrat-SemiBold;
-  src: url('/static/assets/fonts/montserrat/Montserrat-SemiBold.ttf');
+  src: url('../fonts/montserrat/Montserrat-SemiBold.ttf'); 
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -158,7 +158,7 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
 
-.login-box {
+.limiter {
   width: 100%;
   margin: 0 auto;
 }
@@ -513,17 +513,15 @@ iframe {
     padding-left: 60px;
     padding-right: 60px;
   }
-}
 
 @media (max-width: 576px) {
   .wrap-login100 {
     padding-left: 15px;
     padding-right: 15px;
   }
-
+}
   .btn-face,
   .btn-google {
     width: 100%;
   }
 }
-
