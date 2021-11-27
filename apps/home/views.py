@@ -23,7 +23,6 @@ def bla(request):
     context = {'bla': bla}
     return render(request, 'home/temp.html', context)
 
-
 @login_required(login_url="/login/")
 def index(request):
     context = {'segment': 'index'}
