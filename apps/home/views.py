@@ -14,9 +14,9 @@ from .models import Bla
 
 
 """bla = [
- {'id': 1, 'name': 'Lets learn python!'},
- {'id': 2, 'name': 'Design with me'},
- {'id': 3, 'name': 'Frontend developers'},
+    {'id': 1, 'name': 'Lets learn python!'},
+    {'id': 2, 'name': 'Design with me'},
+    {'id': 3, 'name': 'Frontend developers'},
     {'id': 4, 'name': 'Frontend developers'},
     {'id': 5, 'name': 'Frontend developers'},
     {'id': 6, 'name': 'Frontend developers'},

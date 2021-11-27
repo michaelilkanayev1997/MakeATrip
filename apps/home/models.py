@@ -8,11 +8,6 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-<<<<<<< Updated upstream
-class Bla(models.Model):
-    name = models.CharField(max_length=200)
-    header = models.TextField(null=True, blank=True)
-=======
 class Temp(models.Model):
     name = models.CharField(max_length=200)
     header = models.TextField(null=True, blank=True)
