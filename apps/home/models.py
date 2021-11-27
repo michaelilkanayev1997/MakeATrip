@@ -25,10 +25,6 @@ class AboutUs(models.Model):
         return self.name
 
 class FAQ(models.Model):
-    subject = models.CharField(max_length=200)
-    sub_subject = models.TextField(null=True, blank=True)
->>>>>>> Stashed changes
+    name = models.CharField(max_length=200)
+    header = models.TextField(null=True, blank=True)
     body = models.TextField(null=True, blank=True)
-
-    def __str__(self):
-        return self.name

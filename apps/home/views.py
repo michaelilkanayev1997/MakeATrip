@@ -9,7 +9,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render
-from .models import Bla
+from .models import Temp
 
 
 
@@ -22,10 +22,12 @@ from .models import Bla
     {'id': 6, 'name': 'Frontend developers'},
     {'id': 7, 'name': 'Frontend developers'},
     {'id': 8, 'name': 'Frontend developers'},
-]"""
+]
+"""
 
-def bla(request):
-    context = {'bla': bla}
+def temp(request):
+    temp = Temp.objects.all()
+    context = {'temp': temp}
     return render(request, 'home/temp.html', context)
 
 @login_required(login_url="/login/")
