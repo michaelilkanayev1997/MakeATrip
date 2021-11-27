@@ -13,7 +13,7 @@ from .models import Temp
 
 
 
-bla = [
+"""bla = [
  {'id': 1, 'name': 'Lets learn python!'},
  {'id': 2, 'name': 'Design with me'},
  {'id': 3, 'name': 'Frontend developers'},
@@ -23,6 +23,7 @@ bla = [
     {'id': 7, 'name': 'Frontend developers'},
     {'id': 8, 'name': 'Frontend developers'},
 ]
+"""
 
 def temp(request):
     temp = Temp.objects.all()
