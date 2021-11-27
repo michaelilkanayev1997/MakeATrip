@@ -9,7 +9,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render
-from .models import Bla
+from .models import Temp
 
 
 
@@ -17,10 +17,16 @@ bla = [
  {'id': 1, 'name': 'Lets learn python!'},
  {'id': 2, 'name': 'Design with me'},
  {'id': 3, 'name': 'Frontend developers'},
+    {'id': 4, 'name': 'Frontend developers'},
+    {'id': 5, 'name': 'Frontend developers'},
+    {'id': 6, 'name': 'Frontend developers'},
+    {'id': 7, 'name': 'Frontend developers'},
+    {'id': 8, 'name': 'Frontend developers'},
 ]
 
-def bla(request):
-    context = {'bla': bla}
+def temp(request):
+    temp = Temp.objects.all()
+    context = {'temp': temp}
     return render(request, 'home/temp.html', context)
 
 
