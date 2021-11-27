@@ -29,7 +29,6 @@ def temp(request):
     context = {'temp': temp}
     return render(request, 'home/temp.html', context)
 
-
 @login_required(login_url="/login/")
 def index(request):
     context = {'segment': 'index'}
