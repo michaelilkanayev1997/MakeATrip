@@ -10,7 +10,7 @@
 {% block content %}
 
   <header class="header-2">
-    <div class="page-header section-height-75 relative" style="background-image: url('./static/assets/img/main_background.jpg')">
+    <div class="page-header section-height-75 relative" style="background-image: url('static/assets/img/main_background.jpg')">
       <div class="position-absolute w-100 z-index-1 bottom-0">
         <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
           <defs>
@@ -43,31 +43,5 @@
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
   <script src="/static/assets/js/soft-design-system.min.js?v=1.0.1" type="text/javascript"></script>
-  <script type="text/javascript">
-    if (document.getElementById('state1')) {
-      const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
-      if (!countUp.error) {
-        countUp.start();
-      } else {
-        console.error(countUp.error);
-      }
-    }
-    if (document.getElementById('state2')) {
-      const countUp1 = new CountUp('state2', document.getElementById("state2").getAttribute("countTo"));
-      if (!countUp1.error) {
-        countUp1.start();
-      } else {
-        console.error(countUp1.error);
-      }
-    }
-    if (document.getElementById('state3')) {
-      const countUp2 = new CountUp('state3', document.getElementById("state3").getAttribute("countTo"));
-      if (!countUp2.error) {
-        countUp2.start();
-      } else {
-        console.error(countUp2.error);
-      };
-    }
-  </script>
 
 {% endblock javascripts %}
