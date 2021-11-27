@@ -18,7 +18,6 @@
         {% if temp %}
             {% for temp in temp %}
 
-
                 {% if temp.id == 1  %}
                     <div class="panel panel-default">
 
@@ -39,14 +38,14 @@
                                     <ul>
                                         <li>
                                             <div class="panel panel-default">
-                                              <div  role="tab" id="heading{{ general.id }}-{{ general.id }}">
+                                              <div  role="tab" id="heading1-{{ general.id }}">
                                                 <h3 class="panel-title">
-                                                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ general.id }}-{{ general.id }}" aria-expanded="true" aria-controls="collapse{{ general.id }}-{{ general.id }}">
+                                                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse1-{{ general.id }}" aria-expanded="true" aria-controls="collapse1-{{ general.id }}">
                                                     {{ general.name }}
                                                   </a>
                                                 </h3>
                                               </div>
-                                              <div id="collapse{{ general.id }}-{{ general.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ general.id }}-{{ general.id }}">
+                                              <div id="collapse1-{{ general.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1-{{ general.id }}">
                                                 <div class="panel-body px-3 mb-4">
                                                   <p>{{ general.subject }}</p>
                                                 </div>
@@ -64,7 +63,6 @@
 
                         <!-- Subject -->
                         <div class="panel-heading p-3 mb-3" role="tab" id="heading{{ temp.id }}">
-                            {{ temp.id }}
                             <h3 class="panel-title">
                                 <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ temp.id }}" aria-expanded="true" aria-controls="collapse{{ temp.id }}">
                                     {{ temp.name }}
@@ -73,36 +71,23 @@
                         </div>
 
                         <!-- Sub_Subject -->
-                        <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ forloop.counter }}">
+
+                        <div id="collapse{{ temp.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ temp.id }}">
                             {% if temp_travel %}
                                 {% for travel in temp_travel %}
                                     <ul>
                                         <li>
                                             <div class="panel panel-default">
-                                                <div class="panel-heading p-1 mb-1" role="tab" id="head{{ forloop.counter }}">
-                                                    <h3 class="panel-title">
-                                                        <a class="collapsed" role="button" title="" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
-                                                        {{ travel.name }}
-                                                        </a>
-                                                    </h3>
-                                                </div>
-                                                <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="head{{ forloop.counter }}">
-                                                    <div class="panel-body px-1 mb-2">
-                                                        <p><strong> {{ travel.subject }} </strong></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="panel panel-default">
-                                              <div  role="tab" id="heading{{ forloop.counter }}">
+                                              <div  role="tab" id="heading2-{{ travel.id }}">
                                                 <h3 class="panel-title">
-                                                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
-                                                    What are the benefits of Solodev CMS?
+                                                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse2-{{ travel.id }}" aria-expanded="true" aria-controls="collapse2-{{ travel.id }}">
+                                                    {{ travel.name }}
                                                   </a>
                                                 </h3>
                                               </div>
-                                              <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ forloop.counter }}">
+                                              <div id="collapse2-{{ travel.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2-{{ travel.id }}">
                                                 <div class="panel-body px-3 mb-4">
-                                                  <p>Text</p>
+                                                  <p>{{ travel.subject }}</p>
                                                 </div>
                                               </div>
                                             </div>
