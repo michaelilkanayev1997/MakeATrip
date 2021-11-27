@@ -8,12 +8,10 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
-from django.shortcuts import render
-from .models import Temp
+from django.shortcuts import render, redirect
+from .models import Temp, TempTravel, TempGeneral
 
-
-
-"""bla = [
+bla = [
     {'id': 1, 'name': 'Lets learn python!'},
     {'id': 2, 'name': 'Design with me'},
     {'id': 3, 'name': 'Frontend developers'},
@@ -23,12 +21,24 @@ from .models import Temp
     {'id': 7, 'name': 'Frontend developers'},
     {'id': 8, 'name': 'Frontend developers'},
 ]
-"""
+
 
 def temp(request):
     temp = Temp.objects.all()
-    context = {'temp': temp}
+    temp_general = TempGeneral.objects.all()
+    temp_travel = TempTravel.objects.all()
+    context = {'temp': temp, 'temp_general': temp_general, 'temp_travel': temp_travel}
     return render(request, 'home/temp.html', context)
+
+
+"""def temp(request, pk):
+    temp_sub = TempSub.objects.get(id=pk)
+
+    if request.method == 'POST':
+        return redirect('room', pk=temp_sub.id)
+    context = {'temp_sub': temp_sub}
+    return render(request, 'home/temp.html', context)"""
+
 
 @login_required(login_url="/login/")
 def index(request):
