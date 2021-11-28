@@ -1,8 +1,15 @@
 {% extends 'layouts/base-travel.html' %}
 
+{% block title %} FAQ {% endblock title %}
+
+<!-- Specific CSS goes HERE      -->
 {% block stylesheets %}
-<link rel="stylesheet" href="/static/assets/css/FAQ.css">
+    <!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/assets/css/faq.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 {% endblock stylesheets %}
+
 {% block content %}
 
 <!-- main_background -->
@@ -25,279 +32,117 @@
     </div>
   </div>
 </header>
-
-<!-- FAQ_content -->
+<!-- FAQ Accordion -->
 <section class="accordion-section clearfix mt-3" aria-label="Question Accordions">
-  <div class="container">
+    <div class="container">
+        <!-- Title -->
+        <h2>Frequently Asked Questions </h2>
+        <!-- Accordion -->
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-	  <h2>Frequently Asked Questions </h2>
-	  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-		<div class="panel panel-default">
-		  <div class="panel-heading p-3 mb-3" role="tab" id="heading0">
-			<h3 class="panel-title">
-			  <a class="collapsed" role="button" title="" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse0" aria-expanded="true" aria-controls="collapse0">
-				General
-			  </a>
-			</h3>
-		  </div>
-		  <div id="collapse0" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading0">
-			<div class="panel-body px-3 mb-4">
-			  <p>Check out this section for answers to some of our most frequently asked questions on general topics:</p>
-			  <ul>
-          <li>
-            <div class="panel panel-default">
-            <div class="panel-heading p-1 mb-1" role="tab" id="head1">
-            <h3 class="panel-title">
-              <a class="collapsed" role="button" title="" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse11" aria-expanded="true" aria-controls="collapse11">
-                Why should I create an account?
-              </a>
-            </h3>
-            </div>
-            <div id="collapse11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="head1">
-            <div class="panel-body px-1 mb-2">
-              <p><strong>First of all, in order to use the site, it is necessary to register on the site.
-                If you have an account,Make a trip automatically saves any trip you create while logged in. You can then access your trips from other computers and other devices. When you're signed in, you can also collaborate on your trips with others.</strong></p>
-            </div>
-            </div>
-          </div>
-          </li>
-				<li>
-          <div class="panel panel-default">
-          <div class="panel-heading p-1 mb-1" role="tab" id="head1">
-          <h3 class="panel-title">
-            <a class="collapsed" role="button" title="" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse12" aria-expanded="true" aria-controls="collapse12">
-            I can't sign into my account, what should I do?
-            </a>
-          </h3>
-          </div>
-          <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="head1">
-          <div class="panel-body px-1 mb-2">
-            <p><strong>If you receive an error that your email or password are incorrect, you can request a reset password email for your account. Please be sure to check your spam or junk folder if you don't see the reset password email land in your inbox shortly after requesting it.</strong></p>
-          </div>
-          </div>
+        {% if faq %}
+            {% for faq in faq %}
+
+                {% if faq.id == 1  %}
+                    <div class="panel panel-default">
+
+                        <!-- Subject -->
+                        <div class="panel-heading p-3 mb-3" role="tab" id="heading{{ faq.id }}">
+                            <h3 class="panel-title">
+                                <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ faq.id }}" aria-expanded="true" aria-controls="collapse{{ faq.id }}">
+                                    {{ faq.name }}
+                                </a>
+                            </h3>
+                        </div>
+
+                        <!-- Sub_Subject -->
+
+                        <div id="collapse{{ faq.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ faq.id }}">
+                            {% if faq_general %}
+                                {% for general in faq_general %}
+                                    <ul>
+                                        <li>
+                                            <div class="panel panel-default">
+                                              <div  role="tab" id="heading1-{{ general.id }}">
+                                                <h3 class="panel-title">
+                                                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse1-{{ general.id }}" aria-expanded="true" aria-controls="collapse1-{{ general.id }}">
+                                                    {{ general.question }}
+                                                  </a>
+                                                </h3>
+                                              </div>
+                                              <div id="collapse1-{{ general.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1-{{ general.id }}">
+                                                <div class="panel-body px-3 mb-4">
+                                                  <p>{{ general.answer }}</p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+
+                {% elif faq.id == 2  %}
+                    <div class="panel panel-default">
+
+                        <!-- Subject -->
+                        <div class="panel-heading p-3 mb-3" role="tab" id="heading{{ faq.id }}">
+                            <h3 class="panel-title">
+                                <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ faq.id }}" aria-expanded="true" aria-controls="collapse{{ faq.id }}">
+                                    {{ faq.name }}
+                                </a>
+                            </h3>
+                        </div>
+
+                        <!-- Sub_Subject -->
+
+                        <div id="collapse{{ faq.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ faq.id }}">
+                            {% if faq_travel %}
+                                {% for travel in faq_travel %}
+                                    <ul>
+                                        <li>
+                                            <div class="panel panel-default">
+                                              <div  role="tab" id="heading2-{{ travel.id }}">
+                                                <h3 class="panel-title">
+                                                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse2-{{ travel.id }}" aria-expanded="true" aria-controls="collapse2-{{ travel.id }}">
+                                                    {{ travel.question }}
+                                                  </a>
+                                                </h3>
+                                              </div>
+                                              <div id="collapse2-{{ travel.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2-{{ travel.id }}">
+                                                <div class="panel-body px-3 mb-4">
+                                                  <p>{{ travel.answer }}</p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
         </div>
-        </li>
-				<li>
-            <div class="panel panel-default">
-      		  <div class="panel-heading p-1 mb-1" role="tab" id="head1">
-      			<h3 class="panel-title">
-      			  <a class="collapsed" role="button" title="" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse13" aria-expanded="true" aria-controls="collapse13">
-      				Can I use Roadtrippers on multiple devices?
-      			  </a>
-      			</h3>
-      		  </div>
-      		  <div id="collapse13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="head1">
-      			<div class="panel-body px-1 mb-2">
-      			  <p><strong>Yes, our site can work on any device that has the ability to Log in to the browser ,Just make sure that you're logged into the same account in both places.</strong></p>
-      			</div>
-      		  </div>
-          </div>
-        </li>
-				<li>
-          <div class="panel panel-default">
-          <div class="panel-heading p-1 mb-1" role="tab" id="head1">
-          <h3 class="panel-title">
-            <a class="collapsed" role="button" title="" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse14" aria-expanded="true" aria-controls="collapse14">
-          How can I report a problem on make a trip?
-            </a>
-          </h3>
-          </div>
-          <div id="collapse14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="head1">
-          <div class="panel-body px-1 mb-2">
-            <p><strong>If you notice incorrect information please let us know by reporting the problem on the Contact-us page.</strong></p>
-          </div>
-          </div>
-        </div>
-        </li>
-				<li>
-          <div class="panel panel-default">
-          <div class="panel-heading p-1 mb-1" role="tab" id="head1">
-          <h3 class="panel-title">
-            <a class="collapsed" role="button" title="" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse15" aria-expanded="true" aria-controls="collapse15">
-          How can I delete my account?
-            </a>
-          </h3>
-          </div>
-          <div id="collapse15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="head1">
-          <div class="panel-body px-1 mb-2">
-            <p><strong>If you use make a trip at our desktop site and would like to delete your account, please send a request to us at support@makeatrip.com including your email and/or username and we'll remove the account for you.</strong></p>
-          </div>
-          </div>
-        </div>
-        </li>
-        <li>
-          <div class="panel panel-default">
-          <div class="panel-heading p-1 mb-1" role="tab" id="head1">
-          <h3 class="panel-title">
-            <a class="collapsed" role="button" title="" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse16" aria-expanded="true" aria-controls="collapse16">
-          How does make a trip make money?
-            </a>
-          </h3>
-          </div>
-          <div id="collapse16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="head1">
-          <div class="panel-body px-1 mb-2">
-            <p><strong>we do not accept payment for placing destinations or attractions on trips. Instead, we earn a commission if you decide to book trip components, such as hotels, transportation, and tours, through make a trip. Commissions don't affect the prices you pay—they remain the same whether you purchase on our site or on our booking partners.</strong></p>
-          </div>
-          </div>
-        </div>
-        </li>
-			  </ul>
-			</div>
-		  </div>
-		</div>
-
-		<div class="panel panel-default">
-		  <div class="panel-heading p-3 mb-3" role="tab" id="heading1">
-			<h3 class="panel-title">
-			  <a class="collapsed" role="button" title="" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapse2">
-				Trip planning
-			  </a>
-			</h3>
-		  </div>
-		  <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
-			<div class="panel-body px-3 mb-4">
-			  <p>Check out this section for answers to some of our most frequently asked questions on trip planning topics:</p>
-        <ul>
-       <li>
-          <div class="panel panel-default">
-          <div class="panel-heading p-1 mb-1" role="tab" id="head1">
-          <h3 class="panel-title">
-            <a class="collapsed" role="button" title="" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse21" aria-expanded="true" aria-controls="collapse21">
-            Can I change the starting point for my trip?
-            </a>
-          </h3>
-          </div>
-          <div id="collapse21" class="panel-collapse collapse" role="tabpanel" aria-labelledby="head1">
-          <div class="panel-body px-1 mb-2">
-            <p><strong>Yes, you can!
-           The trip planner will set the starting point as your current location, as best as we can detect from your device, by default. If your starting location is incorrect or you want to begin a trip from another starting point, it can be easily removed within the Trip Planner. Once deleted, simply add your next waypoint to your trip and drag/drop the waypoints as needed.</strong></p>
-          </div>
-          </div>
-        </div>
-        </li>
-        <li>
-           <div class="panel panel-default">
-           <div class="panel-heading p-1 mb-1" role="tab" id="head1">
-           <h3 class="panel-title">
-             <a class="collapsed" role="button" title="" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse22" aria-expanded="true" aria-controls="collapse22">
-            Can I add my preferences to the trip schedule?
-             </a>
-           </h3>
-           </div>
-           <div id="collapse22" class="panel-collapse collapse" role="tabpanel" aria-labelledby="head1">
-           <div class="panel-body px-1 mb-2">
-             <p><strong>No, you can select the preferences of the trip before creating the schedule but the preferences of the trips are fixed and cannot be changed.</strong></p>
-           </div>
-           </div>
-         </div>
-         </li>
-         <li>
-            <div class="panel panel-default">
-            <div class="panel-heading p-1 mb-1" role="tab" id="head1">
-            <h3 class="panel-title">
-              <a class="collapsed" role="button" title="" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse23" aria-expanded="true" aria-controls="collapse23">
-             How do I match my actual intercity travel schedule with the one suggested by the site?
-              </a>
-            </h3>
-            </div>
-            <div id="collapse23" class="panel-collapse collapse" role="tabpanel" aria-labelledby="head1">
-            <div class="panel-body px-1 mb-2">
-              <p><strong>The intercity travel scheduling you see on the Route tab displays an average duration based on the available transportation options. If you expect your flight, drive, or train/bus trip to be longer or shorter than what the site suggests, you can change it on your calendar.
-                Navigate to the Calendar view on the Day by Day tab, click on the travel block, and specify your scheduled departure and arrival times. Your trip's intercity travel schedule will now match the bookings you've made or plan to make.
-                How do I change the attractions in</strong></p>
-            </div>
-            </div>
-          </div>
-          </li>
-          <li>
-             <div class="panel panel-default">
-             <div class="panel-heading p-1 mb-1" role="tab" id="head1">
-             <h3 class="panel-title">
-               <a class="collapsed" role="button" title="" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse24" aria-expanded="true" aria-controls="collapse24">
-                 Can I add notes to my trip?
-               </a>
-             </h3>
-             </div>
-             <div id="collapse24" class="panel-collapse collapse" role="tabpanel" aria-labelledby="head1">
-             <div class="panel-body px-1 mb-2">
-               <p><strong>Yes. When you create a custom activity on your calendar, you can attach notes to it. You can name the restaurant you want to eat at for lunch, add a link with information about the custom activity, write out an address, and much more. You'll also be able to see your custom activity notes in the List view of the Day by Day tab.</strong></p>
-             </div>
-             </div>
-           </div>
-           </li>
-           <li>
-              <div class="panel panel-default">
-              <div class="panel-heading p-1 mb-1" role="tab" id="head1">
-              <h3 class="panel-title">
-                <a class="collapsed" role="button" title="" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse25" aria-expanded="true" aria-controls="collapse25">
-                  How do I get information about public transportation?
-                </a>
-              </h3>
-              </div>
-              <div id="collapse25" class="panel-collapse collapse" role="tabpanel" aria-labelledby="head1">
-              <div class="panel-body px-1 mb-2">
-                <p><strong>We create your initial trip assuming you're using a car for sightseeing, but you can use any type of transportation. For other options between attractions, click on the Maps view on the Day by Day tab. Click on the estimated driving time between two attractions to bring up Google Maps, where you can see available transportation options.
-                  For traveling between destinations, click the Route tab and then the travel duration/transportation mode prompt between two destinations. This will show you the different modes of transportation available, including different routes and price ranges.</strong></p>
-              </div>
-              </div>
-            </div>
-            </li>
-            <li>
-               <div class="panel panel-default">
-               <div class="panel-heading p-1 mb-1" role="tab" id="head1">
-               <h3 class="panel-title">
-                 <a class="collapsed" role="button" title="" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse26" aria-expanded="true" aria-controls="collapse26">
-                   How do I delete a trip?
-                 </a>
-               </h3>
-               </div>
-               <div id="collapse26" class="panel-collapse collapse" role="tabpanel" aria-labelledby="head1">
-               <div class="panel-body px-1 mb-2">
-                 <p><strong>To delete a trip you’ve created, navigate to the My Trips button on the top right corner, and click on “See all”. Then, hover your mouse over the trip you want to delete and a trashcan icon will appear.</strong></p>
-               </div>
-               </div>
-             </div>
-             </li>
-			</div>
-		  </div>
-		</div>
-
-		<div class="panel panel-default">
-		  <div class="panel-heading p-3 mb-3" role="tab" id="heading2">
-			<h3 class="panel-title">
-			  <a class="collapsed" role="button" title="" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse3" aria-expanded="true" aria-controls="collapse3">
-				What is the uptime for Solodev CMS?
-			  </a>
-			</h3>
-		  </div>
-		  <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
-			<div class="panel-body px-3 mb-4">
-			  <p>Using Amazon AWS technology which is an industry leader for reliability you will be able to experience an uptime in the vicinity of 99.95%.</p>
-			</div>
-		  </div>
-		</div>
-
-		<div class="panel panel-default">
-		  <div class="panel-heading p-3 mb-3" role="tab" id="heading3">
-			<h3 class="panel-title">
-			  <a class="collapsed" role="button" title="" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse4" aria-expanded="true" aria-controls="collapse4">
-				Can Solodev CMS handle multiple websites for my company?
-			  </a>
-			</h3>
-		  </div>
-		  <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
-			<div class="panel-body px-3 mb-4">
-			  <p>Yes, Solodev CMS is built to handle the needs of any size company. With our Multi-Site Management, you will be able to easily manage all of your websites.</p>
-			</div>
-		  </div>
-		</div>
-	  </div>
-
-
-  </div>
+    </div>
 </section>
-
-
-
-
 {% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+{% endblock javascripts %}
+
+
+
+
+
+
+
+
+
+
