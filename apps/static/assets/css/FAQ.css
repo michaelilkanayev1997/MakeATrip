@@ -8,6 +8,7 @@ h2 {
 .accordion-section .panel-default > .panel-heading {
     border: 0;
     background: #f4f4f4;
+    text-decoration:;
     padding: 0;
 }
 .accordion-section .panel-default .panel-title a {
@@ -31,6 +32,6 @@ h2 {
     font-size: 1.2rem;
 }
 #head1{
-  background: #FFFFFF;
-  text-decoration:underline;
+    background: #FFFFFF;
+    text-decoration:underline;
 }
