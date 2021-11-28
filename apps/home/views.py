@@ -9,7 +9,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
-from .models import Temp, TempTravel, TempGeneral
+from .models import Temp, TempTravel, TempGeneral, FAQGeneral, FAQTravel, FAQ, AboutUs
 
 bla = [
     {'id': 1, 'name': 'Lets learn python!'},
@@ -30,14 +30,21 @@ def temp(request):
     context = {'temp': temp, 'temp_general': temp_general, 'temp_travel': temp_travel}
     return render(request, 'home/temp.html', context)
 
+def faq(request):
+    faq = FAQ.objects.all()
+    faq_general = FAQGeneral.objects.all()
+    faq_travel = FAQTravel.objects.all()
+    context = {'faq': faq, 'faq_general': faq_general, 'faq_travel': faq_travel}
+    html_template = loader.get_template('home/FAQ.html')
+    return HttpResponse(html_template.render(context, request))
 
-"""def temp(request, pk):
-    temp_sub = TempSub.objects.get(id=pk)
+def about_us(request):
+    about = AboutUs.objects.all()
+    context = {'about': about}
+    html_template = loader.get_template('home/about-us.html')
+    return HttpResponse(html_template.render(context, request))
 
-    if request.method == 'POST':
-        return redirect('room', pk=temp_sub.id)
-    context = {'temp_sub': temp_sub}
-    return render(request, 'home/temp.html', context)"""
+
 
 
 @login_required(login_url="/login/")
