@@ -9,7 +9,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
-from .models import Temp, TempTravel, TempGeneral, FAQGeneral, FAQTravel, FAQ, AboutUs,ContactUs
+from .models import Temp, TempTravel, TempGeneral, FAQGeneral, FAQTravel, FAQ, AboutUs, ContactUs
+
+
 ######################################################################
 #                          Views Functions                           #
 ######################################################################
@@ -21,6 +23,7 @@ def temp(request):
     context = {'temp': temp, 'temp_general': temp_general, 'temp_travel': temp_travel}
     return render(request, 'home/temp.html', context)
 
+
 def faq(request):
     faq = FAQ.objects.all()
     faq_general = FAQGeneral.objects.all()
@@ -28,6 +31,7 @@ def faq(request):
     context = {'faq': faq, 'faq_general': faq_general, 'faq_travel': faq_travel}
     html_template = loader.get_template('home/FAQ.html')
     return HttpResponse(html_template.render(context, request))
+
 
 def about_us(request):
     about = AboutUs.objects.all()
@@ -38,7 +42,7 @@ def about_us(request):
 
 def contact_us(request):
     contact = ContactUs.objects.all()
-    context = {' contact':  contact}
+    context = {' contact': contact}
     html_template = loader.get_template('home/contact-us.html')
     return HttpResponse(html_template.render(context, request))
 
