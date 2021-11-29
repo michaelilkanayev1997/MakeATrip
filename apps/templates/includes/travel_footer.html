@@ -10,7 +10,7 @@
           </div>
             <ul class="flex-column ms-n3 nav">
               <li class="nav-item">
-                <a class="nav-link" href="/about-us.html">
+                <a class="nav-link" href="{% url 'about-us' %}">
                   About Us
                 </a>
               </li>
@@ -22,12 +22,12 @@
             <h6 class="text-gradient text-Primary Link text-sm">Help & Support</h6>
             <ul class="flex-column ms-n3 nav">
               <li class="nav-item">
-                <a class="nav-link" href="FAQ.html">
+                <a class="nav-link" href="{% url 'faq' %}">
                   FAQs
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/Contact-us.html">
+                <a class="nav-link" href="{% url 'contact-us' %}">
                   Contact us
                 </a>
               </li>
@@ -40,22 +40,22 @@
             <h6 class="text-gradient text-Primary Link text-sm">Legal</h6>
             <ul class="flex-column ms-n3 nav">
               <li class="nav-item">
-                <a class="nav-link" href="/" target="_blank">
+                <a class="nav-link" href="{% url 'home' %}" target="_blank">
                   Terms of use
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/" target="_blank">
+                <a class="nav-link" href="{% url 'home' %}" target="_blank">
                   Privacy Policy
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/" target="_blank">
+                <a class="nav-link" href="{% url 'home' %}" target="_blank">
                   Cookie policy
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/" target="_blank">
+                <a class="nav-link" href="{% url 'home' %}" target="_blank">
                   Copyright policy
                 </a>
               </li>

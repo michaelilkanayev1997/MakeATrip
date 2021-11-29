@@ -29,11 +29,12 @@ def faq(request):
     faq_general = FAQGeneral.objects.all()
     faq_travel = FAQTravel.objects.all()
     context = {'faq': faq, 'faq_general': faq_general, 'faq_travel': faq_travel}
-    html_template = loader.get_template('home/FAQ.html')
+    html_template = loader.get_template('home/faq.html')
     return HttpResponse(html_template.render(context, request))
 
 
 def about_us(request):
+    load_template = request.path.split('/')
     about = AboutUs.objects.all()
     context = {'about': about}
     html_template = loader.get_template('home/about-us.html')
@@ -53,6 +54,7 @@ def index(request):
 
     html_template = loader.get_template('home/index.html')
     return HttpResponse(html_template.render(context, request))
+
 
 
 # @login_required(login_url="/login/")
