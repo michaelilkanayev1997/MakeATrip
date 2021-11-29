@@ -9,7 +9,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
-from .models import Temp, TempTravel, TempGeneral, FAQGeneral, FAQTravel, FAQ, AboutUs
+from .models import Temp, TempTravel, TempGeneral, FAQGeneral, FAQTravel, FAQ, AboutUs,ContactUs
 
 bla = [
     {'id': 1, 'name': 'Lets learn python!'},
@@ -43,6 +43,18 @@ def about_us(request):
     context = {'about': about}
     html_template = loader.get_template('home/about-us.html')
     return HttpResponse(html_template.render(context, request))
+
+
+def contact_us(request):
+    contact = ContactUs.objects.all()
+    context = {' contact':  contact}
+    html_template = loader.get_template('home/contact-us.html')
+    return HttpResponse(html_template.render(context, request))
+
+
+
+
+
 
 
 
