@@ -3,7 +3,7 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-import os
+import os, sys
 from decouple import config
 from unipath import Path
 
@@ -19,6 +19,8 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 
 # load production server from .env
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', config('SERVER', default='127.0.0.1')]
+
+
 
 # Application definition
 
@@ -116,10 +118,20 @@ DATABASES = {
         'PASSWORD': 'Pa$$W0rd',
         'HOST': 'ec2-3-70-153-51.eu-central-1.compute.amazonaws.com',
         'PORT': '3306',
-        'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"}
+        'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
+        'TEST': {
+            'NAME': 'make-a-trip',
+        },
     }
 }
 
+if 'test' in sys.argv or 'test_coverage' in sys.argv: #Covers regular testing and django-coverage
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'db.sqlite3',
+        }
+    }
 
 
 # Password validation

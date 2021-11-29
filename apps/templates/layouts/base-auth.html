@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>
-        Make A Trip - {% block title %}{% endblock %}
-    </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/static/assets/favicon.ico" type="image/x-icon">
 
-    {% block stylesheets %}
+
+  <title>
+    Make A Trip - {% block title %}{% endblock %}
+  </title>
+
+  <!-- Specific Page CSS goes HERE  -->
+  {% block stylesheets %}
+
 <!--===============================================================================================-->
-    <link rel="icon" href="/static/assets/favicon.ico" type="image/x-icon">
+	<link rel="icon" type="image/png" href="/static/assets/images/icons/favicon.ico"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/static/assets/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -29,20 +35,16 @@
 	<link rel="stylesheet" type="text/css" href="/static/assets/css/util.css">
 	<link rel="stylesheet" type="text/css" href="/static/assets/css/main.css">
 <!--===============================================================================================-->
-
-    {% endblock stylesheets %}
+  {% endblock stylesheets %}
 
 </head>
-
-<body>
+<body class="hold-transition {% block body_class %}{% endblock body_class %}">
 
     {% block content %}{% endblock content %}
 
-    {% include 'includes/scripts.html' %}
+    {% include "includes/scripts.html" %}
 
-    <!-- Specific Page JS goes HERE  -->
-    {% block javascripts %}{% endblock javascripts %}
-
+  <!-- Specific JS goes HERE -->
+  {% block javascripts %}{% endblock javascripts %}
 </body>
 </html>
-

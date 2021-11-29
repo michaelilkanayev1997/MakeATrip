@@ -1,36 +1,11 @@
 # [Make A Trip](https://www.makeatrip.live)
 
-Frontend based on (https://appseed.us) Tamplates.  
-Admin dashboard - [AdminLTE Django](https://appseed.us/admin-dashboards/django-dashboard-adminlte) 
-
-<br />
-
-## Quick Start in [Docker](https://www.docker.com/)
-
-> Get the code
-
-```bash
-$ git clone https://github.com/app-generator/django-dashboard-adminlte.git
-$ cd django-dashboard-adminlte
-```
-
-> Start the app in Docker
-
-```bash
-$ docker-compose pull   # download dependencies 
-$ docker-compose build  # local set up
-$ docker-compose up -d  # start the app 
-```
-
-Visit `http://localhost:85` in your browser. The app should be up & running.
-
-
 ## How to use it
 
 ```bash
 $ # Get the code
-$ git clone https://github.com/app-generator/django-dashboard-adminlte.git
-$ cd django-dashboard-adminlte
+$ git clone https://github.com/KfirGerman/MakeATrip.git
+$ cd MakeATrip
 $
 $ # Virtualenv modules installation (Unix based systems)
 $ virtualenv env
@@ -56,9 +31,6 @@ $
 $ # Access the web app in browser: http://127.0.0.1:8000/
 ```
 
-> Note: To use the app, please access the registration page and create a new user. After authentication, the app will unlock the private pages.
-
-<br />
 
 ## Code-base structure
 
@@ -67,151 +39,60 @@ The project is coded using a simple and intuitive structure presented below:
 ```bash
 < PROJECT ROOT >
    |
-   |-- core/                               # Implements app configuration
-   |    |-- settings.py                    # Defines Global Settings
-   |    |-- wsgi.py                        # Start the app in production
-   |    |-- urls.py                        # Define URLs served by all apps/nodes
+   |-- core/                                     # Implements app configuration
+   |    |-- settings.py                          # Defines Global Settings
+   |    |-- wsgi.py                              # Start the app in production
+   |    |-- urls.py                              # Define URLs served by all apps/nodes
    |
    |-- apps/
    |    |
-   |    |-- home/                          # A simple app that serve HTML files
-   |    |    |-- views.py                  # Serve HTML pages for authenticated users
-   |    |    |-- urls.py                   # Define some super simple routes  
+   |    |-- home/                                # A simple app that serve HTML files
+   |    |    |-- views.py                        # Serve HTML pages for authenticated users
+   |    |    |-- urls.py                         # Define some super simple routes  
    |    |
-   |    |-- authentication/                # Handles auth routes (login and register)
-   |    |    |-- urls.py                   # Define authentication routes  
-   |    |    |-- views.py                  # Handles login and registration  
-   |    |    |-- forms.py                  # Define auth forms (login and register) 
+   |    |-- authentication/                      # Handles auth routes (login and register)
+   |    |    |-- urls.py                         # Define authentication routes  
+   |    |    |-- views.py                        # Handles login and registration  
+   |    |    |-- forms.py                        # Define auth forms (login and register) 
    |    |
    |    |-- static/
-   |    |    |-- <css, JS, images>         # CSS files, Javascripts files
+   |    |    |-- <css, JS, images, JQuery>               # CSS files, Javascripts files
    |    |
-   |    |-- templates/                     # Templates used to render pages
-   |         |-- includes/                 # HTML chunks and components
-   |         |    |-- navigation.html      # Top menu component
-   |         |    |-- sidebar.html         # Sidebar component
-   |         |    |-- footer.html          # App Footer
-   |         |    |-- scripts.html         # Scripts common to all pages
+   |    |-- templates/                           # Templates used to render pages
+   |         |-- includes/                       # HTML chunks and components
+   |         |    |-- navigation.html            # Top menu component at Admin Pages
+   |         |    |-- sidebar.html               # Sidebar component at Admin Pages
+   |         |    |-- footer.html                # App Footer at Admin Pages
+   |         |    |-- scripts.html               # Scripts common to Admin pages
+   |         |    |-- travel_navigation.html     # Top menu Travel Pages
+   |         |    |-- travel_navigation.html     # App Footer at Travel Pages
+   |         |    |-- travel_scripts.html        # Scripts common to Travel pages
    |         |
-   |         |-- layouts/                   # Master pages
-   |         |    |-- base-fullscreen.html  # Used by Authentication pages
-   |         |    |-- base_dashboard.html             # Used by common pages
+   |         |-- layouts/                        # Master pages
+   |         |    |-- base-auth.html              # Used by Authentication pages
+   |         |    |-- base_dashboard.html         # Used by Admin Panel pages
+   |         |    |-- base-travel.html            # Used by Travel pages
+   |         |    |-- base.html                   # Used by Error pages
    |         |
-   |         |-- accounts/                  # Authentication pages
-   |         |    |-- login.html            # Login page
-   |         |    |-- register.html         # Register page
+   |         |-- accounts/                        # Authentication pages
+   |         |    |-- login.html                  # Login page
+   |         |    |-- register.html               # Register page
+   |         |    |-- accounts/                   # Reset Password Pages
+   |         |        |-- *.html/                 # Reset Password page
    |         |
-   |         |-- home/                      # UI Kit Pages
-   |              |-- index.html            # Index page
-   |              |-- 404-page.html         # 404 page
-   |              |-- *.html                # All other pages
+   |         |-- home/                            # UI Kit Pages
+   |              |-- index.html                  # Index page
+   |              |-- 404-page.html               # 404 page
+   |              |-- 500-page.html               # 404 page
+   |              |-- *.html                      # All other pages
    |
-   |-- requirements.txt                     # Development modules - SQLite storage
+   |-- requirements.txt                           # Development modules - MySQL storage
    |
-   |-- .env                                 # Inject Configuration via Environment
-   |-- manage.py                            # Start the app - Django default start script
+   |-- .env                                       # Inject Configuration via Environment
+   |-- manage.py                                  # Start the app - Django default start script
    |
    |-- ************************************************************************
 ```
-
-<br />
-
-> The bootstrap flow
-
-- Django bootstrapper `manage.py` uses `core/settings.py` as the main configuration file
-- `core/settings.py` loads the app magic from `.env` file
-- Redirect the guest users to Login page
-<br />
-
-## Recompile CSS
-
-To recompile SCSS files, follow this setup:
-
-<br />
-
-**Step #1** - Install tools
-
-- [NodeJS](https://nodejs.org/en/) 12.x or higher
-- [Gulp](https://gulpjs.com/) - globally 
-    - `npm install -g gulp-cli`
-- [Yarn](https://yarnpkg.com/) (optional) 
-
-<br />
-
-**Step #2** - Change the working directory to `assets` folder
-
-```bash
-$ cd core/static/assets
-```
-
-<br />
-
-**Step #3** - Install modules (this will create a classic `node_modules` directory)
-
-```bash
-$ npm install
-// OR
-$ yarn
-```
-
-<br />
-
-**Step #4** - Edit & Recompile SCSS files 
-
-```bash
-$ gulp scss
-```
-
-The generated file is saved in `static/assets/css` directory.
-
-<br /> 
-
-## Deployment
-
-The app is provided with a basic configuration to be executed in [Docker](https://www.docker.com/), [Gunicorn](https://gunicorn.org/), and [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/).
-
-### [Gunicorn](https://gunicorn.org/)
----
-
-Gunicorn 'Green Unicorn' is a Python WSGI HTTP Server for UNIX.
-
-> Install using pip
-
-```bash
-$ pip install gunicorn
-```
-> Start the app using gunicorn binary
-
-```bash
-$ gunicorn --bind=0.0.0.0:8001 core.wsgi:application
-Serving on http://localhost:8001
-```
-
-Visit `http://localhost:8001` in your browser. The app should be up & running.
-
-
-<br />
-
-### [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/)
----
-
-Waitress (Gunicorn equivalent for Windows) is meant to be a production-quality pure-Python WSGI server with very acceptable performance. It has no dependencies except ones that live in the Python standard library.
-
-> Install using pip
-
-```bash
-$ pip install waitress
-```
-> Start the app using [waitress-serve](https://docs.pylonsproject.org/projects/waitress/en/stable/runner.html)
-
-```bash
-$ waitress-serve --port=8001 core.wsgi:application
-Serving on http://localhost:8001
-```
-
-Visit `http://localhost:8001` in your browser. The app should be up & running.
-
-<br />
 
 ## Credits & Links
 
