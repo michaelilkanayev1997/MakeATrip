@@ -30,6 +30,18 @@ $ # python manage.py runserver 0.0.0.0:<your_port>
 $
 $ # Access the web app in browser: http://127.0.0.1:8000/
 ```
+<br/>
+
+## Unit Test
+How to test:
+```bash
+$ # authentication/tests
+$ # home/tests
+$ cd MakeATrip
+$ python manage.py test # for all tests
+$ python manage.py test apps.home # for home application test only.
+$ python manage.py test apps.authentication # for home authentication test only.
+```
 
 
 ## Code-base structure

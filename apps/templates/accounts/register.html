@@ -10,7 +10,7 @@
 {% block stylesheets %}
 
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="/static/assets/images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="/static/assets/img/icons/favicon.ico"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/static/assets/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -38,7 +38,7 @@
 {% block content %}
 
   <div class="limiter">
-	<div class="container-login100" style="background-image: url('/static/assets/images/bg-01.jpg');">
+	<div class="container-login100" style="background-image: url('/static/assets/img/bg-01.jpg');">
 		<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
             <form autocomplete="off" method="post" action="" class="login100-form validate-form flex-sb flex-w">
                 {% csrf_token %}
@@ -53,7 +53,7 @@
                     Facebook
                 </a>
                 <a href="{% provider_login_url 'google' %}" class="btn-google m-b-20">
-                    <img src="/static/assets/images/icons/icon-google.png" alt="GOOGLE">
+                    <img src="/static/assets/img/icons/icon-google.png" alt="GOOGLE">
                     Google
                 </a>
 
