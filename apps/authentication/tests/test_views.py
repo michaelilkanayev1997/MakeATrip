@@ -21,10 +21,10 @@ class TestRegister(TestCase):
 
     def test_signup_page_url(self):
         response = self.client.get("register")
-        # self.assertEqual(response.status_code, 404)
+        self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'accounts/register.html')
 
     def test_signup_page_view_name(self):
         response = self.client.get(reverse('register'))
-        # self.assertEqual(response.status_code, 404)
+        self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'accounts/register.html')
