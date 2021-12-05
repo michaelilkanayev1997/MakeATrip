@@ -1,119 +1,91 @@
-<!-- Specific CSS goes HERE      -->
+{% extends "layouts/base-auth.html" %}
+<!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}
-    <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/assets/css/temp.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="/static/assets/img/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/assets/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/assets/css/main.css">
+<!--===============================================================================================-->
+
 {% endblock stylesheets %}
+
 
 {% block content %}
 
-<section class="accordion-section clearfix mt-3" aria-label="Question Accordions">
-    <div class="container">
-        <!-- Title -->
-        <h2>Frequently Asked Questions </h2>
-        <!-- Accordion -->
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-        {% if temp %}
-            {% for temp in temp %}
+  <div class="limiter">
+	<div class="container-login100" style="background-image: url('/static/assets/img/bg-01.jpg');">
+		<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+            <form autocomplete="off" method="post" action="" class="login100-form validate-form flex-sb flex-w">
+                {% csrf_token %}
+                <span class="login100-form-title p-b-53">
+                    Contact Us
+                </span>
 
-                {% if temp.id == 1  %}
-                    <div class="panel panel-default">
 
-                        <!-- Subject -->
-                        <div class="panel-heading p-3 mb-3" role="tab" id="heading{{ temp.id }}">
-                            <h3 class="panel-title">
-                                <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ temp.id }}" aria-expanded="true" aria-controls="collapse{{ temp.id }}">
-                                    {{ temp.name }}
-                                </a>
-                            </h3>
-                        </div>
+                <!--Username-->
+                <div class="p-t-31 p-b-9">
+                    <span class="txt1">
+                        Full Name
+                    </span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate = "Full Name is required">
+                    <input class="input100" type="text" name="full_name" >
+                    <span class="focus-input100"></span>
+                </div>
 
-                        <!-- Sub_Subject -->
+                <div class="p-t-31 p-b-9">
+                    <span class="txt1">
+                        Email
+                    </span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate = "Email is required">
+                    <input class="input100" type="email" name="email" >
+                    <span class="focus-input100"></span>
+                </div>
 
-                        <div id="collapse{{ temp.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ temp.id }}">
-                            {% if temp_general %}
-                                {% for general in temp_general %}
-                                    <ul>
-                                        <li>
-                                            <div class="panel panel-default">
-                                              <div  role="tab" id="heading1-{{ general.id }}">
-                                                <h3 class="panel-title">
-                                                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse1-{{ general.id }}" aria-expanded="true" aria-controls="collapse1-{{ general.id }}">
-                                                    {{ general.name }}
-                                                  </a>
-                                                </h3>
-                                              </div>
-                                              <div id="collapse1-{{ general.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1-{{ general.id }}">
-                                                <div class="panel-body px-3 mb-4">
-                                                  <p>{{ general.subject }}</p>
-                                                </div>
-                                              </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                {% endfor %}
-                            {% endif %}
-                        </div>
-                    </div>
+                <div class="p-t-31 p-b-9">
+                    <span class="txt1">
+                        Subject
+                    </span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate = "Subject is required">
+                    <input class="input100" type="text" name="subject" >
+                    <span class="focus-input100"></span>
+                </div>
 
-                {% elif temp.id == 2  %}
-                    <div class="panel panel-default">
+                <div class="p-t-31 p-b-9">
+                    <span class="txt1">
+                        Comment
+                    </span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate = "Comment is required">
+                    <input class="input100" type="text" name="comment" >
+                    <span class="focus-input100"></span>
+                </div>
 
-                        <!-- Subject -->
-                        <div class="panel-heading p-3 mb-3" role="tab" id="heading{{ temp.id }}">
-                            <h3 class="panel-title">
-                                <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ temp.id }}" aria-expanded="true" aria-controls="collapse{{ temp.id }}">
-                                    {{ temp.name }}
-                                </a>
-                            </h3>
-                        </div>
 
-                        <!-- Sub_Subject -->
 
-                        <div id="collapse{{ temp.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ temp.id }}">
-                            {% if temp_travel %}
-                                {% for travel in temp_travel %}
-                                    <ul>
-                                        <li>
-                                            <div class="panel panel-default">
-                                              <div  role="tab" id="heading2-{{ travel.id }}">
-                                                <h3 class="panel-title">
-                                                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse2-{{ travel.id }}" aria-expanded="true" aria-controls="collapse2-{{ travel.id }}">
-                                                    {{ travel.name }}
-                                                  </a>
-                                                </h3>
-                                              </div>
-                                              <div id="collapse2-{{ travel.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2-{{ travel.id }}">
-                                                <div class="panel-body px-3 mb-4">
-                                                  <p>{{ travel.subject }}</p>
-                                                </div>
-                                              </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                {% endfor %}
-                            {% endif %}
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        {% endif %}
+                <!--Login Button-->
+                <div class="container-login100-form-btn m-t-17">
+                    <button type="submit" name="login" class="login100-form-btn">
+                        Send
+                    </button>
+
+
+            </form>
         </div>
-    </div>
-</section>
-
+	</div>
+  </div>
 
 {% endblock content %}
 
-<!-- Specific JS goes HERE -->
+<!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
 
 
 {% endblock javascripts %}
-
