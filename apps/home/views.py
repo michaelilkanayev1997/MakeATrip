@@ -9,19 +9,32 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
-from .models import Temp, TempTravel, TempGeneral, FAQGeneral, FAQTravel, FAQ, AboutUs, ContactUs
+from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, ContactUs, Temp
+from .forms import TempForm
+
+
 
 
 ######################################################################
 #                          Views Functions                           #
 ######################################################################
 
+
 def temp(request):
-    temp = Temp.objects.all()
-    temp_general = TempGeneral.objects.all()
-    temp_travel = TempTravel.objects.all()
-    context = {'temp': temp, 'temp_general': temp_general, 'temp_travel': temp_travel}
-    return render(request, 'home/temp.html', context)
+    if request.method=="POST":
+        form = TempForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect('')
+            except:
+                pass
+    else:
+        form = TempForm()
+    context = {'form': form}
+    html_template = loader.get_template('home/temp.html')
+    return HttpResponse(html_template.render(context, request))
+
 
 
 def faq(request):
@@ -54,7 +67,6 @@ def index(request):
 
     html_template = loader.get_template('home/index.html')
     return HttpResponse(html_template.render(context, request))
-
 
 
 # @login_required(login_url="/login/")
