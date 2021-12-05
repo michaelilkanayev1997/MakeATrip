@@ -9,8 +9,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
-from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, ContactUs, Temp
-from .forms import TempForm
+from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp
+from .forms import ContactForm
 
 
 
@@ -21,19 +21,7 @@ from .forms import TempForm
 
 
 def temp(request):
-    if request.method=="POST":
-        form = TempForm(request.POST)
-        if form.is_valid():
-            try:
-                form.save()
-                return redirect('')
-            except:
-                pass
-    else:
-        form = TempForm()
-    context = {'form': form}
-    html_template = loader.get_template('home/temp.html')
-    return HttpResponse(html_template.render(context, request))
+    pass
 
 
 
@@ -55,8 +43,17 @@ def about_us(request):
 
 
 def contact_us(request):
-    contact = ContactUs.objects.all()
-    context = {' contact': contact}
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect('')
+            except:
+                pass
+    else:
+        form = ContactForm()
+    context = {'form': form}
     html_template = loader.get_template('home/contact-us.html')
     return HttpResponse(html_template.render(context, request))
 

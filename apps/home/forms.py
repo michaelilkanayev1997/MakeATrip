@@ -1,8 +1,8 @@
 from django import forms
-from .models import Temp
+from .models import Contact
 
 
-class TempForm(forms.ModelForm):
+class ContactForm(forms.ModelForm):
     class Meta:
-        model = Temp
+        model = Contact
         fields = "__all__"

@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',  # for Google OAuth 2.0
     'apps.home',  # Enable the inner home (home)
-    'widget_tweaks',
 
 ]
 

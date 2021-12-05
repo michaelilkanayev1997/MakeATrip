@@ -8,14 +8,15 @@ from django.contrib.auth.models import User
 from datetime import datetime
 
 
-# Create your models here.
-class ContactUs(models.Model):
-    name = models.CharField(max_length=200)
-    email = models.CharField(max_length=200)
-    message = models.TextField(null=True, blank=True)
+class Contact(models.Model):
+    full_name = models.CharField(max_length=200, default="", blank=True)
+    email = models.EmailField(max_length=100, default="", blank=True)
+    subject = models.CharField(max_length=200, default="", blank=True)
+    comment = models.TextField(max_length=500, default="", blank=True)
+    created_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.full_name
 
 
 class AboutUs(models.Model):
