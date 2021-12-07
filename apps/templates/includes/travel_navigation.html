@@ -174,11 +174,18 @@
                   </ul>
                 </li>
 
-                <!--log-out-->
+                <!--log-out | log-in-->
+                {% if user.is_authenticated %}
                 <li class="nav-item ms-lg-auto">
                   <a href="{% url 'logout' %}"
                      class="btn btn-sm bg-gradient-secondary btn-round mb-0 me-1 mt-2 mt-md-0">Logout</a>
                 </li>
+                  {% else %}
+                <li class="nav-item ms-lg-auto">
+                  <a href="{% url 'login' %}"
+                     class="btn btn-sm bg-gradient-secondary btn-round mb-0 me-1 mt-2 mt-md-0">Login</a>
+                </li>
+                {% endif %}
               </ul>
             </div>
 

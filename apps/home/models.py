@@ -29,10 +29,8 @@ class AboutUs(models.Model):
 
 
 class FAQ(models.Model):
-    # subject = models.CharField(max_length=200)
-    # sub_subject = models.TextField(null=True, blank=True)
-    # content = models.TextField(null=True, blank=True)
     name = models.CharField(max_length=200)
+    test = models.CharField(max_length=200, default="", blank=True)
 
     def __str__(self):
         return self.name
