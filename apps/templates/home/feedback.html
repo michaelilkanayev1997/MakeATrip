@@ -1,0 +1,60 @@
+{% extends 'layouts/base-travel.html' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="/static/assets/css/feedback.css">
+{% endblock stylesheets %}
+
+{% block content %}
+<header class="header-2">
+  <div class="page-header section-height-75 relative" style="background-image: url('/static/assets/img/photo1.png')">
+    <div class="position-absolute w-100 z-index-1 bottom-0">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="moving-waves">
+          <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(255,255,255,0.20)" />
+          <use xlink:href="#gentle-wave" x="48" y="13" fill="rgba(255,255,255,0.15)" />
+          <use xlink:href="#gentle-wave" x="48" y="16" fill="rgba(255,255,255,0.95" />
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+	<div class="row" style="margin-top:40px;">
+		<div class="col-md-6">
+    	<div class="well well-sm">
+            <div class="text-right">
+                <a class="btn btn-success btn-green" href="#reviews-anchor" id="open-review-box">Leave a Review</a>
+            </div>
+
+            <div class="row" id="post-review-box" style="display:none;">
+                <div class="col-md-12">
+                    <form accept-charset="UTF-8" action="" method="post">
+                        <input id="ratings-hidden" name="rating" type="hidden">
+                        <textarea class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="5"></textarea>
+
+                        <div class="text-right">
+                            <div class="stars starrr" data-rating="0"></div>
+                            <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
+                            <span class="glyphicon glyphicon-remove"></span>Cancel</a>
+                            <button class="btn btn-success btn-lg" type="submit">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+		</div>
+	</div>
+</div>
+{% endblock content %}

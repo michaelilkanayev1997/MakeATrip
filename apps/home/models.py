@@ -60,3 +60,16 @@ class Temp(models.Model):
     subject = models.CharField(max_length=200)
     comment = models.TextField()
     created_date = models.DateTimeField(default=datetime.now, blank=True)
+
+# Review
+RATING=(
+    (1,'1'),
+    (2,'2'),
+    (3,'3'),
+    (4,'4'),
+    (5,'5'),
+)
+class ProductReview(models.Model):
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
+    review_text=models.TextField()
+    review_rating=models.CharField(choices=RATING,max_length=150)
