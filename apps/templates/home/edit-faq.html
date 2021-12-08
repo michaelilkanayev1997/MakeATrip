@@ -1,6 +1,6 @@
 {% extends "layouts/base-dashboard.html" %}
 
-{% block title %} Project Edit {% endblock %}
+{% block title %} Edit Faq {% endblock %}
 
 <!-- Element injected in the BODY element -->
 {% block body_class %} sidebar-mini {% endblock body_class %}
@@ -41,12 +41,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>About Us Edit</h1>
+            <h1>FAQ Edit</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">About Us Edit</li>
+              <li class="breadcrumb-item active">FAQ Edit</li>
             </ol>
           </div>
         </div>
@@ -72,14 +72,11 @@
                 <form autocomplete="off" method="post" action="" class="forms">
                 {% csrf_token %}
 
-                <label for="inputName">Name</label>
-                <input type="text" id="inputName" class="form-control" placeholder="Name" name="name">
-
                 <label for="inputName">Subject</label>
-                <input type="text" id="inputName" class="form-control" placeholder="Subject" name="subject">
+                <input type="text" id="inputName" class="form-control" placeholder="Question" name="Question">
 
                 <label for="inputDescription">Content</label>
-                <textarea id="inputDescription" class="form-control" rows="4" placeholder="Edit Content" name="content"></textarea>
+                <textarea id="inputDescription" class="form-control" rows="4" placeholder="Answer" name="Answer"></textarea>
 
                 <a href="#" class="btn btn-secondary">Cancel</a>
                 <input type="submit" name="Save Changes" class="btn btn-success float-left">
@@ -108,10 +105,10 @@
                 {% csrf_token %}
 
                 <label for="inputName">Question</label>
-                <input type="text" id="inputName" class="form-control" placeholder="Question" name="subject">
+                <input type="text" id="inputName" class="form-control" placeholder="Question" name="Question">
 
                 <label for="inputDescription">Answer</label>
-                <textarea id="inputDescription" class="form-control" rows="4" placeholder="Answer" name="content"></textarea>
+                <textarea id="inputDescription" class="form-control" rows="4" placeholder="Answer" name="Answer"></textarea>
 
                 <a href="#" class="btn btn-secondary">Cancel</a>
                 <input type="submit" name="Save Changes" class="btn btn-success float-left">

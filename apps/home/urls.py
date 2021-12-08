@@ -11,6 +11,7 @@ urlpatterns = [
     # The home page
     path('', views.index, name='home'),
     path('temp/', views.temp, name='temp'),
+    path('edit-faq/', views.edit_faq, name='edit-faq'),
     path('faq/', views.faq, name="faq"),
     path('about-us/', views.about_us, name="about-us"),
     path('terms-of-use/', views.terms_of_use, name="terms-of-use"),

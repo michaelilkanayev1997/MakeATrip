@@ -10,9 +10,7 @@ from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp
-from .forms import ContactForm, TempForm
-
-
+from .forms import ContactForm, TempForm, FaqGenralForm,FaqTravelForm
 
 
 ######################################################################
@@ -36,6 +34,26 @@ def temp(request):
     return HttpResponse(html_template.render(context, request))
 
 
+def edit_faq(request):
+    if request.method == "POST":
+        general = FaqGenralForm(request.POST)
+        travel = FaqTravelForm(request.POST)
+        form = TempForm(request.POST)
+        if form.is_valid() and general.is_valid() and  travel.is_valid():
+            try:
+                general.save()
+                form.save()
+                return redirect('')
+            except:
+                pass
+    else:
+        general = FaqGenralForm()
+        travel = FaqTravelForm()
+        form = TempForm()
+    context = {'form': form, 'general': general}
+    html_template = loader.get_template('home/edit-faq.html')
+    return HttpResponse(html_template.render(context, request))
+
 
 def faq(request):
     faq = FAQ.objects.all()
@@ -56,9 +74,9 @@ def about_us(request):
 
 def terms_of_use(request):
     context = {'segment': 'terms-of-use'}
-
     html_template = loader.get_template('home/terms-of-use.html')
     return HttpResponse(html_template.render(context, request))
+
 
 def contact_us(request):
     if request.method == "POST":
