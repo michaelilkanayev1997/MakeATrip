@@ -1,9 +1,9 @@
-  <!-- Main Sidebar Container -->
+ <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
-      <img src="" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Make A Trip</span>
+        <img src="/static/assets/img/logo.png"  width="50" height="50" alt="Make A Trip Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">Make A Trip</span>
     </a>
     <!-- Sidebar -->
     <div class="sidebar">
@@ -13,8 +13,9 @@
           <img src="" class="img-circle elevation-2" alt="">
         </div>
         <div class="info">
+
           <a href="{% url 'login' %}" class="d-block">
-            {{ request.user.username }} - Logout
+            <img src="/static/assets/img/user.png"  width="50" height="50" alt="Make A Trip Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> {{ request.user.username }} - Logout
           </a>
         </div>
       </div>
@@ -148,7 +149,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/about-us.html" class="nav-link">
+                <a href="{% url 'about-us-edit' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>About Us</p>
                 </a>
@@ -161,4 +162,3 @@
     </div>
     <!-- /.sidebar -->
   </aside>
-  

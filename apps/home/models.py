@@ -20,9 +20,9 @@ class Contact(models.Model):
 
 
 class AboutUs(models.Model):
-    name = models.CharField(max_length=200)
-    subject = models.TextField(null=True, blank=True)
-    content = models.TextField(null=True, blank=True)
+    name = models.CharField(max_length=200, default="", blank=True)
+    subject = models.TextField(max_length=500, default="", blank=True)
+    content = models.TextField(max_length=500, default="", blank=True)
 
     def __str__(self):
         return self.name
