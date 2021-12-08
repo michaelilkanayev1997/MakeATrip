@@ -42,6 +42,12 @@ def about_us(request):
     return HttpResponse(html_template.render(context, request))
 
 
+def terms_of_use(request):
+    context = {'segment': 'terms-of-use'}
+
+    html_template = loader.get_template('home/terms-of-use.html')
+    return HttpResponse(html_template.render(context, request))
+
 def contact_us(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
