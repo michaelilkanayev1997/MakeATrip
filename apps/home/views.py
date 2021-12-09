@@ -10,7 +10,7 @@ from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp
-from .forms import ContactForm, TempForm
+from .forms import ContactForm, TempForm, AboutUsForm
 
 
 
@@ -51,6 +51,21 @@ def about_us(request):
     about = AboutUs.objects.all()
     context = {'about': about}
     html_template = loader.get_template('home/about-us.html')
+    return HttpResponse(html_template.render(context, request))
+
+def edit_about_us(request):
+    if request.method == "POST":
+        form = AboutUsForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect('')
+            except:
+                pass
+    else:
+        form = AboutUsForm()
+    context = {'form': form}
+    html_template = loader.get_template('home/edit-about-us.html')
     return HttpResponse(html_template.render(context, request))
 
 
