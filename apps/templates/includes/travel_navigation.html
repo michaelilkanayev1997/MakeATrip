@@ -4,8 +4,11 @@
         <nav class="navbar navbar-expand-lg  blur blur-rounded top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
           <div class="container-fluid">
             <!--logo should be here-->
-            <a class="navbar-brand font-weight-bolder ms-sm-3"href="/">MAKE A TRIP</a>
-
+              <!-- Brand Logo -->
+                <a href="/" class="brand-link">
+                <img src="/static/assets/img/logo.png"  width="50" height="50" alt="Make A Trip Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">Make A Trip</span>
+                </a>
             <!--navbar-toggle for phone view-->
             <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon mt-2">
@@ -174,11 +177,18 @@
                   </ul>
                 </li>
 
-                <!--log-out-->
+                <!--log-out | log-in-->
+                {% if user.is_authenticated %}
                 <li class="nav-item ms-lg-auto">
                   <a href="{% url 'logout' %}"
                      class="btn btn-sm bg-gradient-secondary btn-round mb-0 me-1 mt-2 mt-md-0">Logout</a>
                 </li>
+                  {% else %}
+                <li class="nav-item ms-lg-auto">
+                  <a href="{% url 'login' %}"
+                     class="btn btn-sm bg-gradient-secondary btn-round mb-0 me-1 mt-2 mt-md-0">Login</a>
+                </li>
+                {% endif %}
               </ul>
             </div>
 

@@ -15,8 +15,3 @@ class TestUrls(SimpleTestCase):
         url = reverse('register')
         print(resolve(url))
         self.assertEquals(resolve(url).func, register_user)
-
-    """def test_as_view_url_is_resolved(self):
-        url = reverse('logout')
-        print(resolve(url))
-        self.assertEquals(resolve(url).func, LogoutView.as_view())"""

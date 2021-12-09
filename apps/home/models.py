@@ -5,31 +5,32 @@ Copyright (c) 2019 - present AppSeed.us
 
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import datetime
 
 
-# Create your models here.
-class ContactUs(models.Model):
-    name = models.CharField(max_length=200)
-    email = models.CharField(max_length=200)
-    message = models.TextField(null=True, blank=True)
+class Contact(models.Model):
+    full_name = models.CharField(max_length=200, default="", blank=True)
+    email = models.EmailField(max_length=100, default="", blank=True)
+    subject = models.CharField(max_length=200, default="", blank=True)
+    comment = models.TextField(max_length=500, default="", blank=True)
+    created_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.full_name
+
 
 class AboutUs(models.Model):
-    name = models.CharField(max_length=200)
-    subject = models.TextField(null=True, blank=True)
-    content = models.TextField(null=True, blank=True)
+    name = models.CharField(max_length=200, default="", blank=True)
+    subject = models.TextField(max_length=500, default="", blank=True)
+    content = models.TextField(max_length=500, default="", blank=True)
 
     def __str__(self):
         return self.name
 
 
 class FAQ(models.Model):
-    # subject = models.CharField(max_length=200)
-    # sub_subject = models.TextField(null=True, blank=True)
-    # content = models.TextField(null=True, blank=True)
     name = models.CharField(max_length=200)
+    test = models.CharField(max_length=200, default="", blank=True)
 
     def __str__(self):
         return self.name
@@ -52,24 +53,8 @@ class FAQTravel(models.Model):
 
 
 class Temp(models.Model):
-    name = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.name
-
-
-class TempGeneral(models.Model):
-    name = models.CharField(max_length=200)
-    subject = models.TextField(null=True, blank=True)
-
-    def __str__(self):
-        return self.name
-
-
-class TempTravel(models.Model):
-    name = models.CharField(max_length=200)
-    subject = models.TextField(null=True, blank=True)
-
-    def __str__(self):
-        return self.name
-
+    full_name = models.CharField(max_length=200)
+    email = models.EmailField(max_length=100)
+    subject = models.CharField(max_length=200)
+    comment = models.TextField()
+    created_date = models.DateTimeField(default=datetime.now, blank=True)
