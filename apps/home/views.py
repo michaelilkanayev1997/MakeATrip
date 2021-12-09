@@ -9,19 +9,32 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
-from .models import Temp, TempTravel, TempGeneral, FAQGeneral, FAQTravel, FAQ, AboutUs, ContactUs
+from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp
+from .forms import ContactForm, TempForm
+
+
 
 
 ######################################################################
 #                          Views Functions                           #
 ######################################################################
 
+
 def temp(request):
-    temp = Temp.objects.all()
-    temp_general = TempGeneral.objects.all()
-    temp_travel = TempTravel.objects.all()
-    context = {'temp': temp, 'temp_general': temp_general, 'temp_travel': temp_travel}
-    return render(request, 'home/temp.html', context)
+    if request.method == "POST":
+        form = TempForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect('')
+            except:
+                pass
+    else:
+        form = TempForm()
+    context = {'form': form}
+    html_template = loader.get_template('home/temp.html')
+    return HttpResponse(html_template.render(context, request))
+
 
 
 def faq(request):
@@ -41,9 +54,24 @@ def about_us(request):
     return HttpResponse(html_template.render(context, request))
 
 
+def terms_of_use(request):
+    context = {'segment': 'terms-of-use'}
+
+    html_template = loader.get_template('home/terms-of-use.html')
+    return HttpResponse(html_template.render(context, request))
+
 def contact_us(request):
-    contact = ContactUs.objects.all()
-    context = {' contact': contact}
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect('')
+            except:
+                pass
+    else:
+        form = ContactForm()
+    context = {'form': form}
     html_template = loader.get_template('home/contact-us.html')
     return HttpResponse(html_template.render(context, request))
 
@@ -54,7 +82,6 @@ def index(request):
 
     html_template = loader.get_template('home/index.html')
     return HttpResponse(html_template.render(context, request))
-
 
 
 # @login_required(login_url="/login/")
