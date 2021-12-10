@@ -10,7 +10,7 @@ from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp
-from .forms import ContactForm,ReviewAdd
+from .forms import ContactForm
 
 
 
@@ -22,9 +22,8 @@ def temp(request):
     pass
 
 
-def productreviw(request):
-    reviewForm=ReviewAdd()
-    return render(request,{'reviewForm':reviewForm})
+#def productreviw(request):
+    #pass
 
 
 def faq(request):

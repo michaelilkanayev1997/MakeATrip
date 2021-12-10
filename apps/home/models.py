@@ -2,6 +2,7 @@
 """
 Copyright (c) 2019 - present AppSeed.us
 """
+import uuid
 
 from django.db import models
 from django.contrib.auth.models import User
@@ -62,14 +63,17 @@ class Temp(models.Model):
     created_date = models.DateTimeField(default=datetime.now, blank=True)
 
 # Review
-RATING=(
-    (1,'1'),
-    (2,'2'),
-    (3,'3'),
-    (4,'4'),
-    (5,'5'),
-)
-class ProductReview(models.Model):
-    user=models.ForeignKey(User,on_delete=models.CASCADE)
-    review_text=models.TextField()
-    review_rating=models.CharField(choices=RATING,max_length=150)
+class Review (models.Model):
+    VOTE_TYPE=(
+        ('up','Up vote'),
+        ('down','Down Vote'),
+    )
+    user=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
+    body=models.TextField(null=True,blank=True)
+    value=models.CharField(max_length=200,choices=VOTE_TYPE)
+    created = models.DateTimeField(default=datetime.now, blank=True)
+
+
+
+    def __str__(self):
+        return self.value
