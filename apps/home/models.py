@@ -99,7 +99,7 @@ class ItineraryPlanner(models.Model):
 
 ##########################################################################################################
 
-class TempKfir(models.Model):
+class TempVova(models.Model):
     user = models.ForeignKey(travel_user, on_delete=models.DO_NOTHING, blank=True, null=True)
     destination = models.CharField(max_length=254)
     start_date = models.DateField(null=True, blank=True)
