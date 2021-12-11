@@ -9,10 +9,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
-from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp
-from .forms import ContactForm, TempForm, FaqGenralForm,FaqTravelForm
 from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp, ItineraryPlanner
-from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm
+from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, FaqGeneralForm
 
 
 ######################################################################
@@ -25,7 +23,7 @@ def temp(request):
 
 def edit_faq(request):
     if request.method == "POST":
-        general = FaqGenralForm(request.POST)
+        general = FaqGeneralForm(request.POST)
         travel = FaqTravelForm(request.POST)
         form = TempForm(request.POST)
         if form.is_valid() and general.is_valid() and  travel.is_valid():
@@ -36,7 +34,7 @@ def edit_faq(request):
             except:
                 pass
     else:
-        general = FaqGenralForm()
+        general = FaqGeneralForm()
         travel = FaqTravelForm()
         form = TempForm()
     context = {'form': form, 'general': general}

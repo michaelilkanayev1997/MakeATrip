@@ -15,10 +15,11 @@ class TempForm(forms.ModelForm):
         fields = "__all__"
 
 
-class FaqGenralForm(forms.ModelForm):
+class FaqGeneralForm(forms.ModelForm):
     class Meta:
         model = FAQGeneral
         fields = "__all__"
+
 
 class FaqTravelForm(forms.ModelForm):
     class Meta:

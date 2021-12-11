@@ -3,8 +3,7 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-from django.db import models, connection
-from django.contrib.auth.models import User
+from django.db import models
 from datetime import datetime
 from django.contrib.auth import get_user_model
 import uuid
