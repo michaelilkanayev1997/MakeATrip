@@ -99,7 +99,7 @@ class ItineraryPlanner(models.Model):
 
 ##########################################################################################################
 
-class TempKfir(models.Model):
+"""class TempKfir(models.Model):
     user = models.ForeignKey(travel_user, on_delete=models.DO_NOTHING, blank=True, null=True)
     destination = models.CharField(max_length=254)
     start_date = models.DateField(null=True, blank=True)
@@ -109,4 +109,4 @@ class TempKfir(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
     def __str__(self):
-        return "%s -- %s > %s by %s" % (self.start_date, self.end_date, self.destination, self.user)
+        return "%s -- %s > %s by %s" % (self.start_date, self.end_date, self.destination, self.user)"""
