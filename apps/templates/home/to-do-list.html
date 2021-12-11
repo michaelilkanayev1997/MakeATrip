@@ -1,0 +1,130 @@
+{% extends 'layouts/base-travel.html' %}
+
+{% block title %} To DO List {% endblock title %}
+
+<!-- Specific CSS goes HERE      -->
+{% block stylesheets %}
+    <!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/assets/css/to-do-list.css">
+
+{% endblock stylesheets %}
+
+{% block content %}
+<!-- main_background -->
+<header class="header-2">
+  <div class="page-header section-height-75 relative" style="background-image : url('/static/assets/img/1.png')">
+    <div class="position-absolute w-100 z-index-1 bottom-0">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="moving-waves">
+          <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(255,255,255,0.20)" />
+          <use xlink:href="#gentle-wave" x="48" y="13" fill="rgba(255,255,255,0.15)" />
+          <use xlink:href="#gentle-wave" x="48" y="16" fill="rgba(255,255,255,0.95" />
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section class="vh-1000 gradient-custom">
+  <div class="container py-5 h-100">
+    <center><h1> What to take for a Trip </h1></center>
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card">
+          <div class="card-body p-5">
+              <ul>
+                  <li><strong>Rundown of the main essentials to pack for your trip.</strong></li>
+                  <li><strong>The checklist is for you, it can help you see that you have not forgotten anything.</strong></li>
+              </ul>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-white">
+                            <div class="card-body">
+                                <center><h4>Rundown of the main essentials to pack for your trip:</h4></center>
+                                <form action="javascript:void(0);">
+                                    <input type="text" class="form-control add-task" placeholder="New Task...">
+                                </form>
+                                <ul class="nav nav-pills todo-nav">
+                                    <li role="presentation" class="nav-item all-task active"><a href="#/" class="nav-link">All</a></li>
+                                    <li role="presentation" class="nav-item active-task"><a href="#/" class="nav-link">Active</a></li>
+                                    <li role="presentation" class="nav-item completed-task"><a href="#/" class="nav-link">Completed</a></li>
+                                </ul>
+                                <div class="todo-list">
+                                    <div class="todo-item">
+                                        <div class="checker"><span class=""><input type="checkbox"></span></div>
+                                        <span>Passport</span>
+                                        <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                                    </div>
+                                    <div class="todo-item">
+                                        <div class="checker"><span class=""><input type="checkbox"></span></div>
+                                        <span>Phone charger / portable phone charger</span>
+                                        <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                                    </div>
+                                    <div class="todo-item">
+                                        <div class="checker"><span class=""><input type="checkbox"></span></div>
+                                        <span>EU adapters</span>
+                                        <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                                    </div>
+
+                                    <div class="todo-item">
+                                        <div class="checker"><span class=""><input type="checkbox"></span></div>
+                                        <span>Water bottle</span>
+                                        <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                                    </div>
+                                    <div class="todo-item">
+                                        <div class="checker"><span><input type="checkbox"></span></div>
+                                        <span>Underwear</span>
+                                        <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                                    </div>
+                                    <div class="todo-item">
+                                        <div class="checker"><span class=""><input type="checkbox"></span></div>
+                                        <span>Socks</span>
+                                        <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                                    </div>
+                                    <div class="todo-item">
+                                        <div class="checker"><span class=""><input type="checkbox"></span></div>
+                                        <span>Medicines / painkillers</span>
+                                        <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                                    </div>
+                                    <div class="todo-item">
+                                        <div class="checker"><span class=""><input type="checkbox"></span></div>
+                                        <span>FIRST AID KIT</span>
+                                        <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                                    </div>
+                                    <div class="todo-item">
+                                        <div class="checker"><span class=""><input type="checkbox"></span></div>
+                                        <span>Sun cream</span>
+                                        <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                                    </div>
+                                    <div class="todo-item">
+                                        <div class="checker"><span class=""><input type="checkbox"></span></div>
+                                        <span>Any paperwork you may need</span>
+                                        <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/assets/js/to-do-list.js"></script>
+{% endblock javascripts %}

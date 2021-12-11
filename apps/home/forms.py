@@ -1,25 +1,46 @@
 from django import forms
-from .models import Contact, Review
+from .models import Contact, AboutUs, FAQTravel, FAQGeneral
+from .models import Contact, AboutUs, ItineraryPlanner, ItineraryCategory
 
 
-
-########################################################
-#contact-us
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = "__all__"
-######################################################
-#Review
-class ReviewForm(forms.ModelForm):
+
+
+class TempForm(forms.ModelForm):
     class Meta:
-        model= Review
+        model = AboutUs
         fields = "__all__"
 
-    def __init__(self, *args, **kwargs):
-            super(ReviewForm, self).__init__(*args, **kwargs)
 
-            for name, field in self.fields.items():
-                field.widget.attrs.update({'class': 'input'})
+class FaqGeneralForm(forms.ModelForm):
+    class Meta:
+        model = FAQGeneral
+        fields = "__all__"
 
-######################################################
+
+class FaqTravelForm(forms.ModelForm):
+    class Meta:
+        model = FAQTravel
+        fields = "__all__"
+
+
+class AboutUsForm(forms.ModelForm):
+    class Meta:
+        model = AboutUs
+        fields = "__all__"
+
+
+class ItineraryPlannerForm(forms.ModelForm):
+    class Meta:
+        model = ItineraryPlanner
+        fields = '__all__'
+        exclude = ['user', 'category']
+
+
+class ItineraryCategoryForm(forms.ModelForm):
+    class Meta:
+        model = ItineraryCategory
+        fields = ('culture', 'outdoors', 'beaches', 'shopping', 'museums', 'restaurants')

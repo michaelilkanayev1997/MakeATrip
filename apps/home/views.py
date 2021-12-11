@@ -9,32 +9,36 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
-from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp
-from .forms import ContactForm, ReviewForm
-
-
+from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp, ItineraryPlanner
+from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, FaqGeneralForm
 
 
 ######################################################################
 #                          Views Functions                           #
 ######################################################################
+
+
 def temp(request):
     pass
 
-
-def Review(request):
+def edit_faq(request):
     if request.method == "POST":
-        form = ReviewForm(request.POST)
-        if form.is_valid():
+        general = FaqGeneralForm(request.POST)
+        travel = FaqTravelForm(request.POST)
+        form = TempForm(request.POST)
+        if form.is_valid() and general.is_valid() and  travel.is_valid():
             try:
+                general.save()
                 form.save()
                 return redirect('')
             except:
                 pass
     else:
-        form = ReviewForm()
-    context= {'form':form}
-    html_template = loader.get_template('home/Review.html')
+        general = FaqGeneralForm()
+        travel = FaqTravelForm()
+        form = TempForm()
+    context = {'form': form, 'general': general}
+    html_template = loader.get_template('home/edit-faq.html')
     return HttpResponse(html_template.render(context, request))
 
 
@@ -52,6 +56,28 @@ def about_us(request):
     about = AboutUs.objects.all()
     context = {'about': about}
     html_template = loader.get_template('home/about-us.html')
+    return HttpResponse(html_template.render(context, request))
+
+
+def edit_about_us(request):
+    if request.method == "POST":
+        form = AboutUsForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect('')
+            except:
+                pass
+    else:
+        form = AboutUsForm()
+    context = {'form': form}
+    html_template = loader.get_template('home/edit-about-us.html')
+    return HttpResponse(html_template.render(context, request))
+
+
+def terms_of_use(request):
+    context = {'segment': 'terms-of-use'}
+    html_template = loader.get_template('home/terms-of-use.html')
     return HttpResponse(html_template.render(context, request))
 
 
@@ -73,8 +99,32 @@ def contact_us(request):
 
 # @login_required(login_url="/login/")
 def index(request):
-    context = {'segment': 'index'}
+    if request.method == "POST":
+        planner_form = ItineraryPlannerForm(request.POST)
+        category_form = ItineraryCategoryForm(request.POST)
+        if planner_form.is_valid() and category_form.is_valid():
+            try:
+                print("%s" % planner_form, "%s" % category_form)
+                if request.user.is_anonymous:
+                    planner_form.user = request.user
+                    planner_form.save()
+                    category_form.save()
+                    print("The User Is >> >> >> >> %s" % request.user)
+                elif request.user.is_authenticated:
+                    new = planner_form.save(commit=False)  # here
+                    new.user = request.user  # here
+                    new.save()  # here
+                    category_form.save()
+                    print("The User Is >> >> >> >> %s" % request.user)
 
+                return redirect('')
+            except:
+                pass
+    else:
+        planner_form = ItineraryPlannerForm
+        category_form = ItineraryCategoryForm
+
+    context = {'planner_form': planner_form, 'category_form': category_form}
     html_template = loader.get_template('home/index.html')
     return HttpResponse(html_template.render(context, request))
 
