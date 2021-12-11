@@ -6,7 +6,8 @@ Copyright (c) 2019 - present AppSeed.us
 from django.contrib import admin
 
 # Register your models here.
-from .models import AboutUs, FAQTravel, FAQGeneral, FAQ,Contact, Temp,Review
+from .models import AboutUs, FAQTravel, FAQGeneral, FAQ, Contact, Temp, Review,Project
+
 ####################################
 # for Temp Only!!!
 admin.site.register(Temp)
@@ -25,8 +26,9 @@ admin.site.register(FAQTravel)
 # CONTACTUS
 admin.site.register(Contact)
 ####################################
-# Review
-class ReviewAdmin(admin.ModelAdmin):
-	list_display=('user','body','value')
-admin.site.register(Review,ReviewAdmin)
 ####################################
+# Reviews
+admin.site.register(Review)
+admin.site.register(Project)
+####################################
+

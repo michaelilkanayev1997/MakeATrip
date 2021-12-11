@@ -12,17 +12,3 @@ class Migration(migrations.Migration):
         ('home', '0018_contact'),
     ]
 
-    operations = [
-        migrations.CreateModel(
-            name='ProductReview',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('review_text', models.TextField()),
-                ('review_rating', models.CharField(choices=[(1, '1'), (2, '2'), (3, '3'), (4, '4'), (5, '5')], max_length=150)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
-            ],
-        ),
-        migrations.DeleteModel(
-            name='ContactUs',
-        ),
-    ]

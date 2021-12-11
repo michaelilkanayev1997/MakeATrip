@@ -10,7 +10,7 @@ from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp
-from .forms import ContactForm
+from .forms import ContactForm, ReviewForm
 
 
 
@@ -22,8 +22,20 @@ def temp(request):
     pass
 
 
-#def productreviw(request):
-    #pass
+def Review(request):
+    if request.method == "POST":
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect('')
+            except:
+                pass
+    else:
+        form = ReviewForm()
+    context= {'form':form}
+    html_template = loader.get_template('home/Review.html')
+    return HttpResponse(html_template.render(context, request))
 
 
 def faq(request):

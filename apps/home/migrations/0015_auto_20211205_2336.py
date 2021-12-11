@@ -10,38 +10,3 @@ class Migration(migrations.Migration):
         ('home', '0014_temp'),
     ]
 
-    operations = [
-        migrations.RemoveField(
-            model_name='contactus',
-            name='message',
-        ),
-        migrations.RemoveField(
-            model_name='contactus',
-            name='name',
-        ),
-        migrations.AddField(
-            model_name='contactus',
-            name='comment',
-            field=models.TextField(blank=True, default='', max_length=500),
-        ),
-        migrations.AddField(
-            model_name='contactus',
-            name='created_date',
-            field=models.DateTimeField(blank=True, default=datetime.datetime.now),
-        ),
-        migrations.AddField(
-            model_name='contactus',
-            name='full_name',
-            field=models.CharField(blank=True, default='', max_length=200),
-        ),
-        migrations.AddField(
-            model_name='contactus',
-            name='subject',
-            field=models.CharField(blank=True, default='', max_length=200),
-        ),
-        migrations.AlterField(
-            model_name='contactus',
-            name='email',
-            field=models.EmailField(blank=True, default='', max_length=100),
-        ),
-    ]
