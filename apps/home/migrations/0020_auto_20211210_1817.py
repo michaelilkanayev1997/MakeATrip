@@ -8,12 +8,3 @@ class Migration(migrations.Migration):
     dependencies = [
         ('home', '0019_auto_20211207_2219'),
     ]
-
-    operations = [
-        migrations.DeleteModel(
-            name='TempGeneral',
-        ),
-        migrations.DeleteModel(
-            name='TempTravel',
-        ),
-    ]
