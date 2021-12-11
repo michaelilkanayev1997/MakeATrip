@@ -3,10 +3,14 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-from django.db import models
+from django.db import models, connection
 from django.contrib.auth.models import User
 from datetime import datetime
+from django.contrib.auth import get_user_model
+import uuid
 
+
+##########################################################################################################
 
 class Contact(models.Model):
     full_name = models.CharField(max_length=200, default="", blank=True)
@@ -19,6 +23,8 @@ class Contact(models.Model):
         return self.full_name
 
 
+##########################################################################################################
+
 class AboutUs(models.Model):
     name = models.CharField(max_length=200, default="", blank=True)
     subject = models.TextField(max_length=500, default="", blank=True)
@@ -27,6 +33,8 @@ class AboutUs(models.Model):
     def __str__(self):
         return self.name
 
+
+##########################################################################################################
 
 class FAQ(models.Model):
     name = models.CharField(max_length=200)
@@ -52,9 +60,39 @@ class FAQTravel(models.Model):
         return self.question
 
 
+##########################################################################################################
+
 class Temp(models.Model):
     full_name = models.CharField(max_length=200)
     email = models.EmailField(max_length=100)
     subject = models.CharField(max_length=200)
     comment = models.TextField()
     created_date = models.DateTimeField(default=datetime.now, blank=True)
+
+
+##########################################################################################################
+
+travel_user = get_user_model()
+
+
+class ItineraryCategory(models.Model):
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+    culture = models.BooleanField(default=False)
+    outdoors = models.BooleanField(default=False)
+    beaches = models.BooleanField(default=False)
+    shopping = models.BooleanField(default=False)
+    museums = models.BooleanField(default=False)
+    restaurants = models.BooleanField(default=False)
+
+
+class ItineraryPlanner(models.Model):
+    user = models.ForeignKey(travel_user, on_delete=models.DO_NOTHING, blank=True, null=True)
+    destination = models.CharField(max_length=254)
+    start_date = models.DateField(null=True, blank=True)
+    end_date = models.DateField(null=True, blank=True)
+    travelers = models.IntegerField(null=False, blank=True)
+    category = models.ForeignKey(ItineraryCategory, on_delete=models.DO_NOTHING, blank=True, null=True)
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+
+    def __str__(self):
+        return "%s -- %s > %s by %s" % (self.start_date, self.end_date, self.destination, self.user)

@@ -1,115 +1,130 @@
-{% extends "layouts/base-dashboard.html" %}
+{% extends 'layouts/base-travel.html' %}
 
-{% block title %} Project Edit {% endblock %}
+{% block title %} Index {% endblock title %}
 
-<!-- Element injected in the BODY element -->
-{% block body_class %} sidebar-mini {% endblock body_class %}
-
-<!-- Specific Page CSS goes HERE  -->
+<!-- Specific CSS goes HERE -->
 {% block stylesheets %}
-
-
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="/static/assets/plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="/static/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="/static/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- JQVMap -->
-  <link rel="stylesheet" href="/static/assets/plugins/jqvmap/jqvmap.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="/static/assets/css/adminlte.min.css">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="/static/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="/static/assets/plugins/daterangepicker/daterangepicker.css">
-  <!-- summernote -->
-  <link rel="stylesheet" href="/static/assets/plugins/summernote/summernote-bs4.min.css">
+    	<link type="text/css" rel="stylesheet" href="../../static/assets/css/travel_style.css" />
 
 {% endblock stylesheets %}
 
+{% block body_class %} index-page {% endblock body_class %}
+
 {% block content %}
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>About Us Edit</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">About Us Edit</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
-
-    <!-- Main content -->
-    <section class="content">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card card-primary">
-            <div class="card-header">
-              <h3 class="card-title">About Us Edit</h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                  <i class="fas fa-minus"></i>
-                </button>
-              </div>
-            </div>
-            <div class="card-body">
-              <div class="form-group">
-
-                <form autocomplete="off" method="post" action="" class="forms">
-                {% csrf_token %}
-
-                <label for="inputName">Name</label>
-                <input type="text" id="inputName" class="form-control" placeholder="Name" name="name">
-
-                <label for="inputName">Subject</label>
-                <input type="text" id="inputName" class="form-control" placeholder="Subject" name="subject">
-
-                <label for="inputDescription">Content</label>
-                <textarea id="inputDescription" class="form-control" rows="4" placeholder="Edit Content" name="content"></textarea>
-
-                <a href="#" class="btn btn-secondary">Cancel</a>
-                <input type="submit" name="Save Changes" class="btn btn-success float-left">
-              </form>
-              </div>
-
-            </div>
-            <!-- /.card-body -->
-          </div>
-          <!-- /.card -->
-        </div>
+  <header class="header-2">
+    <div class="page-header section-height-75 relative" style="background-image: url('../../static/assets/img/main_background.jpg')">
+      <div class="position-absolute w-100 z-index-1 bottom-0">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
+          <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+          </defs>
+          <g class="moving-waves">
+            <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40"></use>
+            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)"></use>
+            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)"></use>
+            <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(255,255,255,0.20)"></use>
+            <use xlink:href="#gentle-wave" x="48" y="13" fill="rgba(255,255,255,0.15)"></use>
+            <use xlink:href="#gentle-wave" x="48" y="16" fill="rgba(255,255,255,0.95"></use>
+          </g>
+        </svg>
       </div>
+        <div class="container">
+				<div class="row">
+					<div class="booking-form">
+						<form method="post" action="" autocomplete="off">
+                            {% csrf_token %}
 
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+							<div class="row">
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<span class="form-label">Where?</span>
+										<span class="form-label">Destination</span>
+										<input class="form-control" type="text" placeholder="Enter destination (country, region, or city)" name="destination">
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">When?</span>
+										<span class="form-label">Start</span>
+										<input class="form-control" type="date" name="start_date">
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label"> </span>
+										<span class="form-label">End</span>
+										<input class="form-control" type="date" name="end_date">
+									</div>
+								</div>
+
+								<div class="col-md-2">
+									<div class="form-group">
+										<span class="form-label">Who?</span>
+										<span class="form-label">Adults (18+)</span>
+										<select class="form-control" name="travelers">
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+
+								<div class="col-md-8">
+									<span class="form-label">What?</span>
+									<div class="form-checkbox">
+										<label>
+											<input type="checkbox" name="culture">
+											<span></span>Culture
+										</label>
+										<label>
+											<input type="checkbox" name="outdoors">
+											<span></span>Outdoors
+										</label>
+										<label >
+											<input type="checkbox" name="beaches">
+											<span></span>Beaches
+										</label>
+										<label>
+											<input type="checkbox" name="shopping">
+											<span></span>Shopping
+										</label>
+										<label>
+											<input type="checkbox" name="museums">
+											<span></span>Museums
+										</label>
+										<label >
+											<input type="checkbox" name="restaurants">
+											<span></span>Restaurants
+										</label>
+									</div>
+								</div>
+
+								<div class="col-md-2">
+									<div class="form-btn">
+                                        <!--<button type="submit" name="login" class="login100-form-btn">Sign In</button>
+										<button type="submit" class="submit-btn btn btn-sm bg-gradient-secondary btn-round">See your trip</button>-->
+                                        <input type="submit" name="See your trip" class="submit-btn btn btn-sm bg-gradient-secondary btn-round">
+									</div>
+								</div>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+    </div>
+
+  </header>
+
 
 {% endblock content %}
 
-<!-- Specific Page JS goes HERE  -->
+<!-- Specific JS goes HERE -->
 {% block javascripts %}
-
-  <!-- jQuery -->
-  <script src="/static/assets/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="/static/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="/static/assets/js/adminlte.min.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="/static/assets/js/demo.js"></script>
 
 {% endblock javascripts %}
