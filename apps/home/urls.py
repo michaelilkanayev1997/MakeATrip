@@ -16,6 +16,7 @@ urlpatterns = [
     path('edit-about-us/', views.edit_about_us, name="edit-about-us"),
     path('terms-of-use/', views.terms_of_use, name="terms-of-use"),
     path('contact-us/', views.contact_us, name="contact-us"),
+    path('complaints/', views.complaints, name='complaints'),
     # re_path(r'^.*\.*', views.pages, name='pages'),
 
 ]

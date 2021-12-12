@@ -16,7 +16,10 @@ from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, Iti
 ######################################################################
 #                          Views Functions                           #
 ######################################################################
-
+def complaints(request):
+    context = {'segment': 'complaints'}
+    html_template = loader.get_template('home/complaints.html')
+    return HttpResponse(html_template.render(context, request))
 
 def temp(request):
     pass
