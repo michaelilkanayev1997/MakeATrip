@@ -112,7 +112,7 @@ class TempTest(models.Model):
         return "%s -- %s > %s by %s" % (self.start_date, self.end_date, self.destination, self.user)
 
 
-class TempVova(models.Model):
+class UserReviews(models.Model):
     user = models.ForeignKey(travel_user, on_delete=models.DO_NOTHING, blank=True, null=True)
     destination = models.CharField(max_length=254)
     start_date = models.DateField(null=True, blank=True)
