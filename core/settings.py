@@ -36,9 +36,10 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',  # for Google OAuth 2.0
     'apps.home',  # Enable the inner home (home)
+    'crispy_forms'
 
 ]
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 SITE_ID = 1
 # LOGIN_REDIRECT_URL = '/'
 
