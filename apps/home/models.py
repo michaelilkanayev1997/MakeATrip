@@ -13,6 +13,7 @@ class Contact(models.Model):
     subject = models.CharField(max_length=200, default="", blank=True)
     comment = models.TextField(max_length=500, default="", blank=True)
     created_date = models.DateTimeField(default=datetime.now, blank=True)
+    complete = models.BooleanField(default=False)
     class Meta:
         db_table = "home_contact"
 

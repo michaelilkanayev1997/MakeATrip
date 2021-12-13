@@ -10,7 +10,7 @@ from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp, ItineraryPlanner
-from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, FaqGeneralForm
+from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, FaqGeneralForm,complaintform
 
 
 ######################################################################
@@ -19,7 +19,9 @@ from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, Iti
 def complaints(request):
     complaint = Contact.objects.all()
     complaint_count = Contact.objects.all().count()
-    context = {'contact': complaint, 'count': complaint_count}
+    form = complaintform()
+
+    context = {'contact': complaint, 'count': complaint_count, 'form': form}
 
 
     html_template = loader.get_template('home/complaints.html')

@@ -43,3 +43,10 @@ class ItineraryCategoryForm(forms.ModelForm):
     class Meta:
         model = ItineraryCategory
         fields = ('culture', 'outdoors', 'beaches', 'shopping', 'museums', 'restaurants')
+
+
+
+class complaintform(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ('complete',)

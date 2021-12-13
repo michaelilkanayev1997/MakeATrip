@@ -30,15 +30,6 @@
   <link rel="stylesheet" href="/static/assets/plugins/summernote/summernote-bs4.min.css">
 
 <!------------------------------------------------------------------------------------------------->
-<!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="/static/assets/plugins/fontawesome-free/css/all.min.css">
-  <!-- jsGrid -->
-  <link rel="stylesheet" href="/static/assets/plugins/jsgrid/jsgrid.min.css">
-  <link rel="stylesheet" href="/static/assets/plugins/jsgrid/jsgrid-theme.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="/static/assets/css/adminlte.min.css">
 
 {% endblock stylesheets %}
 
@@ -161,6 +152,17 @@
         <td>{{ complaint.email }}</td>
         <td>{{ complaint.subject }}</td>
         <td>{{ complaint.comment }}</td>
+        <td>
+          <form autocomplete="off"  action="" class="">
+            {% csrf_token %}
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name = "complete">
+          <label class="form-check-label" for="defaultCheck1">
+            DONE
+          </label>
+          </div>
+          </form>
+        </td>
       </tr>
         {% endfor %}
     {% endif %}
@@ -212,38 +214,6 @@
   <!-- AdminLTE for demo purposes -->
   <script src="/static/assets/js/demo.js"></script>
 <!-------------------------------------------------------------------------------->
-   <!-- jQuery -->
-  <script src="/static/assets/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="/static/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- jsGrid -->
-  <script src="/static/assets/plugins/jsgrid/demos/db.js"></script>
-  <script src="/static/assets/plugins/jsgrid/jsgrid.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="/static/assets/js/adminlte.min.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="/static/assets/js/demo.js"></script>
-  <!-- page script -->
-  <script>
-    $(function () {
-      $("#jsGrid1").jsGrid({
-          height: "100%",
-          width: "100%",
 
-          sorting: true,
-          paging: true,
-
-          data: db.clients,
-
-          fields: [
-              { name: "Full name:", type: "text", width: 150 },
-              { name: "Email:", type: "number", width: 50 },
-              { name: "Subject:", type: "text", width: 200 },
-              { name: "Comment:", type: "select", items: db.countries, valueField: "Id", textField: "Name" },
-              { name: "Complete", type: "checkbox", title: "Complete" }
-          ]
-      });
-    });
-  </script>
 
 {% endblock javascripts %}
