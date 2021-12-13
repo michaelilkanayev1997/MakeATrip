@@ -55,25 +55,45 @@ def faq(request):
 
 
 def about_us(request):
-    load_template = request.path.split('/')
     about = AboutUs.objects.all()
     context = {'about': about}
     html_template = loader.get_template('home/about-us.html')
     return HttpResponse(html_template.render(context, request))
 
 
-def edit_about_us(request):
+def create_about_us(request):
+    form = AboutUsForm()
     if request.method == "POST":
         form = AboutUsForm(request.POST)
         if form.is_valid():
-            try:
-                form.save()
-                return redirect('')
-            except:
-                pass
-    else:
-        form = AboutUsForm()
+            form.save()
+            return redirect('about-us')
+
     context = {'form': form}
+    html_template = loader.get_template('home/edit-about-us.html')
+    return HttpResponse(html_template.render(context, request))
+
+
+def update_about_us(request, pk):
+    about_us = AboutUs.objects.get(id=pk)
+    form = AboutUsForm(instance=about_us)
+    print(pk)
+    if request.method == "POST":
+        form = AboutUsForm(request.POST, instance=about_us)
+        if form.is_valid():
+            form.save()
+            return redirect('about-us')
+    context = {'form': form}
+    html_template = loader.get_template('home/edit-about-us.html')
+    return HttpResponse(html_template.render(context, request))
+
+
+def delete_about_us(request, pk):
+    about_us = AboutUs.objects.get(id=pk)
+    if request.method == 'POST':
+        about_us.delete()
+        return redirect('about-us')
+    context = {'about_us': about_us}
     html_template = loader.get_template('home/edit-about-us.html')
     return HttpResponse(html_template.render(context, request))
 

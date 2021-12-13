@@ -1,5 +1,6 @@
 {% extends "layouts/base-dashboard.html" %}
-
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
 {% block title %} Project Edit {% endblock %}
 
 <!-- Element injected in the BODY element -->
@@ -71,15 +72,9 @@
 
                 <form autocomplete="off" method="post" action="" class="forms">
                 {% csrf_token %}
+                    {{ form|crispy }}
 
-                <label for="inputName">Name</label>
-                <input type="text" id="inputName" class="form-control" placeholder="Name" name="name">
 
-                <label for="inputName">Subject</label>
-                <input type="text" id="inputName" class="form-control" placeholder="Subject" name="subject">
-
-                <label for="inputDescription">Content</label>
-                <textarea id="inputDescription" class="form-control" rows="4" placeholder="Edit Content" name="content"></textarea>
 
                 <a href="#" class="btn btn-secondary">Cancel</a>
                 <input type="submit" name="Save Changes" class="btn btn-success float-left">
@@ -97,6 +92,8 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
+
 
 {% endblock content %}
 
