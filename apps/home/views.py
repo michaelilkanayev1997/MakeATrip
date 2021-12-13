@@ -17,7 +17,11 @@ from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, Iti
 #                          Views Functions                           #
 ######################################################################
 def complaints(request):
-    context = {'segment': 'complaints'}
+    complaint = Contact.objects.all()
+    complaint_count = Contact.objects.all().count()
+    context = {'contact': complaint, 'count': complaint_count}
+
+
     html_template = loader.get_template('home/complaints.html')
     return HttpResponse(html_template.render(context, request))
 

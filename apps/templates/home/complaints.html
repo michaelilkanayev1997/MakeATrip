@@ -76,7 +76,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                <h3>{{count}}</h3>
 
                 <p>Total complaints</p>
               </div>
@@ -137,22 +137,36 @@
           </div>
         </div>
       </div><!-- /.container-fluid -->
+      </div>
     </section>
 
     <!-- Main content -->
-    <section class="content">
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Date table:</h3>
-        </div>
-        <!-- /.card-header -->
-        <div class="card-body">
-          <div id="jsGrid1"></div>
-        </div>
-        <!-- /.card-body -->
-      </div>
-      <!-- /.card -->
-    </section>
+      <section class="content">
+        <table class="table table-striped">
+    <thead>
+
+      <tr>
+        <th scope="col">Full name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Subject</th>
+        <th scope="col">Comment</th>
+        <th scope="col">Complete</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% if contact %}
+        {% for complaint in contact %}
+      <tr>
+        <td>{{ complaint.full_name }}</td>
+        <td>{{ complaint.email }}</td>
+        <td>{{ complaint.subject }}</td>
+        <td>{{ complaint.comment }}</td>
+      </tr>
+        {% endfor %}
+    {% endif %}
+    </tbody>
+  </table>
+      </section>
     <!-- /.content -->
 
   </div>
