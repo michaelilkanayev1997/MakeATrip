@@ -61,18 +61,6 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='ItineraryCategory',
-            fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
-                ('culture', models.BooleanField(default=False)),
-                ('outdoors', models.BooleanField(default=False)),
-                ('beaches', models.BooleanField(default=False)),
-                ('shopping', models.BooleanField(default=False)),
-                ('museums', models.BooleanField(default=False)),
-                ('restaurants', models.BooleanField(default=False)),
-            ],
-        ),
-        migrations.CreateModel(
             name='Temp',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
@@ -81,18 +69,6 @@ class Migration(migrations.Migration):
                 ('subject', models.CharField(max_length=200)),
                 ('comment', models.TextField()),
                 ('created_date', models.DateTimeField(blank=True, default=datetime.datetime.now)),
-            ],
-        ),
-        migrations.CreateModel(
-            name='ItineraryPlanner',
-            fields=[
-                ('destination', models.CharField(max_length=254)),
-                ('start_date', models.DateField(blank=True, null=True)),
-                ('end_date', models.DateField(blank=True, null=True)),
-                ('travelers', models.IntegerField(blank=True)),
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
-                ('category', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.DO_NOTHING, to='home.itinerarycategory')),
-                ('user', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.DO_NOTHING, to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]
