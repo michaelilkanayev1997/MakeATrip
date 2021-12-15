@@ -232,6 +232,16 @@ def pages(request):
         html_template = loader.get_template('home/page-500.html')
         return HttpResponse(html_template.render(context, request))
 
+def to_do_list(request):
+    context = {'segment': 'to_do_list'}
+    html_template = loader.get_template('home/to_do_list.html')
+    return HttpResponse(html_template.render(context, request))
+
+def recent_trips(request):
+    context = {'segment': 'recent_trips'}
+    html_template = loader.get_template('home/recent_trips.html')
+    return HttpResponse(html_template.render(context, request))
+
 ######################################################################
 #                     System Functions & Classes                     #
 ######################################################################
