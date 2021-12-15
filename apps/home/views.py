@@ -13,12 +13,26 @@ from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, ContactUs, Temp, Itiner
 from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, \
     FaqGeneralForm
 from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp, ItineraryPlanner, Career, PrivacyPolicy
-from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, FaqGeneralForm
+from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, FaqGeneralForm,administrator_complaintsForm,complaintform
 
 
 ######################################################################
 #                          Views Functions                           #
 ######################################################################
+@csrf_protect
+def administrator_complaints(request):
+    administrator_complaints = ContactUs.objects.filter(subject='2')
+    count = ContactUs.objects.filter(subject='2').count()
+
+    # user is posting: get edited node, change comment, and save
+    if request.POST:
+        complete = request.POST.get('complete')
+        edited_node = administrator_complaints.get(complete=complete)
+        edited_node.save()
+
+    context = {'administrator_complaints': administrator_complaints,'count': count}
+    html_template = loader.get_template('home/administrator_complaints.html')
+    return HttpResponse(html_template.render(context, request))
 
 @csrf_protect
 def complaints(request):

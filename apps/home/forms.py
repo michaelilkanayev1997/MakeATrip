@@ -60,3 +60,8 @@ class PrivacyPolicyForm(forms.ModelForm):
     class Meta:
         model = PrivacyPolicy
         fields = "__all__"
+
+class administrator_complaintsForm(forms.ModelForm):
+    class Meta:
+        model = ContactUs
+        fields = ('complete',)
