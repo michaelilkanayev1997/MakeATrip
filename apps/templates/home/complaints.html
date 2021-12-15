@@ -1,5 +1,6 @@
 {% extends "layouts/base-dashboard.html" %}
-
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
 {% block title %} Complaints {% endblock %}
 
 <!-- Element injected in the BODY element -->
@@ -137,6 +138,7 @@
     <thead>
 
       <tr>
+        <th scope="col">ID</th>
         <th scope="col">Full name</th>
         <th scope="col">Email</th>
         <th scope="col">Subject</th>
@@ -145,23 +147,27 @@
       </tr>
     </thead>
     <tbody>
-    {% if contact %}
-        {% for complaint in contact %}
+    {% if complaint %}
+        {% for complaint in complaint %}
       <tr>
+        <td>{{ complaint.id }}</td>
         <td>{{ complaint.full_name }}</td>
         <td>{{ complaint.email }}</td>
         <td>{{ complaint.subject }}</td>
         <td>{{ complaint.comment }}</td>
         <td>
-          <form autocomplete="off"  action="" class="">
-            {% csrf_token %}
-          <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name = "complete">
-          <label class="form-check-label" for="defaultCheck1">
-            DONE
-          </label>
-          </div>
-          </form>
+            <form method="post" action="" autocomplete="off">
+              {% csrf_token %}
+
+              	<label>
+                  <input type="checkbox" name="complete">
+                  <span>Done</span>
+                </label>
+              <div class="form-btn">
+                <input type="submit" class="submit-btn btn btn-sm bg-gradient-secondary btn-round">
+              </div>
+
+            </form>
         </td>
       </tr>
         {% endfor %}

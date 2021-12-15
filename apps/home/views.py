@@ -2,7 +2,7 @@
 """
 Copyright (c) 2019 - present AppSeed.us
 """
-
+from django.views.decorators.csrf import csrf_protect
 from django import template
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
@@ -19,8 +19,17 @@ from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, Iti
 ######################################################################
 #                          Views Functions                           #
 ######################################################################
+
+@csrf_protect
 def complaints(request):
-    context = {'segment': 'complaints'}
+    complaint = ContactUs.objects.all()
+    # user is posting: get edited node, change comment, and save
+    if request.POST:
+        complete = request.POST.get('complete')
+        edited_node = complaint.get(complete=complete)
+        edited_node.save()
+
+    context = {'complaint': complaint}
     html_template = loader.get_template('home/complaints.html')
     return HttpResponse(html_template.render(context, request))
 
