@@ -23,6 +23,8 @@ urlpatterns = [
     path('complaints/', views.complaints, name='complaints'),
     path('privacy-policy/', views.privacy_policy, name="privacy-policy"),
     path('administrator_complaints/', views.administrator_complaints, name="administrator_complaints"),
+    path('to_do_list/', views.to_do_list, name="to_do_list"),
+    path('recent_trips/', views.recent_trips, name="recent_trips"),
     # re_path(r'^.*\.*', views.pages, name='pages'),
 
 
