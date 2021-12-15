@@ -12,6 +12,8 @@ from django.shortcuts import render, redirect
 from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, ContactUs, Temp, ItineraryPlanner, ItineraryCategory
 from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, \
     FaqGeneralForm
+from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp, ItineraryPlanner, Career
+from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, FaqGeneralForm
 
 
 ######################################################################
@@ -123,6 +125,13 @@ def contact_us(request):
     context = {'form': form}
     html_template = loader.get_template('home/contact-us.html')
     return HttpResponse(html_template.render(context, request))
+
+def career(request):
+    career = Career.objects.all()
+    context = {'career': career}
+    html_template = loader.get_template('home/career.html')
+    return HttpResponse(html_template.render(context, request))
+
 
 
 # @login_required(login_url="/login/")

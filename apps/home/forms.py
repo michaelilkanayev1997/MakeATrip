@@ -31,6 +31,11 @@ class AboutUsForm(forms.ModelForm):
         model = AboutUs
         fields = "__all__"
 
+class CareerForm(forms.ModelForm):
+    class Meta:
+        model = Career
+        fields = "__all__"
+
 
 class ItineraryPlannerForm(forms.ModelForm):
     class Meta:
