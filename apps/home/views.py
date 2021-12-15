@@ -143,6 +143,12 @@ def career(request):
     html_template = loader.get_template('home/career.html')
     return HttpResponse(html_template.render(context, request))
 
+def job_detail(request, pk):
+    career = Career.objects.get(id=pk)
+    context = {'career': career}
+    html_template = loader.get_template('home/job_detail.html')
+    return HttpResponse(html_template.render(context, request))
+
 
 
 # @login_required(login_url="/login/")
