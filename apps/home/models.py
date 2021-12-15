@@ -4,29 +4,30 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 import uuid
 
-
-
 ##########################################################################################################
 
 
 ##########################################################################################################
-subject_choices = (
-    ('1','General'),
-    ('2', 'Complaint'),
+SUBJECT_CHOICES = (
+    ('general', 'GENERAL'),
+    ('complaint', 'COMPLAINT'),
 )
+
 
 class ContactUs(models.Model):
     full_name = models.CharField(max_length=200, default="", blank=True)
     email = models.EmailField(max_length=100, default="", blank=True)
-    subject = models.CharField(max_length=2,default="", blank=True)
-    comment = models.TextField(max_length=500, default="", blank=True)
+    subject = models.CharField(max_length=9, choices=SUBJECT_CHOICES, default='', blank=True)
+    comment = models.TextField(max_length=200, default="", blank=True)
     created_date = models.DateTimeField(default=datetime.now, blank=True)
     complete = models.BooleanField(default=False)
+
     class Meta:
         db_table = "home_contact_us"
 
     def __str__(self):
         return self.full_name
+
 
 class Contact(models.Model):
     pass

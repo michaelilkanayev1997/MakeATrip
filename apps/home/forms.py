@@ -49,5 +49,4 @@ class ItineraryCategoryForm(forms.ModelForm):
 class complaintform(forms.ModelForm):
     class Meta:
         model = ContactUs
-        fields = '__all__'
-        # fields = ('complete',)
+        fields = ('complete',)
