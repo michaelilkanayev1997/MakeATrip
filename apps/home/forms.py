@@ -1,6 +1,6 @@
 from django import forms
 from .models import Contact, AboutUs, FAQTravel, FAQGeneral
-from .models import Contact, AboutUs, ItineraryPlanner, ItineraryCategory
+from .models import Contact, AboutUs, ItineraryPlanner, ItineraryCategory, Career
 
 
 class ContactForm(forms.ModelForm):
@@ -30,6 +30,11 @@ class FaqTravelForm(forms.ModelForm):
 class AboutUsForm(forms.ModelForm):
     class Meta:
         model = AboutUs
+        fields = "__all__"
+
+class CareerForm(forms.ModelForm):
+    class Meta:
+        model = Career
         fields = "__all__"
 
 

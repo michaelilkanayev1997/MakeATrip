@@ -1,0 +1,140 @@
+{% extends 'layouts/base-travel.html' %}
+
+{% block title %} Career {% endblock title %}
+
+
+
+<!-- Specific CSS goes HERE      -->
+{% block stylesheets %}
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../../static/assets/css/team.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/static/assets/plugins/fontawesome-free/css/all.min.css">
+
+{% endblock stylesheets %}
+
+
+{% block content %}
+
+<!-- main_background -->
+<header class="header-2">
+  <div class="page-header section-height-75 relative" style="background-image: url('../../static/assets/img/career.jpg')">
+    <div class="position-absolute w-100 z-index-1 bottom-0">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="moving-waves">
+          <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(255,255,255,0.20)" />
+          <use xlink:href="#gentle-wave" x="48" y="13" fill="rgba(255,255,255,0.15)" />
+          <use xlink:href="#gentle-wave" x="48" y="16" fill="rgba(255,255,255,0.95" />
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- Career Accordion -->
+    <center>
+        <div class="container" >
+
+        <!-- Title -->
+        {% if about %}
+
+            {% for obj in about %}
+                {% if user.is_superuser %}
+                <a class="btn btn-app" href="{% url 'update-about-us' obj.id %}">
+                  <i class="fas fa-edit"></i> Edit
+                </a>
+                <a class="btn btn-app" href="{% url 'delete-about-us' obj.id %}">
+                  <i class="fas fa-delete"></i> Delete
+                </a>
+                {% endif %}
+                <h1>{{ obj.name }} </h1>
+                <br/><br/>
+                <h3>{{ obj.subject }} </h3>
+                <br/><br/>
+                <h6>{{ obj.content }} </h6>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+
+    </center>
+
+
+
+<!---------------------- Team ---------------------->
+{#    <br><br><br>#}
+{#<div class="container bootdey">#}
+{#        <div class="row">#}
+{#            <div class="col-12 text-center">#}
+{#                <div class="section-title mb pb-2">#}
+{#                    <h1 >Team</h1>#}
+{#                </div>#}
+{#            </div><!--end col-->#}
+{#        </div><!--end row-->#}
+{##}
+{#        <div class="row">#}
+{#            <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">#}
+{#                <div class="team text-center rounded p-3 py-4">#}
+{#                    <img src="https://scontent-mxp1-1.xx.fbcdn.net/v/t1.18169-9/11045021_918998161474494_2370761045624218153_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=rtwLAyyLMuQAX_NoFk8&_nc_ht=scontent-mxp1-1.xx&oh=e575aef8ce8d3d4f689b392d16510549&oe=61C7DE53" class="img-fluid shadow rounded-pill" alt="">#}
+{#                    <div class="content mt-3">#}
+{#                        <h4 class="title mb-0">Marat Zinger</h4>#}
+{#                        <small class="text-muted">SCE student</small>#}
+{##}
+{#                    </div>#}
+{#                </div>#}
+{#            </div><!--end col-->#}
+{##}
+{#            <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">#}
+{#                <div class="team text-center rounded p-3 py-4">#}
+{#                    <img src="../../static/assets/img/michael_ilkanayev.jpg"  class="img-fluid shadow rounded-pill" alt="">#}
+{#                    <div class="content mt-3">#}
+{#                        <h4 class="title mb-0">Michael Ilkanayev</h4>#}
+{#                        <small class="text-muted">SCE student</small>#}
+{##}
+{#                    </div>#}
+{#                </div>#}
+{#            </div><!--end col-->#}
+{##}
+{#            <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">#}
+{#                <div class="team text-center rounded p-3 py-4">#}
+{#                    <img src="../../static/assets/img/kfir profile photo.jpg" class="img-fluid shadow rounded-pill" alt="">#}
+{#                    <div class="content mt-3">#}
+{#                        <h4 class="title mb-0">Kfir German</h4>#}
+{#                        <small class="text-muted">SCE student</small>#}
+{##}
+{#                    </div>#}
+{#                </div>#}
+{#            </div><!--end col-->#}
+{##}
+{#            <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">#}
+{#                <div class="team text-center rounded p-3 py-4">#}
+{#                    <img src="https://media-exp1.licdn.com/dms/image/C4D03AQGbTdFn9_dnaA/profile-displayphoto-shrink_800_800/0/1635676115684?e=1643846400&v=beta&t=d6b4TlN0g9CEa4n2CvgmwzSy_Pnzd7H7t1AfRCGV_JU" class="img-fluid shadow rounded-pill" alt="">#}
+{#                    <div class="content mt-3">#}
+{#                        <h4 class="title mb-0">Vladimir Davidzon</h4>#}
+{#                        <small class="text-muted">SCE student</small>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div><!--end col-->#}
+{#        </div><!--end row-->#}
+{#    </div>#}
+
+
+
+{% endblock content %}
+
+
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+{% endblock javascripts %}

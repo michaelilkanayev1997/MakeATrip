@@ -31,6 +31,17 @@ class AboutUs(models.Model):
 
 
 ##########################################################################################################
+class Career(models.Model):
+    name = models.CharField(max_length=200, default="", blank=True)
+    subject = models.TextField(max_length=500, default="", blank=True)
+    content = models.TextField(max_length=500, default="", blank=True)
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+
+    def __str__(self):
+        return self.name
+
+
+##########################################################################################################
 
 class FAQ(models.Model):
     name = models.CharField(max_length=200)
