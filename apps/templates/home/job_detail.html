@@ -38,16 +38,27 @@
     </div>
   </div>
 </header>
-
-        <center>
-        <div class="container" >
-<h1>{{ career.job_title }} </h1>
-<h2>{{ career.id }} </h2>
-<h3>{{ career.job_detail }} </h3>
-
+   <section class="py-sm-7 py-5 position-relative">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mx-auto">
+          <div class="row py-lg-7 py-5">
+            <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mt-sm-0 mt-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h4 class="mb-0">{{ career.job_title }}</h4>
+                <div class="d-block">
+                  <button type="button" class="btn btn-sm  btn-outline-info text-nowrap mb-0">Send</button>
+                </div>
+              </div>
+              <p class="text-lg mb-0">
+                {{ career.job_detail }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    </center>
+  </section>
 
 
 {% endblock content %}
