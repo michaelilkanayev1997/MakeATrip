@@ -12,13 +12,30 @@ from django.shortcuts import render, redirect
 from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, ContactUs, Temp, ItineraryPlanner, ItineraryCategory
 from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, \
     FaqGeneralForm
-from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp, ItineraryPlanner, Career, PrivacyPolicy
-from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, FaqGeneralForm,administrator_complaintsForm,complaintform
+from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp, ItineraryPlanner, Career, PrivacyPolicy, Review
+from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, FaqGeneralForm,administrator_complaintsForm,complaintform,ReviewpForm
 
 
 ######################################################################
 #                          Views Functions                           #
 ######################################################################
+
+def review_project(request):
+    if request.method == "POST":
+        form = ReviewpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    else:
+        form = ReviewpForm()
+    context = {'form': form}
+    html_template = loader.get_template('home/Review.html')
+    return HttpResponse(html_template.render(context, request))
+
+
+
+
+
 @csrf_protect
 def administrator_complaints(request):
     administrator_complaints = ContactUs.objects.filter(subject='2')

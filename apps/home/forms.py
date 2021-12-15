@@ -1,5 +1,5 @@
 from django import forms
-from .models import ContactUs, AboutUs, FAQTravel, FAQGeneral, ItineraryPlanner, ItineraryCategory, Career, PrivacyPolicy
+from .models import ContactUs, AboutUs, FAQTravel, FAQGeneral, ItineraryPlanner, ItineraryCategory, Career, PrivacyPolicy,Review
 
 
 class ContactForm(forms.ModelForm):
@@ -65,3 +65,9 @@ class administrator_complaintsForm(forms.ModelForm):
     class Meta:
         model = ContactUs
         fields = ('complete',)
+
+class ReviewpForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = "__all__"
+        exclude = ['created_date']

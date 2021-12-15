@@ -1,48 +1,58 @@
-<head> <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={API_KEY}&libraries=places&callback=initAutocomplete" async defer></script> </haed>
+{% extends 'layouts/base-travel.html' %}
 
-<body>
-....
-<div class="col-sm-37">
-   {{form.where_load|as_crispy_field}}
-</div>
-<div class="col-sm-37">
-   {{form.where_unload|as_crispy_field}}
-</div>
-<script>
-    // This example displays an address form, using the autocomplete feature
-    // of the Google Places API to help users fill in the information.
-    var placeSearch, autocomplete;
+{% block title %} Modals {% endblock title %}
 
-    function initAutocomplete() {
-      // Create the autocomplete object, restricting the search to geographical
-      // location types.
-      autocomplete = new google.maps.places.Autocomplete(
-          /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-          {types: ['geocode']});
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
 
-      // When the user selects an address from the dropdown, populate the address
-      // fields in the form.
-      autocomplete.addListener('place_changed', fillInAddress);
-    }
+{% block body_class %} modals-sections {% endblock body_class %}
 
-    // [START region_geolocation]
-    // Bias the autocomplete object to the user's geographical location,
-    // as supplied by the browser's 'navigator.geolocation' object.
-    function geolocate() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          var geolocation = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-          var circle = new google.maps.Circle({
-            center: geolocation,
-            radius: position.coords.accuracy
-          });
-          autocomplete.setBounds(circle.getBounds());
-        });
-      }
-    }
-    // [END region_geolocation]
-</script>
-</body>
+{% block content %}
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <div class="container mt-5">
+  <div class="col-md-4">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn bg-gradient-success btn-block mb-3" data-bs-toggle="modal" data-bs-target="#exampleModalMessage">
+      Message Modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalMessage" tabindex="-1" role="dialog" aria-labelledby="exampleModalMessageTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">New message to @CT</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Recipient:</label>
+                <input type="text" class="form-control" value="Creative Tim" id="recipient-name">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Message:</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn bg-gradient-primary">Send message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}
+
+  <script src="/static/assets/js/soft-design-system.min.js?v=1.0.1" type="text/javascript"></script>
+
+{% endblock javascripts %}

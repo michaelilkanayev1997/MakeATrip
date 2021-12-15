@@ -25,6 +25,7 @@ urlpatterns = [
     path('administrator_complaints/', views.administrator_complaints, name="administrator_complaints"),
     path('to_do_list/', views.to_do_list, name="to_do_list"),
     path('recent_trips/', views.recent_trips, name="recent_trips"),
+    path('review/', views.review_project, name="review"),
     # re_path(r'^.*\.*', views.pages, name='pages'),
 
 
