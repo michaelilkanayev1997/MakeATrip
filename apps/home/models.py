@@ -140,3 +140,22 @@ class PrivacyPolicy(models.Model):
 
     def __str__(self):
         return self.subject
+#####################################################################################################
+VOTE_choice = (
+    ('Very good', 'Very good'),
+    ('Good', 'Good'),
+    ('Mediocre', 'Mediocre'),
+    ('Bad', 'Bad'),
+    ('Very Bad', 'Very Bad'),
+
+)
+
+
+class Review(models.Model):
+    feedback = models.CharField(max_length=200, choices=VOTE_choice)
+    comment = models.TextField(max_length=500, default="", blank=True)
+    created_date = models.DateTimeField(default=datetime.now, blank=True)
+
+    def __str__(self):
+        return self.feedback
+    #############################################################################
