@@ -1,5 +1,5 @@
 from django import forms
-from .models import ContactUs, AboutUs, FAQTravel, FAQGeneral, ItineraryPlanner, ItineraryCategory
+from .models import ContactUs, AboutUs, FAQTravel, FAQGeneral, ItineraryPlanner, ItineraryCategory, Career
 
 
 class ContactForm(forms.ModelForm):
