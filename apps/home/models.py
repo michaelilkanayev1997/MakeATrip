@@ -74,6 +74,7 @@ class Temp(models.Model):
 travel_user = get_user_model()
 t_user = User
 
+
 class ItineraryCategory(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     culture = models.BooleanField(default=False)
@@ -86,12 +87,12 @@ class ItineraryCategory(models.Model):
 
 class ItineraryPlanner(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
-    user = models.ForeignKey(t_user, on_delete=models.DO_NOTHING, blank=True, null=True)
+    user = models.ForeignKey(t_user, on_delete=models.CASCADE, blank=True, null=True)
     destination = models.CharField(max_length=254)
     start_date = models.DateField(null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)
-    # category = models.ForeignKey(ItineraryCategory, on_delete=models.DO_NOTHING, blank=True, null=True)
-
+    travelers = models.IntegerField(null=True, blank=True)
+    category = models.ForeignKey(ItineraryCategory, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         return "%s -- %s > %s by %s" % (self.start_date, self.end_date, self.destination, self.user)
@@ -103,4 +104,3 @@ class ItineraryPlanner(models.Model):
 class UserReviews(models.Model):
     user = models.ForeignKey(travel_user, on_delete=models.DO_NOTHING, blank=True, null=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
-
