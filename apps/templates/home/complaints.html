@@ -30,15 +30,6 @@
   <link rel="stylesheet" href="/static/assets/plugins/summernote/summernote-bs4.min.css">
 
 <!------------------------------------------------------------------------------------------------->
-<!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="/static/assets/plugins/fontawesome-free/css/all.min.css">
-  <!-- jsGrid -->
-  <link rel="stylesheet" href="/static/assets/plugins/jsgrid/jsgrid.min.css">
-  <link rel="stylesheet" href="/static/assets/plugins/jsgrid/jsgrid-theme.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="/static/assets/css/adminlte.min.css">
 
 {% endblock stylesheets %}
 
@@ -76,7 +67,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                <h3>{{count}}</h3>
 
                 <p>Total complaints</p>
               </div>
@@ -137,22 +128,47 @@
           </div>
         </div>
       </div><!-- /.container-fluid -->
+      </div>
     </section>
 
     <!-- Main content -->
-    <section class="content">
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Date table:</h3>
-        </div>
-        <!-- /.card-header -->
-        <div class="card-body">
-          <div id="jsGrid1"></div>
-        </div>
-        <!-- /.card-body -->
-      </div>
-      <!-- /.card -->
-    </section>
+      <section class="content">
+        <table class="table table-striped">
+    <thead>
+
+      <tr>
+        <th scope="col">Full name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Subject</th>
+        <th scope="col">Comment</th>
+        <th scope="col">Complete</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% if contact %}
+        {% for complaint in contact %}
+      <tr>
+        <td>{{ complaint.full_name }}</td>
+        <td>{{ complaint.email }}</td>
+        <td>{{ complaint.subject }}</td>
+        <td>{{ complaint.comment }}</td>
+        <td>
+          <form autocomplete="off"  action="" class="">
+            {% csrf_token %}
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name = "complete">
+          <label class="form-check-label" for="defaultCheck1">
+            DONE
+          </label>
+          </div>
+          </form>
+        </td>
+      </tr>
+        {% endfor %}
+    {% endif %}
+    </tbody>
+  </table>
+      </section>
     <!-- /.content -->
 
   </div>
@@ -198,38 +214,6 @@
   <!-- AdminLTE for demo purposes -->
   <script src="/static/assets/js/demo.js"></script>
 <!-------------------------------------------------------------------------------->
-   <!-- jQuery -->
-  <script src="/static/assets/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="/static/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- jsGrid -->
-  <script src="/static/assets/plugins/jsgrid/demos/db.js"></script>
-  <script src="/static/assets/plugins/jsgrid/jsgrid.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="/static/assets/js/adminlte.min.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="/static/assets/js/demo.js"></script>
-  <!-- page script -->
-  <script>
-    $(function () {
-      $("#jsGrid1").jsGrid({
-          height: "100%",
-          width: "100%",
 
-          sorting: true,
-          paging: true,
-
-          data: db.clients,
-
-          fields: [
-              { name: "Full name:", type: "text", width: 150 },
-              { name: "Email:", type: "number", width: 50 },
-              { name: "Subject:", type: "text", width: 200 },
-              { name: "Comment:", type: "select", items: db.countries, valueField: "Id", textField: "Name" },
-              { name: "Complete", type: "checkbox", title: "Complete" }
-          ]
-      });
-    });
-  </script>
 
 {% endblock javascripts %}
