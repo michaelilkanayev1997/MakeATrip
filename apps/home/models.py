@@ -12,8 +12,7 @@ SUBJECT_CHOICES = (
     ('1', 'GENERAL'),
     ('2', 'COMPLAINT'),
 )
-CHOICES = [("yes", "YES"),
-           ("no", "NO")]
+
 
 class ContactUs(models.Model):
     full_name = models.CharField(max_length=200, default="", blank=True)
@@ -21,7 +20,7 @@ class ContactUs(models.Model):
     subject = models.CharField(max_length=9, choices=SUBJECT_CHOICES, default='1')
     comment = models.TextField(max_length=200, default="", blank=True)
     created_date = models.DateTimeField(default=datetime.now, blank=True)
-    complete = models.CharField(max_length=9, choices=CHOICES, default='no')
+    complete = models.BooleanField(default=False)
 
     class Meta:
         db_table = "home_contact_us"
