@@ -129,3 +129,14 @@ class ItineraryPlanner(models.Model):
 class UserReviews(models.Model):
     user = models.ForeignKey(travel_user, on_delete=models.DO_NOTHING, blank=True, null=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+
+##########################################################################################################
+
+class PrivacyPolicy(models.Model):
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+    subject = models.CharField(max_length=200, default="", blank=True)
+    content = models.TextField(max_length=500000, default="", blank=True)
+
+
+    def __str__(self):
+        return self.subject
