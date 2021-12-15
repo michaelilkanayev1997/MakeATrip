@@ -9,15 +9,15 @@ import uuid
 
 ##########################################################################################################
 SUBJECT_CHOICES = (
-    ('general', 'GENERAL'),
-    ('complaint', 'COMPLAINT'),
+    ('1', 'GENERAL'),
+    ('2', 'COMPLAINT'),
 )
 
 
 class ContactUs(models.Model):
     full_name = models.CharField(max_length=200, default="", blank=True)
     email = models.EmailField(max_length=100, default="", blank=True)
-    subject = models.CharField(max_length=9, choices=SUBJECT_CHOICES, default='', blank=True)
+    subject = models.CharField(max_length=9, choices=SUBJECT_CHOICES, default='1')
     comment = models.TextField(max_length=200, default="", blank=True)
     created_date = models.DateTimeField(default=datetime.now, blank=True)
     complete = models.BooleanField(default=False)

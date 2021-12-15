@@ -22,14 +22,16 @@ from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, Iti
 
 @csrf_protect
 def complaints(request):
-    complaint = ContactUs.objects.all()
+    complaint = ContactUs.objects.filter(subject='2')
+    count = ContactUs.objects.filter(subject='2').count()
+
     # user is posting: get edited node, change comment, and save
     if request.POST:
         complete = request.POST.get('complete')
         edited_node = complaint.get(complete=complete)
         edited_node.save()
 
-    context = {'complaint': complaint}
+    context = {'complaint': complaint,'count': count}
     html_template = loader.get_template('home/complaints.html')
     return HttpResponse(html_template.render(context, request))
 
