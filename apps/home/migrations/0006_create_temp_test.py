@@ -20,7 +20,6 @@ class Migration(migrations.Migration):
                 ('destination', models.CharField(max_length=254)),
                 ('start_date', models.DateField(blank=True, null=True)),
                 ('end_date', models.DateField(blank=True, null=True)),
-                ('travelers', models.IntegerField(blank=True)),
                 ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
                 # ('category', models.ForeignKey(blank=True, null=True,
                 # on_delete=django.db.models.deletion.DO_NOTHING, to='home.itinerarycategory')),

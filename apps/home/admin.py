@@ -6,7 +6,7 @@ Copyright (c) 2019 - present AppSeed.us
 from django.contrib import admin
 
 # Register your models here.
-from .models import AboutUs, FAQTravel, FAQGeneral, FAQ, Contact, Temp, ItineraryPlanner, ItineraryCategory
+from .models import AboutUs, FAQTravel, FAQGeneral, FAQ, ContactUs, Temp, ItineraryPlanner, ItineraryCategory
 
 ####################################
 # for Temp Only!!!
@@ -24,7 +24,7 @@ admin.site.register(FAQTravel)
 ####################################
 ####################################
 # CONTACTUS
-admin.site.register(Contact)
+admin.site.register(ContactUs)
 ####################################
 ####################################
 # TRAVEL

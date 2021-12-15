@@ -26,17 +26,6 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='Contact',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('full_name', models.CharField(blank=True, default='', max_length=200)),
-                ('email', models.EmailField(blank=True, default='', max_length=100)),
-                ('subject', models.CharField(blank=True, default='', max_length=200)),
-                ('comment', models.TextField(blank=True, default='', max_length=500)),
-                ('created_date', models.DateTimeField(blank=True, default=datetime.datetime.now)),
-            ],
-        ),
-        migrations.CreateModel(
             name='FAQ',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
@@ -66,7 +55,6 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('full_name', models.CharField(max_length=200)),
                 ('email', models.EmailField(max_length=100)),
-                ('subject', models.CharField(max_length=200)),
                 ('comment', models.TextField()),
                 ('created_date', models.DateTimeField(blank=True, default=datetime.datetime.now)),
             ],

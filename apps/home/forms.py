@@ -1,10 +1,10 @@
 from django import forms
-from .models import Contact, AboutUs, FAQTravel, FAQGeneral, ItineraryPlanner, ItineraryCategory
+from .models import ContactUs, AboutUs, FAQTravel, FAQGeneral, ItineraryPlanner, ItineraryCategory
 
 
 class ContactForm(forms.ModelForm):
     class Meta:
-        model = Contact
+        model = ContactUs
         fields = "__all__"
 
 
@@ -48,5 +48,6 @@ class ItineraryCategoryForm(forms.ModelForm):
 
 class complaintform(forms.ModelForm):
     class Meta:
-        model = Contact
-        fields = ('complete',)
+        model = ContactUs
+        fields = '__all__'
+        # fields = ('complete',)

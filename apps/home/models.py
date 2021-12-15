@@ -15,7 +15,8 @@ subject_choices = (
     ('2', 'Complaint'),
 )
 
-class Contact(models.Model):
+class ContactUs(models.Model):
+    pass
     full_name = models.CharField(max_length=200, default="", blank=True)
     email = models.EmailField(max_length=100, default="", blank=True)
     subject = models.CharField(max_length=2,default="", blank=True)
@@ -23,10 +24,13 @@ class Contact(models.Model):
     created_date = models.DateTimeField(default=datetime.now, blank=True)
     complete = models.BooleanField(default=False)
     class Meta:
-        db_table = "home_contact"
+        db_table = "home_contact_us"
 
     def __str__(self):
         return self.full_name
+
+class Contact(models.Model):
+    pass
 
 
 ##########################################################################################################
@@ -72,7 +76,7 @@ class FAQTravel(models.Model):
 class Temp(models.Model):
     full_name = models.CharField(max_length=200)
     email = models.EmailField(max_length=100)
-    subject = models.CharField(max_length=200)
+    # subject = models.CharField(max_length=200)
     comment = models.TextField()
     created_date = models.DateTimeField(default=datetime.now, blank=True)
 
@@ -99,7 +103,7 @@ class ItineraryPlanner(models.Model):
     destination = models.CharField(max_length=254)
     start_date = models.DateField(null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)
-    travelers = models.IntegerField(null=True, blank=True)
+    # travelers = models.IntegerField(null=True, blank=True)
     category = models.ForeignKey(ItineraryCategory, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):

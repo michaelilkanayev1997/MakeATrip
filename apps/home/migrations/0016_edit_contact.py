@@ -8,10 +8,3 @@ class Migration(migrations.Migration):
     dependencies = [
         ('home', '0015_edit_ItineraryPlanner'),
     ]
-
-    operations = [
-        migrations.AlterModelTable(
-            name='contact',
-            table='home_contact',
-        ),
-    ]
