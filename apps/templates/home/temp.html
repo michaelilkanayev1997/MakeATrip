@@ -1,130 +1,48 @@
-{% extends 'layouts/base-travel.html' %}
+<head> <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={API_KEY}&libraries=places&callback=initAutocomplete" async defer></script> </haed>
 
-{% block title %} Index {% endblock title %}
+<body>
+....
+<div class="col-sm-37">
+   {{form.where_load|as_crispy_field}}
+</div>
+<div class="col-sm-37">
+   {{form.where_unload|as_crispy_field}}
+</div>
+<script>
+    // This example displays an address form, using the autocomplete feature
+    // of the Google Places API to help users fill in the information.
+    var placeSearch, autocomplete;
 
-<!-- Specific CSS goes HERE -->
-{% block stylesheets %}
-    	<link type="text/css" rel="stylesheet" href="../../static/assets/css/travel_style.css" />
+    function initAutocomplete() {
+      // Create the autocomplete object, restricting the search to geographical
+      // location types.
+      autocomplete = new google.maps.places.Autocomplete(
+          /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+          {types: ['geocode']});
 
-{% endblock stylesheets %}
+      // When the user selects an address from the dropdown, populate the address
+      // fields in the form.
+      autocomplete.addListener('place_changed', fillInAddress);
+    }
 
-{% block body_class %} index-page {% endblock body_class %}
-
-{% block content %}
-
-  <header class="header-2">
-    <div class="page-header section-height-75 relative" style="background-image: url('../../static/assets/img/main_background.jpg')">
-      <div class="position-absolute w-100 z-index-1 bottom-0">
-        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
-          <defs>
-            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
-          </defs>
-          <g class="moving-waves">
-            <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40"></use>
-            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)"></use>
-            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)"></use>
-            <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(255,255,255,0.20)"></use>
-            <use xlink:href="#gentle-wave" x="48" y="13" fill="rgba(255,255,255,0.15)"></use>
-            <use xlink:href="#gentle-wave" x="48" y="16" fill="rgba(255,255,255,0.95"></use>
-          </g>
-        </svg>
-      </div>
-        <div class="container">
-				<div class="row">
-					<div class="booking-form">
-						<form method="post" action="" autocomplete="off">
-                            {% csrf_token %}
-
-							<div class="row">
-
-								<div class="col-md-4">
-									<div class="form-group">
-										<span class="form-label">Where?</span>
-										<span class="form-label">Destination</span>
-										<input class="form-control" type="text" placeholder="Enter destination (country, region, or city)" name="destination">
-									</div>
-								</div>
-
-								<div class="col-md-3">
-									<div class="form-group">
-										<span class="form-label">When?</span>
-										<span class="form-label">Start</span>
-										<input class="form-control" type="date" name="start_date">
-									</div>
-								</div>
-
-								<div class="col-md-3">
-									<div class="form-group">
-										<span class="form-label"> </span>
-										<span class="form-label">End</span>
-										<input class="form-control" type="date" name="end_date">
-									</div>
-								</div>
-
-								<div class="col-md-2">
-									<div class="form-group">
-										<span class="form-label">Who?</span>
-										<span class="form-label">Adults (18+)</span>
-										<select class="form-control" name="travelers">
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-										</select>
-										<span class="select-arrow"></span>
-									</div>
-								</div>
-
-								<div class="col-md-8">
-									<span class="form-label">What?</span>
-									<div class="form-checkbox">
-										<label>
-											<input type="checkbox" name="culture">
-											<span></span>Culture
-										</label>
-										<label>
-											<input type="checkbox" name="outdoors">
-											<span></span>Outdoors
-										</label>
-										<label >
-											<input type="checkbox" name="beaches">
-											<span></span>Beaches
-										</label>
-										<label>
-											<input type="checkbox" name="shopping">
-											<span></span>Shopping
-										</label>
-										<label>
-											<input type="checkbox" name="museums">
-											<span></span>Museums
-										</label>
-										<label >
-											<input type="checkbox" name="restaurants">
-											<span></span>Restaurants
-										</label>
-									</div>
-								</div>
-
-								<div class="col-md-2">
-									<div class="form-btn">
-                                        <!--<button type="submit" name="login" class="login100-form-btn">Sign In</button>
-										<button type="submit" class="submit-btn btn btn-sm bg-gradient-secondary btn-round">See your trip</button>-->
-                                        <input type="submit" name="See your trip" class="submit-btn btn btn-sm bg-gradient-secondary btn-round">
-									</div>
-								</div>
-							</div>
-
-						</form>
-					</div>
-				</div>
-			</div>
-    </div>
-
-  </header>
-
-
-{% endblock content %}
-
-<!-- Specific JS goes HERE -->
-{% block javascripts %}
-
-{% endblock javascripts %}
+    // [START region_geolocation]
+    // Bias the autocomplete object to the user's geographical location,
+    // as supplied by the browser's 'navigator.geolocation' object.
+    function geolocate() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var geolocation = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          var circle = new google.maps.Circle({
+            center: geolocation,
+            radius: position.coords.accuracy
+          });
+          autocomplete.setBounds(circle.getBounds());
+        });
+      }
+    }
+    // [END region_geolocation]
+</script>
+</body>

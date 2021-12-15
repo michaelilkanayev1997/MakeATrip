@@ -1,5 +1,6 @@
 {% extends 'layouts/base-travel.html' %}
-
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
 {% block title %} Index {% endblock title %}
 
 <!-- Specific CSS goes HERE -->
@@ -36,12 +37,12 @@
                             {% csrf_token %}
 
 							<div class="row">
-
+                            {{ form|crispy }}
 								<div class="col-md-4">
 									<div class="form-group">
 										<span class="form-label">Where?</span>
 										<span class="form-label">Destination</span>
-										<input class="form-control" type="text" placeholder="Enter destination (country, region, or city)" name="destination">
+										<input class="form-control" id="travel_from" type="text" placeholder="Enter destination (country, region, or city)" name="destination" required>
 									</div>
 								</div>
 
@@ -49,7 +50,7 @@
 									<div class="form-group">
 										<span class="form-label">When?</span>
 										<span class="form-label">Start</span>
-										<input class="form-control" type="date" name="start_date">
+										<input class="form-control" type="date" name="start_date" required>
 									</div>
 								</div>
 
@@ -57,7 +58,7 @@
 									<div class="form-group">
 										<span class="form-label"> </span>
 										<span class="form-label">End</span>
-										<input class="form-control" type="date" name="end_date">
+										<input class="form-control" type="date" name="end_date" required>
 									</div>
 								</div>
 
@@ -65,10 +66,11 @@
 									<div class="form-group">
 										<span class="form-label">Who?</span>
 										<span class="form-label">Adults (18+)</span>
-										<select class="form-control" name="travelers">
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
+										<select class="form-control" name="travelers" required>
+											<option disabled selected value>Select an option</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
 										</select>
 										<span class="select-arrow"></span>
 									</div>
@@ -106,8 +108,6 @@
 
 								<div class="col-md-2">
 									<div class="form-btn">
-                                        <!--<button type="submit" name="login" class="login100-form-btn">Sign In</button>
-										<button type="submit" class="submit-btn btn btn-sm bg-gradient-secondary btn-round">See your trip</button>-->
                                         <input type="submit" name="See your trip" class="submit-btn btn btn-sm bg-gradient-secondary btn-round">
 									</div>
 								</div>
@@ -122,9 +122,54 @@
   </header>
 
 
+        <div class="container" >
+
+        <!-- Title -->
+        {% if travel %}
+
+            {% for obj in travel %}
+                <br/><br/>
+                <h1>{{ obj.user }} </h1>
+                 <br/><br/>
+                <h1>{{ obj.destination }} </h1>
+                <br/><br/>
+                <h1>{{ obj.start_date }} </h1>
+                <br/><br/>
+                <h1>{{ obj.end_date }} </h1>
+                <br/><br/>
+                <h1>culture = {{ obj.category.culture }} </h1>
+                <h1>beaches = {{ obj.category.beaches }} </h1>
+                <h1>outdoors = {{ obj.category.outdoors }} </h1>
+                <h1>shopping = {{ obj.category.shopping }} </h1>
+                <h1>museums = {{ obj.category.museums }} </h1>
+                <h1>restaurants = {{ obj.category.restaurants }} </h1>
+            {% endfor %}
+        {% endif %}
+
+    </div>
 {% endblock content %}
 
 <!-- Specific JS goes HERE -->
 {% block javascripts %}
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3L3Q5rCMHsMgixN6s6x9Y7vaSOHLSoJ4&libraries=places&callback=initMap" defer></script>
+
+<script>
+
+
+    function initMap() {
+
+        var input_from = document.getElementById('travel_from');
+
+        var autocomplete_from = new google.maps.places.Autocomplete(input_from);
+
+        google.maps.event.addDomListener(input_from, 'keydown', function(e) {
+            if (e.keyCode == 13 && $('.pac-container:visible').length) {
+                e.preventDefault();
+            }
+        });
+    }
+
+
+</script>
 {% endblock javascripts %}

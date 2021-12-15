@@ -9,8 +9,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
-from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp, ItineraryPlanner
-from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, FaqGeneralForm
+from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp, ItineraryPlanner, ItineraryCategory
+from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, \
+    FaqGeneralForm
 
 
 ######################################################################
@@ -21,15 +22,19 @@ def complaints(request):
     html_template = loader.get_template('home/complaints.html')
     return HttpResponse(html_template.render(context, request))
 
+
 def temp(request):
-    pass
+    context = {}
+    html_template = loader.get_template('home/temp.html')
+    return HttpResponse(html_template.render(context, request))
+
 
 def edit_faq(request):
     if request.method == "POST":
         general = FaqGeneralForm(request.POST)
         travel = FaqTravelForm(request.POST)
         form = TempForm(request.POST)
-        if form.is_valid() and general.is_valid() and  travel.is_valid():
+        if form.is_valid() and general.is_valid() and travel.is_valid():
             try:
                 general.save()
                 form.save()
@@ -122,32 +127,38 @@ def contact_us(request):
 
 # @login_required(login_url="/login/")
 def index(request):
+    travel = ItineraryPlanner.objects.all()
     if request.method == "POST":
         planner_form = ItineraryPlannerForm(request.POST)
         category_form = ItineraryCategoryForm(request.POST)
         if planner_form.is_valid() and category_form.is_valid():
-            try:
-                print("%s" % planner_form, "%s" % category_form)
-                if request.user.is_anonymous:
-                    planner_form.user = request.user
-                    planner_form.save()
-                    category_form.save()
-                    print("The User Is >> >> >> >> %s" % request.user)
-                elif request.user.is_authenticated:
-                    new = planner_form.save(commit=False)  # here
-                    new.user = request.user  # here
-                    new.save()  # here
-                    category_form.save()
-                    print("The User Is >> >> >> >> %s" % request.user)
+            print("%s" % planner_form, "%s" % category_form)
 
-                return redirect('')
-            except:
-                pass
+            if request.user.is_anonymous:
+                category = category_form.save()
+                planner = planner_form.save(commit=False)
+                planner.user = None
+                planner.category = category
+                planner_form.save()
+                print("The User Is >> >> >> >> %s" % request.user)
+
+            elif request.user.is_authenticated:
+                category = category_form.save()
+                planner = planner_form.save(commit=False)  # here
+                planner.user = request.user  # here
+                planner.category = category
+                planner.save()  # here
+                print("The User Is >> >> >> >> %s" % request.user)
+
+            return redirect('/')
+
     else:
         planner_form = ItineraryPlannerForm
         category_form = ItineraryCategoryForm
 
-    context = {'planner_form': planner_form, 'category_form': category_form}
+    context = {'planner_form': planner_form,
+               'category_form': category_form,
+               'travel': travel}
     html_template = loader.get_template('home/index.html')
     return HttpResponse(html_template.render(context, request))
 
