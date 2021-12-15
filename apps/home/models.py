@@ -16,7 +16,6 @@ subject_choices = (
 )
 
 class ContactUs(models.Model):
-    pass
     full_name = models.CharField(max_length=200, default="", blank=True)
     email = models.EmailField(max_length=100, default="", blank=True)
     subject = models.CharField(max_length=2,default="", blank=True)
