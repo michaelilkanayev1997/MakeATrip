@@ -5,12 +5,20 @@ from django.contrib.auth.models import User
 import uuid
 
 
+
 ##########################################################################################################
+
+
+##########################################################################################################
+subject_choices = (
+    ('1','General'),
+    ('2', 'Complaint'),
+)
 
 class Contact(models.Model):
     full_name = models.CharField(max_length=200, default="", blank=True)
     email = models.EmailField(max_length=100, default="", blank=True)
-    subject = models.CharField(max_length=200, default="", blank=True)
+    subject = models.CharField(max_length=2,default="", blank=True)
     comment = models.TextField(max_length=500, default="", blank=True)
     created_date = models.DateTimeField(default=datetime.now, blank=True)
     complete = models.BooleanField(default=False)
