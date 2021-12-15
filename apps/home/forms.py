@@ -1,5 +1,5 @@
 from django import forms
-from .models import ContactUs, AboutUs, FAQTravel, FAQGeneral, ItineraryPlanner, ItineraryCategory, Career
+from .models import ContactUs, AboutUs, FAQTravel, FAQGeneral, ItineraryPlanner, ItineraryCategory, Career, PrivacyPolicy
 
 
 class ContactForm(forms.ModelForm):
@@ -55,3 +55,8 @@ class complaintform(forms.ModelForm):
     class Meta:
         model = ContactUs
         fields = ('complete',)
+
+class PrivacyPolicyForm(forms.ModelForm):
+    class Meta:
+        model = PrivacyPolicy
+        fields = "__all__"
