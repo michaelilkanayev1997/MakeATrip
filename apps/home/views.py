@@ -88,6 +88,16 @@ def complaint(request, pk):
             check.complete = True
             check.save()
     elif pk == "system_administrator":
+        complaint = ContactUs.objects.filter(subject='2', complete=0)
+        count = ContactUs.objects.filter(subject='2').count()
+        if request.POST:
+            complete = request.POST["complete"]
+            print(int(complete))
+            check = ContactUs.objects.get(id=int(complete))
+            check.complete = True
+            check.save()
+
+
         
         complaint = ContactUs.objects.filter(subject='2', complete=0)
         count = ContactUs.objects.filter(subject='2').count()
