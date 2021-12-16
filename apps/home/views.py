@@ -2,6 +2,8 @@
 """
 Copyright (c) 2019 - present AppSeed.us
 """
+from datetime import date,timedelta,datetime
+from django.utils import timezone
 from django.views.decorators.csrf import csrf_protect
 from django import template
 from django.contrib.auth.decorators import login_required
@@ -55,7 +57,12 @@ def administrator_complaints(request):
 def complaints(request):
     # complaint = ContactUs.objects.filter(subject='2')
     count = ContactUs.objects.filter(subject='2').count()
-    context = {'asd': complaint,'count': count}
+    count_handled = ContactUs.objects.filter(subject='2',complete='1').count()
+    count_unhandled = ContactUs.objects.filter(subject='2', complete='0').count()
+    count_administrator = ContactUs.objects.filter(subject='2', complete='0',created_date = datetime.now() - timedelta(days=1)).count()
+
+    context = {'asd': complaint,'count': count,'count_handled':count_handled,
+               'count_unhandled':count_unhandled,'count_administrator':count_administrator}
     html_template = loader.get_template('home/complaints.html')
     return HttpResponse(html_template.render(context, request))
 
@@ -63,6 +70,10 @@ def complaint(request, pk):
     if pk == "total_complaints":
         complaint = ContactUs.objects.filter(subject='2')
         count = ContactUs.objects.filter(subject='2').count()
+        count_handled = ContactUs.objects.filter(subject='2', complete='1').count()
+        count_unhandled = ContactUs.objects.filter(subject='2', complete='0').count()
+        count_administrator = ContactUs.objects.filter(subject='2', complete='0',
+                                                       created_date=datetime.now() - timedelta(days=1)).count()
         if request.POST:
             complete = request.POST["complete"]
             print(int(complete))
@@ -72,6 +83,10 @@ def complaint(request, pk):
     elif pk == "complaints_handled":
         complaint = ContactUs.objects.filter(subject='2', complete=1)
         count = ContactUs.objects.filter(subject='2').count()
+        count_handled = ContactUs.objects.filter(subject='2', complete='1').count()
+        count_unhandled = ContactUs.objects.filter(subject='2', complete='0').count()
+        count_administrator = ContactUs.objects.filter(subject='2', complete='0',
+                                                       created_date=datetime.now() - timedelta(days=1)).count()
         if request.POST:
             complete = request.POST["complete"]
             print(int(complete))
@@ -81,6 +96,10 @@ def complaint(request, pk):
     elif pk == "unhandled_complaints":
         complaint = ContactUs.objects.filter(subject='2', complete=0)
         count = ContactUs.objects.filter(subject='2').count()
+        count_handled = ContactUs.objects.filter(subject='2', complete='1').count()
+        count_unhandled = ContactUs.objects.filter(subject='2', complete='0').count()
+        count_administrator = ContactUs.objects.filter(subject='2', complete='0',
+                                                       created_date=datetime.now() - timedelta(days=1)).count()
         if request.POST:
             complete = request.POST["complete"]
             print(int(complete))
@@ -88,27 +107,23 @@ def complaint(request, pk):
             check.complete = True
             check.save()
     elif pk == "system_administrator":
-        complaint = ContactUs.objects.filter(subject='2', complete=0)
+        complaint = ContactUs.objects.filter(subject='2', complete='0',created_date = datetime.now() - timedelta(days=1))
         count = ContactUs.objects.filter(subject='2').count()
+        count_handled = ContactUs.objects.filter(subject='2', complete='1').count()
+        count_unhandled = ContactUs.objects.filter(subject='2', complete='0').count()
+        count_administrator = ContactUs.objects.filter(subject='2', complete='0',
+                                                       created_date=datetime.now() - timedelta(days=1)).count()
         if request.POST:
             complete = request.POST["complete"]
             print(int(complete))
             check = ContactUs.objects.get(id=int(complete))
             check.complete = True
             check.save()
-
 
         
-        complaint = ContactUs.objects.filter(subject='2', complete=0)
-        count = ContactUs.objects.filter(subject='2').count()
-        if request.POST:
-            complete = request.POST["complete"]
-            print(int(complete))
-            check = ContactUs.objects.get(id=int(complete))
-            check.complete = True
-            check.save()
 
-    context = {'complaint': complaint,'count': count}
+    context = {'complaint': complaint,'count': count,
+               'count_handled':count_handled,'count_unhandled':count_unhandled,'count_administrator':count_administrator}
     html_template = loader.get_template('home/complaints.html')
     return HttpResponse(html_template.render(context, request))
 

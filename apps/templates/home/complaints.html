@@ -84,7 +84,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3>{{count_handled}}</h3>
                 <a href="{% url 'complaints' %}complaints_handled">
                   <p>Complaints Handled</p>
                 </a>
@@ -97,7 +97,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                <h3>{{count_unhandled}}</h3>
                 <a href="{% url 'complaints' %}unhandled_complaints">
                   <p>Unhandled Complaints</p>
                 </a>
@@ -109,7 +109,7 @@
                   <!-- small box -->
                   <div class="small-box bg-gradient-warning">
                     <div class="inner">
-                      <h3>65</h3>
+                      <h3>{{count_administrator}}</h3>
                         <a href="{% url 'complaints' %}system_administrator">
                           <p>System administrator</p>
                         </a>
