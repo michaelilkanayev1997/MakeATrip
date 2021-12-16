@@ -53,19 +53,54 @@ def administrator_complaints(request):
 
 @csrf_protect
 def complaints(request):
-    complaint = ContactUs.objects.filter(subject='2')
+    # complaint = ContactUs.objects.filter(subject='2')
     count = ContactUs.objects.filter(subject='2').count()
+    context = {'asd': complaint,'count': count}
+    html_template = loader.get_template('home/complaints.html')
+    return HttpResponse(html_template.render(context, request))
 
-    # user is posting: get edited node, change comment, and save
-    if request.POST:
-        complete = request.POST.get('complete')
-        edited_node = complaint.get(complete=complete)
-        edited_node.save()
+def complaint(request, pk):
+    if pk == "total_complaints":
+        complaint = ContactUs.objects.filter(subject='2')
+        count = ContactUs.objects.filter(subject='2').count()
+        if request.POST:
+            complete = request.POST["complete"]
+            print(int(complete))
+            check = ContactUs.objects.get(id=int(complete))
+            check.complete = True
+            check.save()
+    elif pk == "complaints_handled":
+        complaint = ContactUs.objects.filter(subject='2', complete=1)
+        count = ContactUs.objects.filter(subject='2').count()
+        if request.POST:
+            complete = request.POST["complete"]
+            print(int(complete))
+            check = ContactUs.objects.get(id=int(complete))
+            check.complete = True
+            check.save()
+    elif pk == "unhandled_complaints":
+        complaint = ContactUs.objects.filter(subject='2', complete=0)
+        count = ContactUs.objects.filter(subject='2').count()
+        if request.POST:
+            complete = request.POST["complete"]
+            print(int(complete))
+            check = ContactUs.objects.get(id=int(complete))
+            check.complete = True
+            check.save()
+    elif pk == "system_administrator":
+        
+        complaint = ContactUs.objects.filter(subject='2', complete=0)
+        count = ContactUs.objects.filter(subject='2').count()
+        if request.POST:
+            complete = request.POST["complete"]
+            print(int(complete))
+            check = ContactUs.objects.get(id=int(complete))
+            check.complete = True
+            check.save()
 
     context = {'complaint': complaint,'count': count}
     html_template = loader.get_template('home/complaints.html')
     return HttpResponse(html_template.render(context, request))
-
 
 def temp(request):
     context = {}

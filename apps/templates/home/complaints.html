@@ -69,8 +69,10 @@
             <div class="small-box bg-info">
               <div class="inner">
                 <h3>{{count}}</h3>
+                <a href="{% url 'complaints' %}total_complaints">
+                  <p>Total complaints</p>
+                </a>
 
-                <p>Total complaints</p>
               </div>
               <div class="icon">
               </div>
@@ -83,7 +85,9 @@
             <div class="small-box bg-success">
               <div class="inner">
                 <h3>53<sup style="font-size: 20px">%</sup></h3>
-                <p>Complaints handled</p>
+                <a href="{% url 'complaints' %}complaints_handled">
+                  <p>Complaints Handled</p>
+                </a>
               </div>
 
             </div>
@@ -94,12 +98,14 @@
             <div class="small-box bg-danger">
               <div class="inner">
                 <h3>65</h3>
-                <p>Unhandled complaints</p>
+                <a href="{% url 'complaints' %}unhandled_complaints">
+                  <p>Unhandled Complaints</p>
+                </a>
               </div>
             </div>
           </div>
           <!-- ./col -->
-              <div class="col-lg-3 col-6">
+          <div class="col-lg-3 col-6">
                   <!-- small box -->
                   <div class="small-box bg-gradient-warning">
                     <div class="inner">
@@ -160,7 +166,7 @@
               {% csrf_token %}
 
               	<label>
-                  <input type="checkbox" name="complete">
+                  <input type="checkbox" name="complete" value="{{ complaint.id }}" id="{{ complaint.id }}">
                   <span>Done</span>
                 </label>
               <div class="form-btn">

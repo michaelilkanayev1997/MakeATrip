@@ -19,7 +19,7 @@ class ContactUs(models.Model):
     email = models.EmailField(max_length=100, default="", blank=True)
     subject = models.CharField(max_length=9, choices=SUBJECT_CHOICES, default='1')
     comment = models.TextField(max_length=200, default="", blank=True)
-    created_date = models.DateTimeField(default=datetime.now, blank=True)
+    created_date = models.DateField(default=datetime.now, blank=True)
     complete = models.BooleanField(default=False)
 
     class Meta:
