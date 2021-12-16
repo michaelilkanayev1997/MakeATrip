@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0025_edit_ContactUs'),
+        ('home', '0026_add_review'),
     ]
 
     operations = [
