@@ -14,7 +14,7 @@ from django.shortcuts import render, redirect
 from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, ContactUs, Temp, ItineraryPlanner, ItineraryCategory
 from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, \
     FaqGeneralForm
-from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp, ItineraryPlanner, Career, PrivacyPolicy, Review #users
+from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp, ItineraryPlanner, Career, PrivacyPolicy, Review ,users
 from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, FaqGeneralForm,administrator_complaintsForm,complaintform,ReviewpForm #usersForm
 
 
@@ -310,9 +310,7 @@ def recent_trips(request):
 
 
 def usage(request):
-    data = "Current Data"
-
-    #users = users.objects.all()
+    type_user = users.objects.all()
 
     #if request.method == 'POST':
       #  form = usersForm(request.POST)
@@ -323,7 +321,7 @@ def usage(request):
        # form = usersForm()
 
     context = {
-        "data": data,
+        "type_user": type_user,
 
 
     }

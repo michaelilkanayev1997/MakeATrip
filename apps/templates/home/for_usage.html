@@ -35,10 +35,10 @@
                 var myChart = new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: ['user' ,'admin','Green'  ],
+                        labels: [{% for users in type_user %}  '{{ users.Types_users }}',  {% endfor %} ],
                         datasets: [{
                             label: '# of users',
-                            data: [12,9,20],
+                            data: [{% for users in type_user %}  {{users.num_users }},  {% endfor %}],
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.8)',
                                 'rgba(54, 162, 235, 0.8)',
