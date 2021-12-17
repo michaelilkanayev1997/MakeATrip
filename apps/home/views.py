@@ -22,11 +22,15 @@ from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, Iti
 #                          Views Functions                           #
 ######################################################################
 @csrf_protect
-def Monthly_Complaints_report(request):
+def Monthly_inquiries_report(request):
+
+    report = ContactUs.objects.all()
+
     count_complaints = ContactUs.objects.filter(subject='2').count()
     count_general = ContactUs.objects.filter(subject='1').count()
-    context={'page':Monthly_Complaints_report,'count_complaints':count_complaints,'count_general':count_general}
-    html_template = loader.get_template('home/Monthly_Complaints_report.html')
+
+    context={'page':Monthly_inquiries_report,'count_complaints':count_complaints,'count_general':count_general,'report':report}
+    html_template = loader.get_template('home/Monthly_inquiries_report.html')
     return HttpResponse(html_template.render(context, request))
 
 def review_project(request):
@@ -48,7 +52,7 @@ def complaints(request):
     count = ContactUs.objects.filter(subject='2').count()
     count_handled = ContactUs.objects.filter(subject='2',complete='1').count()
     count_unhandled = ContactUs.objects.filter(subject='2', complete='0').count()
-    count_administrator = ContactUs.objects.filter(subject='2', complete='0',created_date = datetime.now() - timedelta(days=1)).count()
+    count_administrator = ContactUs.objects.filter(subject='2', complete='0',created_date = datetime.now() - timedelta(days=7)).count()
 
     context = {'asd': complaint,'count': count,'count_handled':count_handled,
                'count_unhandled':count_unhandled,'count_administrator':count_administrator}
@@ -62,7 +66,7 @@ def complaint(request, pk):
         count_handled = ContactUs.objects.filter(subject='2', complete='1').count()
         count_unhandled = ContactUs.objects.filter(subject='2', complete='0').count()
         count_administrator = ContactUs.objects.filter(subject='2', complete='0',
-                                                       created_date=datetime.now() - timedelta(days=1)).count()
+                                                       created_date=datetime.now() - timedelta(days=7)).count()
         if request.POST:
             complete = request.POST["complete"]
             print(int(complete))
@@ -75,7 +79,7 @@ def complaint(request, pk):
         count_handled = ContactUs.objects.filter(subject='2', complete='1').count()
         count_unhandled = ContactUs.objects.filter(subject='2', complete='0').count()
         count_administrator = ContactUs.objects.filter(subject='2', complete='0',
-                                                       created_date=datetime.now() - timedelta(days=1)).count()
+                                                       created_date=datetime.now() - timedelta(days=7)).count()
         if request.POST:
             complete = request.POST["complete"]
             print(int(complete))
@@ -88,7 +92,7 @@ def complaint(request, pk):
         count_handled = ContactUs.objects.filter(subject='2', complete='1').count()
         count_unhandled = ContactUs.objects.filter(subject='2', complete='0').count()
         count_administrator = ContactUs.objects.filter(subject='2', complete='0',
-                                                       created_date=datetime.now() - timedelta(days=1)).count()
+                                                       created_date=datetime.now() - timedelta(days=7)).count()
         if request.POST:
             complete = request.POST["complete"]
             print(int(complete))
@@ -96,12 +100,12 @@ def complaint(request, pk):
             check.complete = True
             check.save()
     elif pk == "system_administrator":
-        complaint = ContactUs.objects.filter(subject='2', complete='0',created_date = datetime.now() - timedelta(days=1))
+        complaint = ContactUs.objects.filter(subject='2', complete='0',created_date = datetime.now() - timedelta(days=7))
         count = ContactUs.objects.filter(subject='2').count()
         count_handled = ContactUs.objects.filter(subject='2', complete='1').count()
         count_unhandled = ContactUs.objects.filter(subject='2', complete='0').count()
         count_administrator = ContactUs.objects.filter(subject='2', complete='0',
-                                                       created_date=datetime.now() - timedelta(days=1)).count()
+                                                       created_date=datetime.now() - timedelta(days=7)).count()
         if request.POST:
             complete = request.POST["complete"]
             print(int(complete))
