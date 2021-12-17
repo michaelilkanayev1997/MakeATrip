@@ -159,3 +159,14 @@ class Review(models.Model):
     def __str__(self):
         return self.feedback
     #############################################################################
+#####################################################################################################
+#for_usage
+class users(models.Model):
+
+    Types_users = models.CharField(max_length=100, null=False, blank=False)
+    num_users = models.IntegerField()
+
+    def __str__(self):
+        return f'{self.Types_users} - {self.num_users}'
+
+#####################################################################################################

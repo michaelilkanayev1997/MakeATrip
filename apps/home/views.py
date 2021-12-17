@@ -14,8 +14,8 @@ from django.shortcuts import render, redirect
 from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, ContactUs, Temp, ItineraryPlanner, ItineraryCategory
 from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, \
     FaqGeneralForm
-from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp, ItineraryPlanner, Career, PrivacyPolicy, Review
-from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, FaqGeneralForm,administrator_complaintsForm,complaintform,ReviewpForm
+from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp, ItineraryPlanner, Career, PrivacyPolicy, Review #users
+from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, FaqGeneralForm,administrator_complaintsForm,complaintform,ReviewpForm #usersForm
 
 
 ######################################################################
@@ -307,6 +307,28 @@ def recent_trips(request):
     context = {'segment': 'recent_trips'}
     html_template = loader.get_template('home/recent_trips.html')
     return HttpResponse(html_template.render(context, request))
+
+
+def usage(request):
+    data = "Current Data"
+
+    #users = users.objects.all()
+
+    #if request.method == 'POST':
+      #  form = usersForm(request.POST)
+        #if form.is_valid():
+         #   form.save()
+          #  return redirect('index')
+   # else:
+       # form = usersForm()
+
+    context = {
+        "data": data,
+
+
+    }
+
+    return render(request, 'home/for_usage.html', context)
 
 ######################################################################
 #                     System Functions & Classes                     #
