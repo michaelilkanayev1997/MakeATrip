@@ -21,6 +21,13 @@ from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, Iti
 ######################################################################
 #                          Views Functions                           #
 ######################################################################
+@csrf_protect
+def Monthly_Complaints_report(request):
+    count_complaints = ContactUs.objects.filter(subject='2').count()
+    count_general = ContactUs.objects.filter(subject='1').count()
+    context={'page':Monthly_Complaints_report,'count_complaints':count_complaints,'count_general':count_general}
+    html_template = loader.get_template('home/Monthly_Complaints_report.html')
+    return HttpResponse(html_template.render(context, request))
 
 def review_project(request):
     if request.method == "POST":
