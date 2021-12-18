@@ -14,6 +14,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
 from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, ContactUs, Temp, ItineraryPlanner, ItineraryCategory
 from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, \
     FaqGeneralForm
@@ -334,14 +335,6 @@ def usage(request):
     }
 
     return render(request, 'home/for_usage.html', context)
-
-
-def report_most_popular(request):
-    # data = Products.objects.values('productline').annotate(Number=Count('productline')).filter(Number__gt=1)
-    most_popular = ItineraryPlanner.objects.values('destination').annotate(Number=Count('destination')).filter(Number__gt=1)
-    context = {'most_popular': most_popular}
-    html_template = loader.get_template('home/report_most_popular.html')
-    return HttpResponse(html_template.render(context, request))
 
 ######################################################################
 #                     System Functions & Classes                     #
