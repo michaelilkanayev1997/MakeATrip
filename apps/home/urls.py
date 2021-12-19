@@ -30,8 +30,8 @@ urlpatterns = [
     #path('usage/', views.usage, name="usage"),
     path('system-usages/', views.system_usages, name="system-usages"),
     # re_path(r'^.*\.*', views.pages, name='pages'),
-    path('for_usage/', views.usage, name="for_usage"),
-    path('popular/', views.report_most_popular, name="popular"),
+   # path('for_usage/', views.usage, name="for_usage"),
+    #path('popular/', views.report_most_popular, name="popular"),
 
 
 
