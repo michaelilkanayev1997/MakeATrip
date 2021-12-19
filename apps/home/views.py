@@ -2,10 +2,7 @@
 """
 Copyright (c) 2019 - present AppSeed.us
 """
-from datetime import date,timedelta,datetime
-from itertools import count
-
-from django.db.models import Count
+from datetime import date, timedelta, datetime
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_protect
 from django import template
@@ -18,8 +15,10 @@ from django.contrib.auth.models import User
 from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, ContactUs, Temp, ItineraryPlanner, ItineraryCategory
 from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, \
     FaqGeneralForm
-from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp, ItineraryPlanner, Career, PrivacyPolicy, Review ,users
-from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, FaqGeneralForm,administrator_complaintsForm,complaintform,ReviewpForm #usersForm
+from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp, ItineraryPlanner, Career, PrivacyPolicy, Review, \
+    users
+from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, \
+    FaqGeneralForm, administrator_complaintsForm, complaintform, ReviewpForm  # usersForm
 
 
 ######################################################################
@@ -27,15 +26,16 @@ from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, Iti
 ######################################################################
 @csrf_protect
 def Monthly_inquiries_report(request):
-
     report = ContactUs.objects.all()
 
     count_complaints = ContactUs.objects.filter(subject='2').count()
     count_general = ContactUs.objects.filter(subject='1').count()
 
-    context={'page':Monthly_inquiries_report,'count_complaints':count_complaints,'count_general':count_general,'report':report}
+    context = {'page': Monthly_inquiries_report, 'count_complaints': count_complaints, 'count_general': count_general,
+               'report': report}
     html_template = loader.get_template('home/Monthly_inquiries_report.html')
     return HttpResponse(html_template.render(context, request))
+
 
 def review_project(request):
     if request.method == "POST":
@@ -54,14 +54,16 @@ def review_project(request):
 def complaints(request):
     # complaint = ContactUs.objects.filter(subject='2')
     count = ContactUs.objects.filter(subject='2').count()
-    count_handled = ContactUs.objects.filter(subject='2',complete='1').count()
+    count_handled = ContactUs.objects.filter(subject='2', complete='1').count()
     count_unhandled = ContactUs.objects.filter(subject='2', complete='0').count()
-    count_administrator = ContactUs.objects.filter(subject='2', complete='0',created_date = datetime.now() - timedelta(days=7)).count()
+    count_administrator = ContactUs.objects.filter(subject='2', complete='0',
+                                                   created_date=datetime.now() - timedelta(days=7)).count()
 
-    context = {'asd': complaint,'count': count,'count_handled':count_handled,
-               'count_unhandled':count_unhandled,'count_administrator':count_administrator}
+    context = {'asd': complaint, 'count': count, 'count_handled': count_handled,
+               'count_unhandled': count_unhandled, 'count_administrator': count_administrator}
     html_template = loader.get_template('home/complaints.html')
     return HttpResponse(html_template.render(context, request))
+
 
 def complaint(request, pk):
     if pk == "total_complaints":
@@ -104,7 +106,7 @@ def complaint(request, pk):
             check.complete = True
             check.save()
     elif pk == "system_administrator":
-        complaint = ContactUs.objects.filter(subject='2', complete='0',created_date = datetime.now() - timedelta(days=7))
+        complaint = ContactUs.objects.filter(subject='2', complete='0', created_date=datetime.now() - timedelta(days=7))
         count = ContactUs.objects.filter(subject='2').count()
         count_handled = ContactUs.objects.filter(subject='2', complete='1').count()
         count_unhandled = ContactUs.objects.filter(subject='2', complete='0').count()
@@ -117,10 +119,9 @@ def complaint(request, pk):
             check.complete = True
             check.save()
 
-        
-
-    context = {'complaint': complaint,'count': count,
-               'count_handled':count_handled,'count_unhandled':count_unhandled,'count_administrator':count_administrator}
+    context = {'complaint': complaint, 'count': count,
+               'count_handled': count_handled, 'count_unhandled': count_unhandled,
+               'count_administrator': count_administrator}
     html_template = loader.get_template('home/complaints.html')
     return HttpResponse(html_template.render(context, request))
 
@@ -237,11 +238,13 @@ def job_detail(request, pk):
     html_template = loader.get_template('home/job_detail.html')
     return HttpResponse(html_template.render(context, request))
 
+
 def privacy_policy(request):
     privacy = PrivacyPolicy.objects.all()
     context = {'privacy': privacy}
     html_template = loader.get_template('home/privacy_policy.html')
     return HttpResponse(html_template.render(context, request))
+
 
 # @login_required(login_url="/login/")
 def index(request):
@@ -306,10 +309,12 @@ def pages(request):
         html_template = loader.get_template('home/page-500.html')
         return HttpResponse(html_template.render(context, request))
 
+
 def to_do_list(request):
     context = {'segment': 'to_do_list'}
     html_template = loader.get_template('home/to_do_list.html')
     return HttpResponse(html_template.render(context, request))
+
 
 def recent_trips(request):
     context = {'segment': 'recent_trips'}
@@ -317,24 +322,25 @@ def recent_trips(request):
     return HttpResponse(html_template.render(context, request))
 
 
-def usage(request):
-    type_user = users.objects.all()
-
-    #if request.method == 'POST':
-      #  form = usersForm(request.POST)
-        #if form.is_valid():
-         #   form.save()
-          #  return redirect('index')
-   # else:
-       # form = usersForm()
+def system_usages(request):
+    admins = User.objects.all()
+    users = User.objects.all()
+    """count_users = user.count()
+    count_admin = admin.count()"""
+    # if request.method == 'POST':
+    #  form = usersForm(request.POST)
+    # if form.is_valid():
+    #   form.save()
+    #  return redirect('index')
+    # else:
+    # form = usersForm()
 
     context = {
-        "type_user": type_user,
-
-
+        "user": users,
+        "admins": admins,
     }
 
-    return render(request, 'home/for_usage.html', context)
+    return render(request, 'home/system_usages.html', context)
 
 ######################################################################
 #                     System Functions & Classes                     #
