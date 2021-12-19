@@ -29,6 +29,7 @@ urlpatterns = [
     path('Monthly_inquiries_report/', views.Monthly_inquiries_report, name="Monthly_inquiries_report"),
     #path('usage/', views.usage, name="usage"),
     path('for_usage/', views.usage, name="for_usage"),
+    path('popular/', views.report_most_popular, name="popular"),
     # re_path(r'^.*\.*', views.pages, name='pages'),
 
 

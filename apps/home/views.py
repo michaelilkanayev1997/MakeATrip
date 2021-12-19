@@ -3,6 +3,9 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 from datetime import date,timedelta,datetime
+from itertools import count
+
+from django.db.models import Count
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_protect
 from django import template
@@ -331,6 +334,14 @@ def usage(request):
     }
 
     return render(request, 'home/for_usage.html', context)
+
+
+def report_most_popular(request):
+    # data = Products.objects.values('productline').annotate(Number=Count('productline')).filter(Number__gt=1)
+    most_popular = ItineraryPlanner.objects.values('destination').annotate(Number=Count('destination')).filter(Number__gt=1)
+    context = {'most_popular': most_popular}
+    html_template = loader.get_template('home/report_most_popular.html')
+    return HttpResponse(html_template.render(context, request))
 
 ######################################################################
 #                     System Functions & Classes                     #
