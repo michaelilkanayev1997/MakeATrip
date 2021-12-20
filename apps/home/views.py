@@ -2,26 +2,17 @@
 """
 Copyright (c) 2019 - present AppSeed.us
 """
-from datetime import date,timedelta,datetime
-from itertools import count
+from datetime import date, timedelta, datetime
 
 from django.db.models import Count
-from django.utils import timezone
 from django.views.decorators.csrf import csrf_protect
 from django import template
-from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
-from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, ContactUs, Temp, ItineraryPlanner, ItineraryCategory
-from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, \
-    FaqGeneralForm
-from .models import FAQGeneral, FAQTravel, FAQ, AboutUs, Contact, Temp, ItineraryPlanner, Career, PrivacyPolicy, Review, \
-    users
-from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, ItineraryCategoryForm, FaqTravelForm, \
-    FaqGeneralForm, administrator_complaintsForm, complaintform, ReviewpForm  # usersForm
+from .models import *
+from .forms import *
 
 
 ######################################################################
@@ -29,7 +20,6 @@ from .forms import ContactForm, TempForm, AboutUsForm, ItineraryPlannerForm, Iti
 ######################################################################
 @csrf_protect
 def Monthly_inquiries_report(request):
-
     report = ContactUs.objects.all()
 
     count_complaints = ContactUs.objects.filter(subject='2').count()
@@ -67,6 +57,7 @@ def complaints(request):
                'count_unhandled': count_unhandled, 'count_administrator': count_administrator}
     html_template = loader.get_template('home/complaints.html')
     return HttpResponse(html_template.render(context, request))
+
 
 def complaint(request, pk):
     if pk == "total_complaints":
@@ -127,6 +118,7 @@ def complaint(request, pk):
                'count_administrator': count_administrator}
     html_template = loader.get_template('home/complaints.html')
     return HttpResponse(html_template.render(context, request))
+
 
 def temp(request):
     context = {}
@@ -229,11 +221,13 @@ def contact_us(request):
     html_template = loader.get_template('home/contact-us.html')
     return HttpResponse(html_template.render(context, request))
 
+
 def career(request):
     career = Career.objects.all()
     context = {'career': career}
     html_template = loader.get_template('home/career.html')
     return HttpResponse(html_template.render(context, request))
+
 
 def job_detail(request, pk):
     career = Career.objects.get(id=pk)
@@ -241,11 +235,13 @@ def job_detail(request, pk):
     html_template = loader.get_template('home/job_detail.html')
     return HttpResponse(html_template.render(context, request))
 
+
 def privacy_policy(request):
     privacy = PrivacyPolicy.objects.all()
     context = {'privacy': privacy}
     html_template = loader.get_template('home/privacy_policy.html')
     return HttpResponse(html_template.render(context, request))
+
 
 # @login_required(login_url="/login/")
 def index(request):
@@ -346,7 +342,8 @@ def system_usages(request):
 
 def report_most_popular(request):
     # data = Products.objects.values('productline').annotate(Number=Count('productline')).filter(Number__gt=1)
-    most_popular = ItineraryPlanner.objects.values('destination').annotate(Number=Count('destination')).filter(Number__gt=1)
+    most_popular = ItineraryPlanner.objects.values('destination').annotate(Number=Count('destination')).filter(
+        Number__gt=1)
     context = {'most_popular': most_popular}
     html_template = loader.get_template('home/report_most_popular.html')
     return HttpResponse(html_template.render(context, request))
