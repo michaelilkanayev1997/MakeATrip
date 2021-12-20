@@ -118,35 +118,38 @@
 				</div>
 			</div>
     </div>
-
   </header>
-        <div class="container" >
-
-        <!-- Title -->
-        {% if travel %}
-
-            {% for obj in travel %}
-                <br/><br/>
-                <h1>{{ obj.user }} </h1>
-                 <br/><br/>
-                <h1>{{ obj.destination }} </h1>
-                <br/><br/>
-                <h1>{{ obj.start_date }} </h1>
-                <br/><br/>
-                <h1>{{ obj.end_date }} </h1>
-                <br/><br/>
-                <h1>culture = {{ obj.category.culture }} </h1>
-                <h1>beaches = {{ obj.category.beaches }} </h1>
-                <h1>outdoors = {{ obj.category.outdoors }} </h1>
-                <h1>shopping = {{ obj.category.shopping }} </h1>
-                <h1>museums = {{ obj.category.museums }} </h1>
-                <h1>restaurants = {{ obj.category.restaurants }} </h1>
-            {% endfor %}
-        {% endif %}
-
+    <section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="row text-center my-sm-5 mt-5">
+        <div class="col-lg-6 mx-auto">
+          <h2 class="">Trending destinations</h2>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row mt-4">
+            {% for i in '0123456789' %}
+          <div class="col-md-4">
+            <a href="">
+              <div class="card move-on-hover">
+                <img class="w-100" src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="">
+              </div>
+              <div class="mt-2 ms-2">
+                <h6 class="mb-0">London</h6>
+              </div>
+            </a>
+          </div>
+            {% endfor %}
 
-
+        </div>
+      </div>
+    </div>
+</section>
 {% endblock content %}
 
 <!-- Specific JS goes HERE -->
