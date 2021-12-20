@@ -12,6 +12,7 @@ from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
 
+
 from .models import *
 from .forms import *
 
