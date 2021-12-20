@@ -70,7 +70,7 @@ def complaint(request, pk):
         count_handled = ContactUs.objects.filter(subject='2', complete='1').count()
         count_unhandled = ContactUs.objects.filter(subject='2', complete='0').count()
         count_administrator = ContactUs.objects.filter(subject='2', complete='0',
-                                                       created_date=datetime.now() - timedelta(days=7)).count()
+                                                       created_date__range=(maximum_days, earlier)).count()
         if request.POST:
             complete = request.POST["complete"]
             print(int(complete))
@@ -83,7 +83,7 @@ def complaint(request, pk):
         count_handled = ContactUs.objects.filter(subject='2', complete='1').count()
         count_unhandled = ContactUs.objects.filter(subject='2', complete='0').count()
         count_administrator = ContactUs.objects.filter(subject='2', complete='0',
-                                                       created_date=datetime.now() - timedelta(days=7)).count()
+                                                       created_date__range=(maximum_days, earlier)).count()
         if request.POST:
             complete = request.POST["complete"]
             print(int(complete))
