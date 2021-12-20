@@ -27,10 +27,8 @@ urlpatterns = [
     path('recent_trips/', views.recent_trips, name="recent_trips"),
     path('review/', views.review_project, name="review"),
     path('Monthly_inquiries_report/', views.Monthly_inquiries_report, name="Monthly_inquiries_report"),
-    #path('usage/', views.usage, name="usage"),
     path('system-usages/', views.system_usages, name="system-usages"),
     path('popular/', views.report_most_popular, name="popular"),
-    path('system-usages/', views.system_usages, name="system-usages"),
     # re_path(r'^.*\.*', views.pages, name='pages'),
 
 
