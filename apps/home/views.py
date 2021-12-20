@@ -3,7 +3,7 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 from datetime import date, timedelta, datetime
-
+import datetime
 from django.db.models import Count
 from django.views.decorators.csrf import csrf_protect
 from django import template
@@ -11,7 +11,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
-
 
 from .models import *
 from .forms import *
@@ -322,12 +321,28 @@ def recent_trips(request):
 
 
 def system_usages(request):
-    users = User.objects.all()
+    admins = User.objects.filter(is_superuser=True)
+    users = User.objects.filter(is_superuser=False)
 
+    lable = [admins, users]
+    data = [admins.count(), users.count()]
     context = {
-        "users": users,
+        "lable": lable,
+        "data": data,
     }
+    return render(request, 'home/system_usages.html', context)
 
+
+def system_usages_by_month(request, pk):
+    admins = User.objects.filter(is_superuser=True)
+    users = User.objects.filter(is_superuser=False)
+
+    lable = [admins, users]
+    data = [admins.count(), users.count()]
+    context = {
+        "lable": lable,
+        "data": data,
+    }
     return render(request, 'home/system_usages.html', context)
 
 

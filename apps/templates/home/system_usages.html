@@ -58,27 +58,8 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-md-6">
-          <div class="card card-primary">
-            <div class="card-header">
-              <h3 class="card-title"> System Usages</h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                  <i class="fas fa-minus"></i>
-                </button>
-              </div>
-            </div>
-            <div class="card-body">
-            <div class="row mt-5">
-            <!-- Graph -->
-                <canvas id="myChart" width="400" height="250"></canvas>
 
-              </div>
-              </div>
-
-            </div>
-            </div>
-        <div class="col-md-6">
+       <div class="col-md-6">
           <div class="card card-primary">
             <div class="card-header">
               <h3 class="card-title"> System Usages Report</h3>
@@ -97,6 +78,30 @@
 
             </div>
             </div>
+      {% if lable and data %}
+        <div class="col-md-6">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title"> System Usages</h3>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+            <div class="row mt-5">
+            <!-- Graph -->
+
+                <canvas id="myChart" width="400" height="250"></canvas>
+
+              </div>
+              </div>
+
+            </div>
+            </div>
+      {% endif %}
+
       </div>
 
     </section>
@@ -124,10 +129,9 @@
   var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
-          labels: [{% for user in users %}  '{{ user.username }}',  {% endfor %}],
+          labels: ['Admins', 'Users'],
           datasets: [{
-              label: '# of Users',
-              data: [{% for user in users %}  {{ user.id }},  {% endfor %}],
+              data: [{% for user in data %}  {{ user }},  {% endfor %}],
               backgroundColor: [
                   'rgba(255, 99, 132, 0.8)',
                   'rgba(54, 162, 235, 0.8)',
@@ -150,13 +154,6 @@
               borderWidth: 2
           }]
       },
-      options: {
-          scales: {
-              y: {
-                  beginAtZero: true
-              }
-          }
-      }
   });
   </script>
 {% endblock javascripts %}
