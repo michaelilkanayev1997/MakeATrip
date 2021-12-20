@@ -322,28 +322,16 @@ def recent_trips(request):
 
 
 def system_usages(request):
-    admins = User.objects.all()
     users = User.objects.all()
-    """count_users = user.count()
-    count_admin = admin.count()"""
-    # if request.method == 'POST':
-    #  form = usersForm(request.POST)
-    # if form.is_valid():
-    #   form.save()
-    #  return redirect('index')
-    # else:
-    # form = usersForm()
 
     context = {
-        "user": users,
-        "admins": admins,
+        "users": users,
     }
 
     return render(request, 'home/system_usages.html', context)
 
 
 def report_most_popular(request):
-    # data = Products.objects.values('productline').annotate(Number=Count('productline')).filter(Number__gt=1)
     most_popular = ItineraryPlanner.objects.values('destination').annotate(Number=Count('destination')).filter(
         Number__gt=1)
     context = {'most_popular': most_popular}
