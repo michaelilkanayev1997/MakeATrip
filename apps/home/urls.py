@@ -30,6 +30,8 @@ urlpatterns = [
     path('system-usages/', views.system_usages, name="system-usages"),
     path('system-usages/<str:pk>/', views.system_usages_by_month, name="system-usages"),
     path('popular/', views.report_most_popular, name="popular"),
+    path('employees-report/', views.employees_report, name="employees-report"),
+
     # re_path(r'^.*\.*', views.pages, name='pages'),
 
 
