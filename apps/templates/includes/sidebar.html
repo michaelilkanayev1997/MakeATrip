@@ -34,35 +34,6 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-header">MANAGE</li>
-          <li class="nav-item has-treeview {% if 'charts' in segment %} menu-open {% endif %}">
-            <a href="#" class="nav-link {% if 'charts' in segment %} active {% endif %}">
-              <i class="nav-icon fas fa-chart-pie"></i>
-              <p>
-                Charts
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/charts-chartjs.html" class="nav-link {% if 'charts-chartjs' in segment %} active {% endif %}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>ChartJS</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/charts-flot.html" class="nav-link {% if 'charts-flot' in segment %} active {% endif %}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Flot</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/charts-inline.html" class="nav-link {% if 'charts-inline' in segment %} active {% endif %}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inline</p>
-                </a>
-              </li>
-            </ul>
-          </li>
           <li class="nav-item has-treeview {% if 'forms-' in segment %} menu-open {% endif %}">
             <a href="#" class="nav-link {% if 'forms-' in segment %} active {% endif %}">
               <i class="nav-icon fas fa-edit"></i>
@@ -81,25 +52,19 @@
               <li class="nav-item">
                 <a href="{% url 'Monthly_inquiries_report' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Monthly inquiries report</p>
+                  <p>Monthly Inquiries Report</p>
                 </a>
               </li>
                <li class="nav-item">
                 <a href="{% url 'system-usages' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>usage report</p>
+                  <p>Usage Report</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="/forms-editors.html" class="nav-link {% if 'forms-editors' in segment %} active {% endif %}">
+               <li class="nav-item">
+                <a href="{% url 'popular' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Editors</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/forms-validation.html" class="nav-link {% if 'forms-validation' in segment %} active {% endif %}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Validation</p>
+                  <p>Most Popular Report</p>
                 </a>
               </li>
             </ul>
