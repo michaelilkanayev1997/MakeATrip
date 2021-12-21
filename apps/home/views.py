@@ -364,6 +364,21 @@ def report_most_popular(request):
     html_template = loader.get_template('home/report_most_popular.html')
     return HttpResponse(html_template.render(context, request))
 
+
+def employees_report(request):
+    admins = User.objects.filter(is_superuser=True)
+
+    lable = [admins]
+    data = [admins]
+    context = {
+        "lable": lable,
+        "data": data,
+        "admins": admins,
+    }
+    return render(request, 'home/employees_report.html', context)
+
+
+
 ######################################################################
 #                     System Functions & Classes                     #
 ######################################################################
