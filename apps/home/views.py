@@ -351,9 +351,16 @@ def system_usages_by_month(request, pk):
 
 
 def report_most_popular(request):
-    most_popular = ItineraryPlanner.objects.values('destination').annotate(Number=Count('destination')).filter(
+    destination = ItineraryPlanner.objects.values('destination').annotate(Number=Count('destination')).filter(
         Number__gt=1)
-    context = {'most_popular': most_popular}
+
+    lable = [destination]
+    data = [destination]
+    context = {
+        "lable": lable,
+        "data": data,
+        "destination": destination,
+    }
     html_template = loader.get_template('home/report_most_popular.html')
     return HttpResponse(html_template.render(context, request))
 
