@@ -1,58 +1,59 @@
-{% extends 'layouts/base-travel.html' %}
-
-{% block title %} Modals {% endblock title %}
-
-<!-- Specific CSS goes HERE -->
-{% block stylesheets %}{% endblock stylesheets %}
-
-{% block body_class %} modals-sections {% endblock body_class %}
-
-{% block content %}
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <div class="container mt-5">
-  <div class="col-md-4">
-    <!-- Button trigger modal -->
-    <button type="button" class="btn bg-gradient-success btn-block mb-3" data-bs-toggle="modal" data-bs-target="#exampleModalMessage">
-      Message Modal
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalMessage" tabindex="-1" role="dialog" aria-labelledby="exampleModalMessageTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">New message to @CT</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Recipient:</label>
-                <input type="text" class="form-control" value="Creative Tim" id="recipient-name">
-              </div>
-              <div class="form-group">
-                <label for="message-text" class="col-form-label">Message:</label>
-                <textarea class="form-control" id="message-text"></textarea>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn bg-gradient-primary">Send message</button>
-          </div>
+  <div class="container">
+    <div class="row">
+      <div class="row text-center my-sm-5 mt-5">
+        <div class="col-lg-6 mx-auto">
+          <h2 class="">Trending destinations</h2>
         </div>
       </div>
     </div>
+    <div class="col-lg-offset-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="tab-content">
+            <div class="timeline timeline-inverse">
+                {% for i in '01' %}
+                <!-- Date -->
+              <div class="time-label">
+                <span class="bg-danger">
+                  10 Feb. 2014
+                </span>
+              </div>
+                <!-- content -->
+                {% for i in '01' %}
+              <div>
+                <i class="fas fa-envelope bg-primary"></i>
+
+                <div class="timeline-item">
+                  <span class="time"><i class="far fa-clock"></i> 5 min Driving</span>
+                  <span class="time"><i class="far fa-clock"></i> 10 min Walking</span>
+
+                  <h3 class="timeline-header"><a href="#">Trip Name</a> Trip short details</h3>
+                      <div class="row mb-3">
+                        <!-- /.col -->
+                        <div class="col-sm-6">
+                          <div class="row">
+                            <!-- /.col -->
+                            <div class="col-sm-6">
+                              <img class="img-fluid mb-3" src="/static/assets/img/photo4.jpg" alt="Photo">
+                              <img class="img-fluid" src="/static/assets/img/photo1.png" alt="Photo">
+                            </div>
+                            <!-- /.col -->
+                          </div>
+                          <!-- /.row -->
+                        </div>
+                        <!-- /.col -->
+                      </div>
+                  <div class="timeline-body">
+                    trip details
+                  </div>
+                </div>
+              </div>
+                {% endfor %}
+                {% endfor %}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
-  </div>
-
-{% endblock content %}
-
-<!-- Specific JS goes HERE --> 
-{% block javascripts %}
-
-  <script src="/static/assets/js/soft-design-system.min.js?v=1.0.1" type="text/javascript"></script>
-
-{% endblock javascripts %}

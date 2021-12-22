@@ -378,6 +378,12 @@ def employees_report(request):
     return render(request, 'home/employees_report.html', context)
 
 
+def trip(request):
+    context = {'segment': 'terms-of-use'}
+    html_template = loader.get_template('home/trip.html')
+    return HttpResponse(html_template.render(context, request))
+
+
 
 ######################################################################
 #                     System Functions & Classes                     #
