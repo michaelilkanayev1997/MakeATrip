@@ -64,11 +64,52 @@
       </div>
     </div>
   </div>
+ <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+          <div class="col-sm-6">
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+      </div>
+    </section>
+ <!-- Main content -->
+      <section class="content">
+        <table class="table table-dark table-striped">
+    <thead>
 
+      <tr>
+        <th scope="col">feedback</th>
+        <th scope="col">comment</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% if feedback %}
+        {% for feedback in feedback %}
+          <tr>
+            <td>{{ feedback.feedback }}</td>
+            <td>{{ feedback.comment }}</td>
+          </tr>
+        {% endfor %}
+    {% endif %}
+    </tbody>
+  </table>
+      </section>
+    <!-- /.content -->
+
+  </div>
 
 {% endblock content %}
 
 {% block javascripts %}
+  <!-- jQuery -->
+  <script src="/static/assets/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="/static/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
 
   <script src="/static/assets/js/soft-design-system.min.js?v=1.0.1" type="text/javascript"></script>
 
