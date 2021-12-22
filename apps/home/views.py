@@ -23,11 +23,12 @@ from .forms import *
 def Monthly_inquiries_report(request):
     report = ContactUs.objects.all()
 
+    count_Total = ContactUs.objects.all().count()
     count_complaints = ContactUs.objects.filter(subject='2').count()
     count_general = ContactUs.objects.filter(subject='1').count()
 
     context = {'page': Monthly_inquiries_report, 'count_complaints': count_complaints, 'count_general': count_general,
-               'report': report}
+               'report': report ,'count_Total':count_Total}
     html_template = loader.get_template('home/Monthly_inquiries_report.html')
     return HttpResponse(html_template.render(context, request))
 

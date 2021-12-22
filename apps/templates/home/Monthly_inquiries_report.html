@@ -61,11 +61,48 @@
 
       <div class="container-fluid">
 
-        <!-- Small boxes (Stat box) -->
         <div class="row">
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
+              <div class="inner">
+                <p>Choose Month</p>
+                <form method="post" action="" autocomplete="off">
+                {% csrf_token %}
+
+                {{ form|crispy }}
+            <div class="form-group">
+                <input class="form-control" type="month" name="start_date" required>
+                <div class="form-btn">
+                    <input type="submit" name="" class="submit-btn btn btn-sm bg-gradient-secondary btn-round">
+                </div>
+            </div>
+            </form>
+              </div>
+              <div class="icon">
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+           <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-gradient-warning">
+              <div class="inner">
+                <h3>{{count_Total}}</h3>
+                  <p>Total inquiries</p>
+              </div>
+              <div class="icon">
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
               <div class="inner">
                 <h3>{{count_general}}</h3>
                   <p>General</p>
@@ -78,7 +115,7 @@
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-success">
+            <div class="small-box bg-danger">
               <div class="inner">
                 <h3>{{count_complaints}}</h3>
                   <p>Complaints</p>
