@@ -1,4 +1,6 @@
 {% extends "layouts/base-dashboard.html" %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
 {% block title %} System Usages {% endblock %}
 
 <!-- Element injected in the BODY element -->
@@ -36,9 +38,14 @@
 
 {% block content %}
 
+
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
+
+
+
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -70,6 +77,30 @@
               </div>
             </div>
             <div class="card-body">
+               <section class="content-header">
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <p>Choose Month</p>
+                <form method="post" action="" autocomplete="off">
+                {% csrf_token %}
+
+                {{ form|crispy }}
+            <div class="form-group">
+                <input class="form-control" type="month" name="start_date" required>
+                <div class="form-btn">
+                    <input type="submit" name="" class="submit-btn btn btn-sm bg-gradient-secondary btn-round">
+                </div>
+            </div>
+            </form>
+              </div>
+              <div class="icon">
+              </div>
+            </div>
+          </div>
+      </div>
             <div class="row mt-5">
 
 
