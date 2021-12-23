@@ -20,6 +20,17 @@ from .forms import *
 #                          Views Functions                           #
 ######################################################################
 @csrf_protect
+#def for_review(request):
+   # report = Review.objects.all()
+   # feedback = Review.objects.all()
+
+    #context = {'page': Review,
+           #    'report': report ,'feedback':feedback}
+   # html_template = loader.get_template('home/Review.html')
+   # return HttpResponse(html_template.render(context, request))
+
+
+@csrf_protect
 def Monthly_inquiries_report(request):
     report = ContactUs.objects.all()
 
@@ -34,6 +45,9 @@ def Monthly_inquiries_report(request):
 
 
 def review_project(request):
+
+    feedback = Review.objects.all()
+
     if request.method == "POST":
         form = ReviewpForm(request.POST)
         if form.is_valid():
@@ -41,7 +55,7 @@ def review_project(request):
             return redirect('/')
     else:
         form = ReviewpForm()
-    context = {'form': form}
+    context = {'form': form,'page': Review,'feedback': feedback}
     html_template = loader.get_template('home/Review.html')
     return HttpResponse(html_template.render(context, request))
 
@@ -329,15 +343,28 @@ def recent_trips(request):
 
 
 def system_usages(request):
-    admins = User.objects.filter(is_superuser=True)
-    users = User.objects.filter(is_superuser=False)
+    admin = 0
+    user = 0
+    print(request.POST.get('month'))
+    month = request.POST.get('month')
 
-    lable = [admins, users]
-    data = [admins.count(), users.count()]
+    # 2021-12-15 20:03:05.157077+00:00
+    admins = User.objects.filter(is_superuser=True)
+    for obj in admins:
+        if str(obj.last_login)[0:7] == month:
+            admin += 1
+    users = User.objects.filter(is_superuser=False)
+    for obj in users:
+        if str(obj.last_login)[0:7] == month:
+            user += 1
+    print('admins', admin)
+    print('users', user)
+
     context = {
-        "lable": lable,
-        "data": data,
+        "lable": ['Users', 'Admins'],
+        "data": [user, admin],
     }
+
     return render(request, 'home/system_usages.html', context)
 
 
