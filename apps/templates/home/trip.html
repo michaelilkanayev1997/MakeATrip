@@ -1,113 +1,121 @@
 {% extends 'layouts/base-travel.html' %}
-{% block title %} Travel {% endblock title %}
 
-<!-- Specific CSS goes HERE -->
+{% block title %} Trip {% endblock title %}
+
+<!-- Specific CSS goes HERE      -->
 {% block stylesheets %}
-    <link type="text/css" rel="stylesheet" href="../../static/assets/css/travel_style.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <link rel="stylesheet" href="../../static/assets/plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="../../static/assets/css/adminlte.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../static/assets/css/trip_timeline.css">
-
-
 {% endblock stylesheets %}
 
-{% block body_class %} index-page {% endblock body_class %}
-v
 {% block content %}
 
+<!-- main_background -->
 <header class="header-2">
-<div class="page-header section-height-75 relative" style="background-image: url('../../static/assets/img/main_background.jpg')">
-  <div class="position-absolute w-100 z-index-1 bottom-0">
-    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
-      <defs>
-        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
-      </defs>
-      <g class="moving-waves">
-        <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40"></use>
-        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)"></use>
-        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)"></use>
-        <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(255,255,255,0.20)"></use>
-        <use xlink:href="#gentle-wave" x="48" y="13" fill="rgba(255,255,255,0.15)"></use>
-        <use xlink:href="#gentle-wave" x="48" y="16" fill="rgba(255,255,255,0.95"></use>
-      </g>
-    </svg>
+  <div class="page-header section-height-75 relative" style="background-image: url('../../static/assets/img/DSC_0495.jpg')">
+    <div class="position-absolute w-100 z-index-1 bottom-0">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+        </defs>
+        <g class="moving-waves">
+          <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(255,255,255,0.20)" />
+          <use xlink:href="#gentle-wave" x="48" y="13" fill="rgba(255,255,255,0.15)" />
+          <use xlink:href="#gentle-wave" x="48" y="16" fill="rgba(255,255,255,0.95" />
+        </g>
+      </svg>
+    </div>
   </div>
-</div>
 </header>
 
-<section class="py-5">
-  <div class="container">
-    <div class="row">
-      <div class="row text-center my-sm-5 mt-5">
-        <div class="col-lg-6 mx-auto">
-          <h2 class="">Trending destinations</h2>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-offset-12">
-    <div class="card">
-      <div class="card-body">
-        <div class="tab-content">
-            <div class="timeline timeline-inverse">
-                {% for i in '01' %}
-                <!-- Date -->
-              <div class="time-label">
-                <span class="bg-danger">
-                  10 Feb. 2014
-                </span>
+<section>
+    <div class="container">
+    <h3 class="page-title text-center">Timeline</h3>
+    <ul class="timeline">
+      <li class="timeline-line"></li>
+      <li class="timeline-group">
+        <a class="btn bg-gradient-secondary " data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-calendar"></i> 26, Dec</a>
+      </li>
+    </ul>
+    <div class="collapse" id="collapseExample">
+        <ul class="timeline">
+          <li class="timeline-line"></li>
+          <li class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                Place Name
+                <div class="timeline-date"><i class="fa fa-clock-o"></i> 00:00 - 00:00</div>
               </div>
-                <!-- content -->
-                {% for i in '01' %}
-              <div>
-                <i class="fas fa-envelope bg-primary"></i>
-
-                <div class="timeline-item">
-                  <span class="time"><i class="far fa-clock"></i> 5 min Driving</span>
-                  <span class="time"><i class="far fa-clock"></i> 10 min Walking</span>
-
-                  <h3 class="timeline-header"><a href="#">Trip Name</a> Trip short details</h3>
-                      <div class="row mb-3">
-                        <!-- /.col -->
-                        <div class="col-sm-6">
-                          <div class="row">
-                            <!-- /.col -->
-                            <div class="col-sm-6">
-                              <img class="img-fluid mb-3" src="/static/assets/img/photo4.jpg" alt="Photo">
-                              <img class="img-fluid" src="/static/assets/img/photo1.png" alt="Photo">
-                            </div>
-                            <!-- /.col -->
-                          </div>
-                          <!-- /.row -->
-                        </div>
-                        <!-- /.col -->
-                      </div>
-                  <div class="timeline-body">
-                    trip details
-                  </div>
+              <div class="timeline-content">
+                <p><img class="img-responsive" src="https://media-cdn.tripadvisor.com/media/photo-s/0c/48/01/58/starbucks-coffee-shop.jpg"></p>
+                <p>Place Data</p>
+              </div>
+                <div class="timeline-footer">
+                <i class="fa fa-clock-o"></i> Driving
+              </div>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                Place Name
+                <div class="timeline-date"><i class="fa fa-clock-o"></i> 00:00 - 00:00</div>
+              </div>
+              <div class="timeline-content">
+                <p><img class="img-responsive" src="https://media-cdn.tripadvisor.com/media/photo-s/0c/48/01/58/starbucks-coffee-shop.jpg"></p>
+                <p>Place Data</p>
+              </div>
+                <div class="timeline-footer">
+                <i class="fa fa-clock-o"></i> Driving
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="timeline">
+          <li class="timeline-line"></li><!-- /.timeline-line -->
+          <li class="timeline-item block">
+            <div class="timeline-badge"><a rel="tooltip" title="" data-context="inverse" data-container="body" class="border-silc" href="#" data-original-title="block highlight"></a></div>
+            <div class="timeline-panel">
+              <div class="timeline-content">
+                <div class="text-center">
+                  <h4>See all places in one map</h4>
+                  <p class="timeline-date">26, Dec</p>
+                  <p>data</p>
+                <div class="timeline-embed">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15936.386801163795!2d101.61008935000001!3d3.0688275999999997!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2smy!4v1446881552869" width="478" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
                 </div>
               </div>
-                {% endfor %}
-                {% endfor %}
             </div>
-          </div>
-        </div>
-
-      </div>
+          </li>
+        </ul>
     </div>
-  </div>
-
-
+</div>
 </section>
-
 {% endblock content %}
 
 <!-- Specific JS goes HERE -->
 {% block javascripts %}
-
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3L3Q5rCMHsMgixN6s6x9Y7vaSOHLSoJ4&libraries=places&callback=initMap" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="../../static/assets/js/travel_timeline.js"></script>
-
 {% endblock javascripts %}
+
+
+
+
+
+
+
+
+
+
+
+
+
