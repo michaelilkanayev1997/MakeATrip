@@ -4,14 +4,7 @@
 
 
 
-<!-- Specific CSS goes HERE      -->
 {% block stylesheets %}
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../../static/assets/css/team.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/static/assets/plugins/fontawesome-free/css/all.min.css">
 
 {% endblock stylesheets %}
 
@@ -39,12 +32,8 @@
   </div>
 </header>
 
-<!-- About Us Accordion -->
-        <div class="container" >
-
-        <!-- Title -->
+    <div class="container" >
         {% if privacy %}
-
             {% for obj in privacy %}
                 <h1>{{ obj.subject }} </h1>
                 <br/><br/>
@@ -52,16 +41,6 @@
                 <br/><br/>
             {% endfor %}
         {% endif %}
-
     </div>
 
 {% endblock content %}
-
-
-
-<!-- Specific JS goes HERE -->
-{% block javascripts %}
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-{% endblock javascripts %}

@@ -7,11 +7,8 @@
 <!-- Specific CSS goes HERE      -->
 {% block stylesheets %}
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../../static/assets/css/team.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/static/assets/plugins/fontawesome-free/css/all.min.css">
+
+
 
 {% endblock stylesheets %}
 
@@ -40,36 +37,12 @@
 </header>
 
 <!-- Career Accordion -->
-    <center>
-        <div class="container" >
+    <section>
 
-        <!-- Title -->
-        {% if about %}
-
-            {% for obj in about %}
-                {% if user.is_superuser %}
-                <a class="btn btn-app" href="{% url 'update-about-us' obj.id %}">
-                  <i class="fas fa-edit"></i> Edit
-                </a>
-                <a class="btn btn-app" href="{% url 'delete-about-us' obj.id %}">
-                  <i class="fas fa-delete"></i> Delete
-                </a>
-                {% endif %}
-                <h1>{{ obj.name }} </h1>
-                <br/><br/>
-                <h3>{{ obj.subject }} </h3>
-                <br/><br/>
-                <h6>{{ obj.content }} </h6>
-            {% endfor %}
-        {% endif %}
-
-    </div>
-
-    </center>
-  <div class="container-fluid py-4">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-12">
-        <div class="card mb-4">
+        <div class="card mb-12">
           <div class="card-header pb-0">
             <h2>Current vacancies</h2>
           </div>
@@ -130,6 +103,8 @@
     </div>
   </div>
 
+
+    </section>
 
 {% endblock content %}
 
