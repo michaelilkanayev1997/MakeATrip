@@ -30,16 +30,17 @@ def monthly_inquiries_report(request):
     if month:
         for report in total:
             if str(report.created_date)[0:7] == month:
-                count_total += 1
-                count_complaints += 1
-                count_general += 1
                 total_list.append(report)
+        for report in complaints:
+            if str(report.created_date)[0:7] == month:
                 complaints_list.append(report)
+        for report in general:
+            if str(report.created_date)[0:7] == month:
                 general_list.append(report)
 
     context = {'total': total, 'complaints': complaints,
                'general': general, 'total_list': total_list,
-               'complaints_list': complaints_list, 'general_list': general_list,}
+               'complaints_list': complaints_list, 'general_list': general_list, 'month': month}
     html_template = loader.get_template('home/monthly_inquiries_report.html')
     return HttpResponse(html_template.render(context, request))
 

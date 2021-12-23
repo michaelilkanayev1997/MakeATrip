@@ -44,7 +44,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark"><strong>Monthly inquiries report:</strong></h1>
+            <h1 class="m-0 text-dark"><strong>Monthly inquiries report: {% if month %} {{month}} {% endif %} </strong></h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -90,9 +90,9 @@
             <!-- small box -->
             <div class="small-box bg-gradient-warning">
               <div class="inner">
-                {% if total_list%}
-                <h3>{{total_list.count}}</h3>
-                {% elif total%}
+                {% if total_list or general_list or complaints_list %}
+                <h3>{{total_list|length}}</h3>
+                {% else %}
                 <h3>{{total.count}}</h3>
                 {% endif %}
                   <p>Total inquiries</p>
@@ -106,8 +106,12 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>{{general.count}}</h3>
-                  <p>General</p>
+                {% if complaints_list or general_list or total_list %}
+                <h3>{{complaints_list|length}}</h3>
+                {% else %}
+                <h3>{{complaints.count}}</h3>
+                {% endif %}
+                  <p>complaints</p>
               </div>
               <div class="icon">
               </div>
@@ -119,8 +123,12 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>{{complaints.count}}</h3>
-                  <p>Complaints</p>
+                {% if general_list or complaints_list or total_list %}
+                <h3>{{general_list|length}}</h3>
+                {% else %}
+                <h3>{{general.count}}</h3>
+                {% endif %}
+                  <p>General</p>
               </div>
             </div>
           </div>
@@ -156,8 +164,18 @@
       </tr>
     </thead>
     <tbody>
-    {% if report %}
-        {% for report in report %}
+    {% if total_list %}
+        {% for report in total_list %}
+      <tr>
+        <td>{{ report.id }}</td>
+        <td>{{ report.full_name }}</td>
+        <td>{{ report.email }}</td>
+        <td>{{ report.subject }}</td>
+        <td>{{ report.comment }}</td>
+      </tr>
+        {% endfor %}
+      {% elif total %}
+          {% for report in total %}
       <tr>
         <td>{{ report.id }}</td>
         <td>{{ report.full_name }}</td>
