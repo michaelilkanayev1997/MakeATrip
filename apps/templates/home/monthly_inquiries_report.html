@@ -69,10 +69,8 @@
                 <p>Choose Month</p>
                 <form method="post" action="" autocomplete="off">
                 {% csrf_token %}
-
-                {{ form|crispy }}
-            <div class="form-group">
-                <input class="form-control" type="month" name="start_date" required>
+                <div class="form-group">
+                <input class="form-control" type="month" name="month" required>
                 <div class="form-btn">
                     <input type="submit" name="" class="submit-btn btn btn-sm bg-gradient-secondary btn-round">
                 </div>
@@ -92,7 +90,11 @@
             <!-- small box -->
             <div class="small-box bg-gradient-warning">
               <div class="inner">
-                <h3>{{count_Total}}</h3>
+                {% if total_list%}
+                <h3>{{total_list.count}}</h3>
+                {% elif total%}
+                <h3>{{total.count}}</h3>
+                {% endif %}
                   <p>Total inquiries</p>
               </div>
               <div class="icon">
@@ -104,7 +106,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>{{count_general}}</h3>
+                <h3>{{general.count}}</h3>
                   <p>General</p>
               </div>
               <div class="icon">
@@ -117,7 +119,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>{{count_complaints}}</h3>
+                <h3>{{complaints.count}}</h3>
                   <p>Complaints</p>
               </div>
             </div>

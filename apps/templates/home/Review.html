@@ -77,25 +77,28 @@
     </section>
  <!-- Main content -->
       <section class="content">
-        <table class="table table-dark table-striped">
-    <thead>
 
-      <tr>
-        <th scope="col">feedback</th>
-        <th scope="col">comment</th>
-      </tr>
-    </thead>
-    <tbody>
-    {% if feedback %}
-        {% for feedback in feedback %}
+            <table class="table table table">
+        <thead>
+
           <tr>
-            <td>{{ feedback.feedback }}</td>
-            <td>{{ feedback.comment }}</td>
+            <th scope="col">feedback</th>
+            <th scope="col">comment</th>
+              <th scope="col">created time</th>
           </tr>
-        {% endfor %}
-    {% endif %}
-    </tbody>
-  </table>
+        </thead>
+        <tbody>
+        {% if feedback %}
+            {% for feedback in feedback %}
+              <tr>
+                <td>{{ feedback.feedback }}</td>
+                <td>{{ feedback.comment }}</td>
+                  <td>{{feedback.created_date}}</td>
+              </tr>
+            {% endfor %}
+        {% endif %}
+        </tbody>
+      </table>
       </section>
     <!-- /.content -->
 

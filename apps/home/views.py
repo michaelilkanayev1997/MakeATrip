@@ -19,33 +19,34 @@ from .forms import *
 ######################################################################
 #                          Views Functions                           #
 ######################################################################
-@csrf_protect
-#def for_review(request):
-   # report = Review.objects.all()
-   # feedback = Review.objects.all()
-
-    #context = {'page': Review,
-           #    'report': report ,'feedback':feedback}
-   # html_template = loader.get_template('home/Review.html')
-   # return HttpResponse(html_template.render(context, request))
 
 
-@csrf_protect
-def Monthly_inquiries_report(request):
-    report = ContactUs.objects.all()
+def monthly_inquiries_report(request):
+    total, count_total, total_list = ContactUs.objects.all(), 0, []
+    complaints, count_complaints, complaints_list = ContactUs.objects.filter(subject='2'), 0, []
+    general, count_general, general_list = ContactUs.objects.filter(subject='1'), 0, []
+    month = request.POST.get('month')
 
-    count_Total = ContactUs.objects.all().count()
-    count_complaints = ContactUs.objects.filter(subject='2').count()
-    count_general = ContactUs.objects.filter(subject='1').count()
+    if month:
+        for report in total:
+            if str(report.created_date)[0:7] == month:
+                count_total += 1
+                count_complaints += 1
+                count_general += 1
+                total_list.append(report)
+                complaints_list.append(report)
+                general_list.append(report)
 
-    context = {'page': Monthly_inquiries_report, 'count_complaints': count_complaints, 'count_general': count_general,
-               'report': report ,'count_Total':count_Total}
-    html_template = loader.get_template('home/Monthly_inquiries_report.html')
+    context = {'total': total, 'complaints': complaints,
+               'general': general, 'total_list': total_list,
+               'complaints_list': complaints_list, 'general_list': general_list,}
+    html_template = loader.get_template('home/monthly_inquiries_report.html')
     return HttpResponse(html_template.render(context, request))
 
 
-def review_project(request):
 
+
+def review_project(request):
     feedback = Review.objects.all()
 
     if request.method == "POST":
@@ -55,12 +56,11 @@ def review_project(request):
             return redirect('/')
     else:
         form = ReviewpForm()
-    context = {'form': form,'page': Review,'feedback': feedback}
+    context = {'form': form, 'page': Review, 'feedback': feedback}
     html_template = loader.get_template('home/Review.html')
     return HttpResponse(html_template.render(context, request))
 
 
-@csrf_protect
 def complaints(request):
     now = datetime.now()
     earlier = now - timedelta(days=7)
@@ -123,7 +123,7 @@ def complaint(request, pk):
             check.save()
     elif pk == "system_administrator":
 
-        complaint = ContactUs.objects.filter(subject='2',complete='0',created_date__range=(maximum_days, earlier))
+        complaint = ContactUs.objects.filter(subject='2', complete='0', created_date__range=(maximum_days, earlier))
         count = ContactUs.objects.filter(subject='2').count()
         count_handled = ContactUs.objects.filter(subject='2', complete='1').count()
         count_unhandled = ContactUs.objects.filter(subject='2', complete='0').count()
@@ -413,8 +413,6 @@ def trip(request):
     context = {'segment': 'terms-of-use'}
     html_template = loader.get_template('home/trip.html')
     return HttpResponse(html_template.render(context, request))
-
-
 
 ######################################################################
 #                     System Functions & Classes                     #
