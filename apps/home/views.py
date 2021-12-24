@@ -42,7 +42,6 @@ def monthly_inquiries_report(request):
     total, count_total, total_list = ContactUs.objects.all(), 0, []
     complaints, count_complaints, complaints_list = ContactUs.objects.filter(subject='2'), 0, []
     general, count_general, general_list = ContactUs.objects.filter(subject='1'), 0, []
-
     month = request.POST.get('month')
 
     if month:
@@ -61,6 +60,8 @@ def monthly_inquiries_report(request):
                'complaints_list': complaints_list, 'general_list': general_list, 'month': month}
     html_template = loader.get_template('home/monthly_inquiries_report.html')
     return HttpResponse(html_template.render(context, request))
+
+
 
 
 def review_project(request):
@@ -421,7 +422,6 @@ def employees_report(request):
     }
     return render(request, 'home/employees_report.html', context)
 
-
 def call_google_api():
     pass
     # gpc = GooglePlaces('Eilat', 'campground')
@@ -452,16 +452,15 @@ def get_places_data(user):
 
 
 def trip(request):
-    #get_places_data(request.user)
     context = {'segment': 'terms-of-use'}
     html_template = loader.get_template('home/trip.html')
     return HttpResponse(html_template.render(context, request))
-
 
 def report_analysis(request):
     context = {}
     html_template = loader.get_template('home/report_analysis.html')
     return HttpResponse(html_template.render(context, request))
+
 
 ######################################################################
 #                     System Functions & Classes                     #
