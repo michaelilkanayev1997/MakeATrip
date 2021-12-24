@@ -61,8 +61,9 @@
 
       <div class="container-fluid">
 
+        <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-lg-3 col-6">
+           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
@@ -81,11 +82,7 @@
               </div>
             </div>
           </div>
-      </div>
 
-
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
            <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-gradient-warning">
@@ -104,14 +101,14 @@
           </div>
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-success">
+            <div class="small-box bg-danger">
               <div class="inner">
                 {% if complaints_list or general_list or total_list %}
                 <h3>{{complaints_list|length}}</h3>
                 {% else %}
                 <h3>{{complaints.count}}</h3>
                 {% endif %}
-                  <p>complaints</p>
+                  <p>Complaints</p>
               </div>
               <div class="icon">
               </div>
@@ -121,7 +118,7 @@
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-danger">
+            <div class="small-box bg-success">
               <div class="inner">
                 {% if general_list or complaints_list or total_list %}
                 <h3>{{general_list|length}}</h3>
