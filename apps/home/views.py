@@ -25,6 +25,7 @@ def monthly_inquiries_report(request):
     total, count_total, total_list = ContactUs.objects.all(), 0, []
     complaints, count_complaints, complaints_list = ContactUs.objects.filter(subject='2'), 0, []
     general, count_general, general_list = ContactUs.objects.filter(subject='1'), 0, []
+
     month = request.POST.get('month')
 
     if month:
