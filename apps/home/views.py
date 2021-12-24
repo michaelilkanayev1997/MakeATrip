@@ -7,11 +7,16 @@ import datetime
 from django.db.models import Count
 from django.views.decorators.csrf import csrf_protect
 from django import template
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect,FileResponse
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
-
+import io
+from reportlab.pdfgen import canvas
+from reportlab.lib.units import inch
+from reportlab.lib.pagesizes import letter
+from .utils import render_to_pdf
+from django.views.generic import View
 from .models import *
 from .forms import *
 
@@ -419,6 +424,9 @@ def report_analysis(request):
     context = {}
     html_template = loader.get_template('home/report_analysis.html')
     return HttpResponse(html_template.render(context, request))
+
+class GeneratePdf(View):
+    pass
 
 
 ######################################################################

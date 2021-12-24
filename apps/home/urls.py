@@ -4,6 +4,7 @@ Copyright (c) 2019 - present AppSeed.us
 """
 from django.urls import path, re_path
 from apps.home import views
+from .views import GeneratePdf
 
 urlpatterns = [
 
@@ -32,6 +33,7 @@ urlpatterns = [
     path('employees-report/', views.employees_report, name="employees-report"),
     path('trip/', views.trip, name="trip"),
     path('report_analysis/', views.report_analysis, name="report_analysis"),
+    path('system-usages_pdf/',views.GeneratePdf ,name="system-usages_pdf"),
 
     # re_path(r'^.*\.*', views.pages, name='pages'),
 
