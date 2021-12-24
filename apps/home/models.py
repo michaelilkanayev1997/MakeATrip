@@ -181,7 +181,8 @@ class Travelers(models.Model):
     travel = models.ManyToManyField('Travels')
 
     def __str__(self):
-        return "%s > %s, from %s - %s" % (self.user, self.travel.destination, self.travel.start_date, self.travel.end_date)
+        destination = ", ".join(str(seg) for seg in self.travel.all())
+        return "{0} >> {1}".format(self.user, destination)
 
 
 class Travels(models.Model):
@@ -191,7 +192,7 @@ class Travels(models.Model):
     end_date = models.DateField(null=True, blank=True)
 
     def __str__(self):
-        return self.destination
+        return "{0}: {1}>>{2}".format(self.destination, self.start_date, self.end_date)
 
 
 class Places(models.Model):
