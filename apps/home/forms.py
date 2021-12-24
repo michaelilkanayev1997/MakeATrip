@@ -47,7 +47,7 @@ class ItineraryPlannerForm(forms.ModelForm):
 class ItineraryCategoryForm(forms.ModelForm):
     class Meta:
         model = ItineraryCategory
-        fields = ('culture', 'outdoors', 'beaches', 'shopping', 'museums', 'restaurants')
+        fields = ('culture', 'parks', 'calm', 'shopping', 'food')
 
 
 

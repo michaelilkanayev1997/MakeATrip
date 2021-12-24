@@ -104,11 +104,10 @@ t_user = User
 class ItineraryCategory(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     culture = models.BooleanField(default=False)
-    outdoors = models.BooleanField(default=False)
-    beaches = models.BooleanField(default=False)
+    parks = models.BooleanField(default=False)
+    calm = models.BooleanField(default=False)
     shopping = models.BooleanField(default=False)
-    museums = models.BooleanField(default=False)
-    restaurants = models.BooleanField(default=False)
+    food = models.BooleanField(default=False)
 
 
 class ItineraryPlanner(models.Model):
