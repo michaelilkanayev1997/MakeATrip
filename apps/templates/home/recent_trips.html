@@ -268,5 +268,39 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
-    <script src="/static/assets/js/recent-trips.js"></script>
+    <script>
+          function active_course() {
+    if ($(".active_course").length) {
+      $(".active_course").owlCarousel({
+        loop: true,
+        margin: 20,
+        items: 3,
+        nav: true,
+        autoplay: 2500,
+        smartSpeed: 1500,
+        dots: false,
+        responsiveClass: true,
+        thumbs: true,
+        thumbsPrerendered: true,
+        navText: ["<img src='https://colorlib.com/preview/theme/edustage/img/prev.png'>", "<img src='https://colorlib.com/preview/theme/edustage/img/next.png'>"],
+        responsive: {
+          0: {
+            items: 1,
+            margin: 0
+          },
+          991: {
+            items: 2,
+            margin: 30
+          },
+          1200: {
+            items: 3,
+            margin: 30
+          }
+        }
+      });
+    }
+  }
+  active_course();
+
+    </script>
 {% endblock javascripts %}

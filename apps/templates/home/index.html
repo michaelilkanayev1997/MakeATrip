@@ -6,7 +6,10 @@
 <!-- Specific CSS goes HERE -->
 {% block stylesheets %}
     	<link type="text/css" rel="stylesheet" href="../../static/assets/css/travel_style.css" />
-
+		<link rel="stylesheet" type="text/css" href="/static/assets/css/recent-trips.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ti-icons@0.1.2/css/themify-icons.css">
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 {% endblock stylesheets %}
 
 {% block body_class %} index-page {% endblock body_class %}
@@ -119,37 +122,236 @@
 			</div>
     </div>
   </header>
-    <section class="py-5">
-  <div class="container">
-    <div class="row">
-      <div class="row text-center my-sm-5 mt-5">
-        <div class="col-lg-6 mx-auto">
-          <h2 class="">Trending destinations</h2>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="row mt-4">
-            {% for i in '0123456789' %}
-          <div class="col-md-4">
-            <a href="">
-              <div class="card move-on-hover">
-                <img class="w-100" src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="">
-              </div>
-              <div class="mt-2 ms-2">
-                <h6 class="mb-0">London</h6>
-              </div>
-            </a>
-          </div>
-            {% endfor %}
 
+	<div class="popular_courses">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="main_title">
+                    <center><h1 class="mb-3"><strong>Trending destinations</strong></h1></center>
+                    <center><p>
+                        here you can explore Recent trips of our customers
+                    </p></center>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="owl-carousel active_course owl-loaded owl-drag">
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage" style="transform: translate3d(-1520px, 0px, 0px); transition: all 1.5s ease 0s; width: 3420px;">
+                            <div class="owl-item cloned" style="width: 350px; margin-right: 30px;">
+                                <div class="single_course">
+                                    <div class="course_head">
+                                        <img class="img-fluid" src="/static/assets/img/moscow5.jpg" alt="" />
+                                    </div>
+                                    <div class="course_content">
+                                        <span class="tag mb-4 d-inline-block">Moscow</span>
+                                        <h4 class="mb-3">
+                                            <a href="#">More information</a>
+                                        </h4>
+
+                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                                            <div class="mt-lg-0 mt-3">
+                                                <span class="meta_info">
+                                                    <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item cloned" style="width: 350px; margin-right: 30px;">
+                                <div class="single_course">
+                                    <div class="course_head">
+                                        <img class="img-fluid" src="/static/assets/img/doing-business-hongkong.jpg" alt="" />
+                                    </div>
+                                    <div class="course_content">
+                                        <span class="tag mb-4 d-inline-block">Hong kong</span>
+                                        <h4 class="mb-3">
+                                            <a href="#">More information</a>
+                                        </h4>
+                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                                            <div class="mt-lg-0 mt-3">
+                                                <span class="meta_info">
+                                                    <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item cloned" style="width: 350px; margin-right: 30px;">
+                                <div class="single_course">
+                                    <div class="course_head">
+                                        <img class="img-fluid" src="/static/assets/img/doing-business-hongkong.jpg" alt="" />
+                                    </div>
+                                    <div class="course_content">
+
+                                        <span class="tag mb-4 d-inline-block">Hong kong</span>
+                                        <h4 class="mb-3">
+                                            <a href="#">More information</a>
+                                        </h4>
+                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                                            <div class="mt-lg-0 mt-3">
+                                                <span class="meta_info">
+                                                    <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item cloned" style="width: 350px; margin-right: 30px;">
+                                <div class="single_course">
+                                    <div class="course_head">
+                                        <img class="img-fluid" src="/static/assets/img/xParis-Tour-Eiffel.jpg.pagespeed.ic.2trsrFlXuR.jpg" alt="" />
+                                    </div>
+                                    <div class="course_content">
+                                        <span class="tag mb-4 d-inline-block">Paris</span>
+                                        <h4 class="mb-3">
+                                            <a href="#">More information</a>
+                                        </h4>
+                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                                            <div class="mt-lg-0 mt-3">
+                                                <span class="meta_info">
+                                                    <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 350px; margin-right: 30px;">
+                                <div class="single_course">
+                                    <div class="course_head">
+                                        <img class="img-fluid" src="/static/assets/img/dubai-pic-3.jpg" alt="" />
+                                    </div>
+                                    <div class="course_content">
+
+                                        <span class="tag mb-4 d-inline-block">Dubai</span>
+                                        <h4 class="mb-3">
+                                            <a href="#">More information</a>
+                                        </h4>
+                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                                            <div class="mt-lg-0 mt-3">
+                                                <span class="meta_info">
+                                                    <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item active" style="width: 350px; margin-right: 30px;">
+                                <div class="single_course">
+                                    <div class="course_head">
+                                        <img class="img-fluid" src="/static/assets/img/country_image_Israel.jpg" alt="" />
+                                    </div>
+                                    <div class="course_content">
+                                        <span class="tag mb-4 d-inline-block">Israel</span>
+                                        <h4 class="mb-3">
+                                            <a href="#">More information</a>
+                                        </h4>
+                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                                            <div class="mt-lg-0 mt-3">
+                                                <span class="meta_info">
+                                                    <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="owl-item active" style="width: 350px; margin-right: 30px;">
+                                <div class="single_course">
+                                    <div class="course_head">
+                                        <img class="img-fluid" src="/static/assets/img/Japan-2107x1406-1-1536x1025.jpg" alt="" />
+                                    </div>
+                                    <div class="course_content">
+                                        <span class="tag mb-4 d-inline-block">Japan</span>
+                                        <h4 class="mb-3">
+                                            <a href="#">More information</a>
+                                        </h4>
+                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                                            <div class="mt-lg-0 mt-3">
+                                                <span class="meta_info">
+                                                    <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item cloned active" style="width: 350px; margin-right: 30px;">
+                                <div class="single_course">
+                                    <div class="course_head">
+                                        <img class="img-fluid" src="/static/assets/img/-shanghai.jpg" alt="" />
+                                    </div>
+                                    <div class="course_content">
+                                        <span class="tag mb-4 d-inline-block">Shanghai</span>
+                                        <h4 class="mb-3">
+                                            <a href="#">More information</a>
+                                        </h4>
+                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                                            <div class="mt-lg-0 mt-3">
+                                                <span class="meta_info">
+                                                    <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item cloned" style="width: 350px; margin-right: 30px;">
+                                <div class="single_course">
+                                    <div class="course_head">
+                                        <img class="img-fluid" src="/static/assets/img/-shanghai.image-asset.jpeg" alt="" />
+                                    </div>
+                                    <div class="course_content">
+                                        <span class="tag mb-4 d-inline-block">Siatel</span>
+                                        <h4 class="mb-3">
+                                            <a href="#">More information</a>
+                                        </h4>
+                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                                            <div class="mt-lg-0 mt-3">
+                                                <span class="meta_info">
+                                                    <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item cloned" style="width: 350px; margin-right: 30px;">
+                                <div class="single_course">
+                                    <div class="course_head">
+                                        <img class="img-fluid" src="/static/assets/img/71438820-8f10-11e8-b6b0-0242ac110007.jpg" alt="" />
+                                    </div>
+                                    <div class="course_content">
+                                        <span class="tag mb-4 d-inline-block">Maiami</span>
+                                        <h4 class="mb-3">
+                                            <a href="#">More information</a>
+                                        </h4>
+                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                                            <div class="mt-lg-0 mt-3">
+                                                <span class="meta_info">
+                                                    <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
+</div>
+
 {% endblock content %}
 
 <!-- Specific JS goes HERE -->
@@ -175,4 +377,42 @@
 
 
 </script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+<script>
+	function active_course() {
+		if ($(".active_course").length) {
+		  $(".active_course").owlCarousel({
+			loop: true,
+			margin: 20,
+			items: 3,
+			nav: true,
+			autoplay: 2500,
+			smartSpeed: 1500,
+			dots: false,
+			responsiveClass: true,
+			thumbs: true,
+			thumbsPrerendered: true,
+			navText: ["<img src='https://colorlib.com/preview/theme/edustage/img/prev.png'>", "<img src='https://colorlib.com/preview/theme/edustage/img/next.png'>"],
+			responsive: {
+			  0: {
+				items: 1,
+				margin: 0
+			  },
+			  991: {
+				items: 2,
+				margin: 30
+			  },
+			  1200: {
+				items: 3,
+				margin: 30
+			  }
+			}
+		  });
+		}
+	  }
+	  active_course();
+</script>
+
 {% endblock javascripts %}
