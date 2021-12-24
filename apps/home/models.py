@@ -181,7 +181,7 @@ class Travelers(models.Model):
     travel = models.ManyToManyField('Travels')
 
     def __str__(self):
-        return "%s > %s" % (self.user, self.travel)
+        return "%s > %s, from %s - %s" % (self.user, self.travel.destination, self.travel.start_date, self.travel.end_date)
 
 
 class Travels(models.Model):
@@ -201,7 +201,7 @@ class Places(models.Model):
     address = models.CharField(max_length=100, null=False, blank=False)
     phone_number = models.CharField(max_length=100, null=False, blank=False)
     opening_hours = models.CharField(max_length=100, null=False, blank=False)
-    rating = models.IntegerField(null=True, blank=True)
+    rating = models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=3)
     type = models.CharField(max_length=100, null=False, blank=False)
     photo_url = models.CharField(max_length=500, null=False, blank=False)
     location = models.CharField(max_length=100, null=False, blank=False)
