@@ -415,6 +415,12 @@ def trip(request):
     html_template = loader.get_template('home/trip.html')
     return HttpResponse(html_template.render(context, request))
 
+def report_analysis(request):
+    context = {}
+    html_template = loader.get_template('home/report_analysis.html')
+    return HttpResponse(html_template.render(context, request))
+
+
 ######################################################################
 #                     System Functions & Classes                     #
 ######################################################################
