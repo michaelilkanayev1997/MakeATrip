@@ -32,6 +32,7 @@ urlpatterns = [
     path('employees-report/', views.employees_report, name="employees-report"),
     path('trip/', views.trip, name="trip"),
     path('report_analysis/', views.report_analysis, name="report_analysis"),
+    path('system_integrity_check/', views.system_integrity_check, name="system_integrity_check"),
 
     # re_path(r'^.*\.*', views.pages, name='pages'),
 
