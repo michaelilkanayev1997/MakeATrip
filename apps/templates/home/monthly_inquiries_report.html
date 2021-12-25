@@ -90,7 +90,7 @@
                 {% if total_list or general_list or complaints_list %}
                 <h3>{{total_list|length}}</h3>
                 {% else %}
-                <h3>{{total.count}}</h3>
+                <h3>0</h3>
                 {% endif %}
                   <p>Total inquiries</p>
               </div>
@@ -106,7 +106,7 @@
                 {% if complaints_list or general_list or total_list %}
                 <h3>{{complaints_list|length}}</h3>
                 {% else %}
-                <h3>{{complaints.count}}</h3>
+                 <h3>0</h3>
                 {% endif %}
                   <p>Complaints</p>
               </div>
@@ -123,7 +123,7 @@
                 {% if general_list or complaints_list or total_list %}
                 <h3>{{general_list|length}}</h3>
                 {% else %}
-                <h3>{{general.count}}</h3>
+                 <h3>0</h3>
                 {% endif %}
                   <p>General</p>
               </div>
@@ -163,16 +163,6 @@
     <tbody>
     {% if total_list %}
         {% for report in total_list %}
-      <tr>
-        <td>{{ report.id }}</td>
-        <td>{{ report.full_name }}</td>
-        <td>{{ report.email }}</td>
-        <td>{{ report.subject }}</td>
-        <td>{{ report.comment }}</td>
-      </tr>
-        {% endfor %}
-      {% elif total %}
-          {% for report in total %}
       <tr>
         <td>{{ report.id }}</td>
         <td>{{ report.full_name }}</td>
