@@ -113,6 +113,7 @@ class ItineraryCategory(models.Model):
 class ItineraryPlanner(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     user = models.ForeignKey(t_user, on_delete=models.CASCADE, blank=True, null=True)
+    session_id = models.CharField(max_length=32, null=True)
     destination = models.CharField(max_length=254)
     start_date = models.DateField(null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)
