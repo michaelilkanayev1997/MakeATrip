@@ -5,7 +5,6 @@ import csv
 from googlemaps.places import places_nearby as g_places_nearby
 from googlemaps.places import place as g_place
 import googlemaps
-import pandas as pd
 
 API_KEY = 'AIzaSyA3L3Q5rCMHsMgixN6s6x9Y7vaSOHLSoJ4'
 gmaps = googlemaps.Client(key=API_KEY)
@@ -23,6 +22,7 @@ class GooglePlaces(object):
             "rating": [],
             "location": [],
             "photo": [],
+            "types": [],
         }
         self.places = []
 
@@ -47,6 +47,9 @@ class GooglePlaces(object):
     def get_photo(self):
         return self.data['photo']
 
+    def get_type(self):
+        return self.data['types']
+
     def get_places(self):
         return self.places
 
@@ -57,7 +60,7 @@ class GooglePlaces(object):
         lat_long = (location.latitude, location.longitude)
 
         places_result = g_places_nearby(client=gmaps, location=lat_long, radius=50000, type=self.types)
-        print(places_result)
+        # print(places_result)
 
         self.places.extend(places_result['results'])
         while "next_page_token" in places_result:
@@ -121,6 +124,13 @@ class GooglePlaces(object):
                 self.data['rating'].append(rating)
 
             try:
+                types = details['result'].get('types')
+                self.data['types'].append(types)
+            except KeyError:
+                types = "None"
+                self.data['types'].append(types)
+
+            try:
                 lat = details['result']['geometry']['location']['lat']
                 lng = details['result']['geometry']['location']['lng']
                 location = '{0},{1}'.format(lat, lng)
@@ -140,7 +150,7 @@ class GooglePlaces(object):
                     url = "https://maps.googleapis.com/maps/api/place/photo?photoreference={0}&sensor=false&maxheight={1}" \
                           "&maxwidth={2}&key={3}".format(photo_id, photo_width, photo_height, API_KEY)
 
-                    print(url)
+                    # print(url)
                     break
             except KeyError:
                 lat = "None"
@@ -148,24 +158,20 @@ class GooglePlaces(object):
                 location = '{0},{1}'.format(lat, lng)
                 self.data['location'].append(location)
 
-
-
-
         return self.data
 
     def get_google_image_search_url(self, place):
         pass
 
 
-
-
-
-
-google_places = GooglePlaces('Beer Sheva', 'restaurant')
+google_places = GooglePlaces('Eilat', 'campground')
 google_places.search_places_by_coordinate()
 google_places.get_data()
-print((google_places.get_name()))
-print((google_places.get_location()))
+# print((google_places.get_name()))
+# print((google_places.get_name()))
+# print((google_places.get_address()))
+# print((google_places.get_opening_hours()))
+# print((google_places.get_rating()))
+# print((google_places.get_phone_number()))
+# print((google_places.get_location()))
 # print((google_places.get_google_image_search_url('BarBaSaba Beer Garden')))
-
-

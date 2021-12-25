@@ -11,9 +11,10 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render, redirect
-
+from django.contrib.sessions.models import Session
 from .models import *
 from .forms import *
+from .google_maps.places import *
 
 
 ######################################################################
@@ -34,6 +35,7 @@ def system_integrity_check(request):
                'count_unhandled': count_unhandled, 'count_administrator': count_administrator}
     html_template = loader.get_template('home/system_integrity_check.html')
     return HttpResponse(html_template.render(context, request))
+
 
 def monthly_inquiries_report(request):
     total, count_total, total_list = ContactUs.objects.all(), 0, []
@@ -58,8 +60,6 @@ def monthly_inquiries_report(request):
                'complaints_list': complaints_list, 'general_list': general_list, 'month': month}
     html_template = loader.get_template('home/monthly_inquiries_report.html')
     return HttpResponse(html_template.render(context, request))
-
-
 
 
 def review_project(request):
@@ -284,28 +284,32 @@ def privacy_policy(request):
 
 # @login_required(login_url="/login/")
 def index(request):
-    travel = ItineraryPlanner.objects.all()
+    all_travels = ItineraryPlanner.objects.all()
     if request.method == "POST":
         planner_form = ItineraryPlannerForm(request.POST)
         category_form = ItineraryCategoryForm(request.POST)
         if planner_form.is_valid() and category_form.is_valid():
-            print("%s" % planner_form, "%s" % category_form)
-
             if request.user.is_anonymous:
                 category = category_form.save()
                 planner = planner_form.save(commit=False)
                 planner.user = None
                 planner.category = category
                 planner_form.save()
-                print("The User Is >> >> >> >> %s" % request.user)
+                print(planner.id)
+                if not request.session or not request.session.session_key:
+                    request.session.save()
+                    anonymous_session_key = Session.objects.get(session_key=request.session.session_key)
+                    user_session = ItineraryPlanner.objects.filter(id=planner.id)
+                    user_session.update(session=anonymous_session_key)
+                    print(user_session['destination'])
+
 
             elif request.user.is_authenticated:
                 category = category_form.save()
-                planner = planner_form.save(commit=False)  # here
-                planner.user = request.user  # here
+                planner = planner_form.save(commit=False)
+                planner.user = request.user
                 planner.category = category
-                planner.save()  # here
-                print("The User Is >> >> >> >> %s" % request.user)
+                planner.save()
 
             return redirect('/')
 
@@ -315,7 +319,7 @@ def index(request):
 
     context = {'planner_form': planner_form,
                'category_form': category_form,
-               'travel': travel}
+               'travel': all_travels}
     html_template = loader.get_template('home/index.html')
     return HttpResponse(html_template.render(context, request))
 
@@ -425,16 +429,46 @@ def employees_report(request):
     return render(request, 'home/employees_report.html', context)
 
 
+def call_google_api():
+    pass
+    # gpc = GooglePlaces('Eilat', 'campground')
+    # gpc.search_places_by_coordinate()
+    # gpc.get_data()
+    # print((gpc.get_name()))
+
+
+def places_data_processing():
+    culture = ['art_gallery', 'hindu_temple', 'aquarium', 'church', 'museum']
+    parks = ['amusement_park', 'campground', 'park', 'amusement_park', 'aquarium', 'zoo']
+    calm = ['movie_theater', 'night_club', 'spa', 'stadium', 'bowling_alley']
+    shopping = ['shoe_store', 'shopping_mall', 'clothing_store', 'jewelry_store']
+    food = ['bakery', 'cafe', 'bar', 'restaurant']
+    category_list = {'culture': culture, 'parks': parks, 'calm': calm, 'shopping': shopping, 'food': food}
+
+
+def get_places_data(user):
+    category_check = {'culture': None, 'parks': None, 'calm': None, 'shopping': None, 'food': None}
+    travel = ItineraryPlanner.objects.filter(user_id=user)
+    print(travel.values_list('destination', 'start_date', 'end_date').first())
+    category_id = travel.values_list('category').first()[0]
+    category = ItineraryCategory.objects.filter(id=category_id).values_list('culture', 'parks', 'calm',
+                                                                            'shopping', 'food').first()
+    for key, cat in zip(category_check, category):
+        category_check[key] = cat
+    print(category_check)
+
+
 def trip(request):
+    get_places_data(request.user)
     context = {'segment': 'terms-of-use'}
     html_template = loader.get_template('home/trip.html')
     return HttpResponse(html_template.render(context, request))
+
 
 def report_analysis(request):
     context = {}
     html_template = loader.get_template('home/report_analysis.html')
     return HttpResponse(html_template.render(context, request))
-
 
 ######################################################################
 #                     System Functions & Classes                     #

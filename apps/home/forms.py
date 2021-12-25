@@ -41,7 +41,7 @@ class ItineraryPlannerForm(forms.ModelForm):
     class Meta:
         model = ItineraryPlanner
         fields = '__all__'
-        exclude = ['user', 'category']
+        exclude = ['user', 'category', 'session_id']
 
 
 class ItineraryCategoryForm(forms.ModelForm):
