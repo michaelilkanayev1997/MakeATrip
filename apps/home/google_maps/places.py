@@ -6,7 +6,17 @@ from googlemaps.places import places_nearby as g_places_nearby
 from googlemaps.places import place as g_place
 import googlemaps
 
-API_KEY = 'AIzaSyA3L3Q5rCMHsMgixN6s6x9Y7vaSOHLSoJ4'
+"""
+
+AIzaSyAKBPc2d9ZAGhe3vt8SgGmAgoZdOHXECW8
+
+
+
+
+
+"""
+# API_KEY = 'AIzaSyA3L3Q5rCMHsMgixN6s6x9Y7vaSOHLSoJ4'
+API_KEY = 'AIzaSyBYPC8Wothfroho8ub3yM6wHtOE--Oovng'
 gmaps = googlemaps.Client(key=API_KEY)
 
 
@@ -164,9 +174,9 @@ class GooglePlaces(object):
         pass
 
 
-google_places = GooglePlaces('Eilat', 'campground')
-google_places.search_places_by_coordinate()
-google_places.get_data()
+# google_places = GooglePlaces('Eilat', 'campground')
+# google_places.search_places_by_coordinate()
+# google_places.get_data()
 # print((google_places.get_name()))
 # print((google_places.get_name()))
 # print((google_places.get_address()))

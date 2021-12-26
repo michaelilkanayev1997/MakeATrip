@@ -4,10 +4,12 @@
 
 # import the libraries
 import googlemaps
-from PIL import Image
+# from PIL import Image
 
 # Define the API Key.
-API_KEY = 'AIzaSyA3L3Q5rCMHsMgixN6s6x9Y7vaSOHLSoJ4'
+API_KEY = 'AIzaSyBh0k7wq-khn5zdQsCD0q12iMKt6xVJl_M'
+# AIzaSyBl-LW1ZgRQfQEicCI9Z_Di9755P4gc6ho
+# API_KEY = 'AIzaSyAer4VW66byYQj08TzM2LYzWcRy2xcy_B8'
 
 # Define the Client
 gmaps = googlemaps.Client(key=API_KEY)
