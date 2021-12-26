@@ -69,7 +69,7 @@ class GooglePlaces(object):
         location = geolocator.geocode(self.destination)
         lat_long = (location.latitude, location.longitude)
 
-        places_result = g_places_nearby(client=gmaps, location=lat_long, radius=50000, type=self.types)
+        places_result = g_places_nearby(client=gmaps, location=lat_long, radius=10000, type=self.types)
         # print(places_result)
 
         self.places.extend(places_result['results'])
@@ -174,7 +174,7 @@ class GooglePlaces(object):
         pass
 
 
-# google_places = GooglePlaces('Eilat', 'campground')
+# google_places = GooglePlaces('Zurich', 'restaurant')
 # google_places.search_places_by_coordinate()
 # google_places.get_data()
 # print((google_places.get_name()))

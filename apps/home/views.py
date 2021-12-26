@@ -452,7 +452,7 @@ def get_places_data(user):
 
 
 def trip(request):
-    get_places_data(request.user)
+    #get_places_data(request.user)
     context = {'segment': 'terms-of-use'}
     html_template = loader.get_template('home/trip.html')
     return HttpResponse(html_template.render(context, request))
