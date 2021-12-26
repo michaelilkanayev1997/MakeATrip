@@ -296,21 +296,6 @@ def index(request):
                 planner.user = None
                 planner.category = category
                 planner_form.save()
-                #print(planner.id)
-
-                """if not request.session or not request.session.session_key:
-                    request.session.save()
-                    anonymous_session_key = Session.objects.get(session_key=request.session.session_key)
-                    anonymous_session_data = request.session.items()
-                    print(anonymous_session_data)
-                    user_session = ItineraryPlanner.objects.filter(id=planner.id)
-                    user_session.update(session=anonymous_session_key)
-                    s_data = anonymous_session_key.session_data
-                    print(s_data)
-                    print(anonymous_session_key)
-                    data = anonymous_session_key.get_decoded()
-                    print(data)"""
-
 
             elif request.user.is_authenticated:
                 category = category_form.save()
