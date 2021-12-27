@@ -457,7 +457,12 @@ def trip(request):
     return HttpResponse(html_template.render(context, request))
 
 def report_analysis(request):
-    context = {}
+    data =Travels.objects.all()
+    context = {
+        'data': data,
+
+    }
+
     html_template = loader.get_template('home/report_analysis.html')
     return HttpResponse(html_template.render(context, request))
 
