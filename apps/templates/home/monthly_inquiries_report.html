@@ -8,7 +8,6 @@
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}
-
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -31,8 +30,6 @@
   <link rel="stylesheet" href="/static/assets/plugins/summernote/summernote-bs4.min.css">
 
 <!--------------------------------------------------------------------------------------------------------->
-
-
 {% endblock stylesheets %}
 
 {% block content %}
@@ -164,7 +161,7 @@
     {% if total_list %}
         {% for report in total_list %}
       <tr>
-        <td>{{ report. id }}</td>
+        <td>{{ report.id }}</td>
         <td>{{ report.full_name }}</td>
         <td>{{ report.email }}</td>
         <td>{{ report.subject }}</td>
