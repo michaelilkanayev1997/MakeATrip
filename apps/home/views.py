@@ -21,20 +21,10 @@ import pprint
 ######################################################################
 #                          Views Functions                           #
 ######################################################################
-def system_integrity_check(request):
-    now = datetime.now()
-    earlier = now - timedelta(days=7)
-    maximum_days = now - timedelta(days=1000)
+def cookie_policy(request):
 
-    count = ContactUs.objects.filter(subject='2').count()
-    count_handled = ContactUs.objects.filter(subject='2', complete='1').count()
-    count_unhandled = ContactUs.objects.filter(subject='2', complete='0').count()
-    count_administrator = ContactUs.objects.filter(subject='2', complete='0',
-                                                   created_date__range=(maximum_days, earlier)).count()
-
-    context = {'asd': complaint, 'count': count, 'count_handled': count_handled,
-               'count_unhandled': count_unhandled, 'count_administrator': count_administrator}
-    html_template = loader.get_template('home/system_integrity_check.html')
+    context = {'segment': 'cookie_policy'}
+    html_template = loader.get_template('home/cookie_policy.html')
     return HttpResponse(html_template.render(context, request))
 
 
@@ -60,8 +50,6 @@ def monthly_inquiries_report(request):
                'complaints_list': complaints_list, 'general_list': general_list, 'month': month}
     html_template = loader.get_template('home/monthly_inquiries_report.html')
     return HttpResponse(html_template.render(context, request))
-
-
 
 
 def review_project(request):

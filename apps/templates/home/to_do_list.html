@@ -134,6 +134,17 @@
                                         <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
                                     </div>
                                 </div>
+
+                                <form method="post" action="" autocomplete="off">
+                                  {% csrf_token %}
+                                    <label>
+                                      <input type="checkbox" name="complete" value="{{ complaint.id }}" id="{{ complaint.id }}">
+                                      <span>Done</span>
+                                    </label>
+                                      <div class="form-btn">
+                                        <input type="submit" class="submit-btn btn btn-sm bg-gradient-secondary btn-round">
+                                      </div>
+                                </form>
                             </div>
                         </div>
                     </div>
