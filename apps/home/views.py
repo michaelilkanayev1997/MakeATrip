@@ -458,8 +458,10 @@ def trip(request):
 
 def report_analysis(request):
     data =Travels.objects.all()
+    category = ItineraryCategory.objects.all()
     context = {
         'data': data,
+        'category': category,
 
     }
 
