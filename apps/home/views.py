@@ -2,6 +2,12 @@
 """
 Copyright (c) 2019 - present AppSeed.us
 """
+from django.shortcuts import render
+from io import BytesIO
+from django.template.loader import get_template
+from django.views import View
+from xhtml2pdf import pisa
+
 from datetime import date, timedelta, datetime
 import datetime
 from django.db.models import Count
@@ -21,15 +27,59 @@ import pprint
 ######################################################################
 #                          Views Functions                           #
 ######################################################################
+def index_pdf(request):
+	context = {}
+	return render(request, 'home/index_pdf.html', context)
+
+def render_to_pdf(template_src, context_dict={}):
+    template = get_template(template_src)
+    html = template.render(context_dict)
+    result = BytesIO()
+    pdf = pisa.pisaDocument(BytesIO(html.encode("ISO-8859-1")), result)
+    if not pdf.err:
+        return HttpResponse(result.getvalue(), content_type='application/pdf')
+    return None
+
+data = {
+    "company": "Dennnis Ivanov Company",
+    "address": "123 Street name",
+    "city": "Vancouver",
+    "state": "WA",
+    "zipcode": "98663",
+
+    "phone": "555-555-2345",
+    "email": "youremail@dennisivy.com",
+    "website": "dennisivy.com",
+}
+
+class ViewPDF(View):
+    def get(self, request, *args, **kwargs):
+        pdf = render_to_pdf('home/pdf_template.html', data)
+        return HttpResponse(pdf, content_type='application/pdf')
+
+
+class DownloadPDF(View):
+    def get(self, request, *args, **kwargs):
+        pdf = render_to_pdf('home/pdf_template.html', data)
+
+        response = HttpResponse(pdf, content_type='application/pdf')
+        filename = "Invoice_%s.pdf" % ("12341231")
+        content = "attachment; filename='%s'" % (filename)
+        response['Content-Disposition'] = content
+        return response
+
+
 def copyright_policy(request):
     context = {'segment': 'copyright_policy'}
     html_template = loader.get_template('home/copyright_policy.html')
     return HttpResponse(html_template.render(context, request))
 
+
 def cookie_policy(request):
     context = {'segment': 'cookie_policy'}
     html_template = loader.get_template('home/cookie_policy.html')
     return HttpResponse(html_template.render(context, request))
+
 
 def monthly_inquiries_report(request):
     total, count_total, total_list = ContactUs.objects.all(), 0, []
@@ -336,7 +386,17 @@ def pages(request):
 
 
 def to_do_list(request):
-    context = {'segment': 'to_do_list'}
+    travel_complete = Travels.objects.filter(complete='0')
+
+    if request.POST:
+        complete = request.POST["complete"]
+        print(int(complete))
+        check = Travels.objects.get("complete")
+        check.complete = True
+        check.save()
+
+
+    context = {'segment': 'to_do_list','travel_complete':travel_complete}
     html_template = loader.get_template('home/to_do_list.html')
     return HttpResponse(html_template.render(context, request))
 

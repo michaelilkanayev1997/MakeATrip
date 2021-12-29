@@ -1,6 +1,10 @@
 from django import forms
-from .models import ContactUs, AboutUs, FAQTravel, FAQGeneral, ItineraryPlanner, ItineraryCategory, Career, PrivacyPolicy,Review
+from .models import ContactUs, AboutUs, FAQTravel, FAQGeneral, ItineraryPlanner, ItineraryCategory, Career, PrivacyPolicy,Review,Travels
 
+class to_do_listform(forms.ModelForm):
+    class Meta:
+        model = Travels
+        fields = ('complete',)
 
 class ContactForm(forms.ModelForm):
     class Meta:

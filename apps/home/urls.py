@@ -35,6 +35,9 @@ urlpatterns = [
     path('report_analysis/', views.report_analysis, name="report_analysis"),
     path('cookie_policy/', views.cookie_policy, name="cookie_policy"),
     path('copyright_policy/', views.copyright_policy, name="copyright_policy"),
+    path('pdf_view/', views.ViewPDF.as_view(), name="pdf_view"),
+    path('pdf_download/', views.DownloadPDF.as_view(), name="pdf_download"),
+    path('index_pdf', views.index_pdf,name="index_pdf"),
     # re_path(r'^.*\.*', views.pages, name='pages'),
 
 
