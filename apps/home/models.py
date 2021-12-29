@@ -192,6 +192,7 @@ class Travels(models.Model):
     destination = models.CharField(max_length=100, null=False, blank=False)
     start_date = models.DateField(null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)
+    complete = models.BooleanField(default=False)
 
     def __str__(self):
         return "{0}: {1}>>{2}".format(self.destination, self.start_date, self.end_date)
