@@ -1,0 +1,60 @@
+
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+   <style>
+    @page {
+        size: a4 portrait;
+        @frame header_frame {           /* Static Frame */
+            -pdf-frame-content: header_content;
+            left: 50pt; width: 512pt; top: 50pt; height: 40pt;
+        }
+        @frame content_frame {          /* Content Frame */
+            left: 50pt; width: 512pt; top: 90pt; height: 632pt;
+        }
+        @frame footer_frame {           /* Another static Frame */
+            -pdf-frame-content: footer_content;
+            left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+        }
+    }
+</style>
+{% endblock stylesheets %}
+
+{% block content %}
+
+   <!-- Content for Static Frame 'header_frame' -->
+    <div id="header_content">
+
+    </div>
+<h4>COVID-19 information</h4>
+<strong><p>Before leaving Israel:</p></strong>
+
+<p>1. The policy in the destination country should be clarified
+It is your responsibility to find out what the border policy and requirements of the state of the destination are related to the entry of citizens, whether there is a requirement to fill out forms, perform tests, isolation obligation and more.
+The countries that sell Israel's corona certificates.</p>
+<p>2. A PCR test must be performed or 72 hours before departure from Israel
+Only those who get a negative test result get on the flight. This directive is binding on all those leaving Israel, at any age.
+The result must be written in English with the passport number of the passenger. No speed tests or tests of any other type will be accepted.</p>
+   <strong><p>During the flight:</p></strong>
+<p>Wear a mask over the nose and mouth (from age 6 and up), keep a distance and maintain personal hygiene.</p>
+<strong><p>Before the flight must be presented to the airline representatives:</p></strong>
+<p>Confirmation of filling out the form of declaration of departure from Israel.
+If you have been in Israel for more than 72 hours - one of the following documents:
+Negative result on the PCR test you did during the 72 hours before the flight.
+A valid green label produced by the Ministry of Health on the basis of vaccination or recovery.
+Please note: The entrance to the passenger terminal in Israel is for pilots only. Accompaniment of escorts is not allowed in the terminal, except for escorts of minors or a person with a disability.</p>
+    <p></p>
+     <p></p>
+    <div>
+
+</div>
+
+
+    <!-- Content for Static Frame 'footer_frame' -->
+    <div id="footer_content">(c) - page <pdf:pagenumber>
+        of <pdf:pagecount>
+    </div>
+
+
+
+{% endblock content %}

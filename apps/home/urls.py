@@ -38,6 +38,8 @@ urlpatterns = [
     path('pdf_view/', views.ViewPDF.as_view(), name="pdf_view"),
     path('pdf_download/', views.DownloadPDF.as_view(), name="pdf_download"),
     path('index_pdf', views.index_pdf,name="index_pdf"),
+    path('view_pdf_summary/', views.view_pdf_summary.as_view(), name="view_pdf_summary"),
+    path('trip_summary', views.trip_summary,name="trip_summary"),
     # re_path(r'^.*\.*', views.pages, name='pages'),
 
 

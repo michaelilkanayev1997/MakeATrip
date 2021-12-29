@@ -31,6 +31,10 @@ def index_pdf(request):
 	context = {}
 	return render(request, 'home/index_pdf.html', context)
 
+def trip_summary(request):
+	context = {}
+	return render(request, 'home/trip_summary.html', context)
+
 def render_to_pdf(template_src, context_dict={}):
     template = get_template(template_src)
     html = template.render(context_dict)
@@ -51,12 +55,15 @@ data = {
     "email": "youremail@dennisivy.com",
     "website": "dennisivy.com",
 }
+push={
+
+}
+
 
 class ViewPDF(View):
     def get(self, request, *args, **kwargs):
-        pdf = render_to_pdf('home/pdf_template.html', data)
+        pdf = render_to_pdf('home/pdf_template.html',data )
         return HttpResponse(pdf, content_type='application/pdf')
-
 
 class DownloadPDF(View):
     def get(self, request, *args, **kwargs):
@@ -68,6 +75,10 @@ class DownloadPDF(View):
         response['Content-Disposition'] = content
         return response
 
+class view_pdf_summary(View):
+    def get(self, request, *args, **kwargs):
+        pdf = render_to_pdf('home/pdf_summary.html', push)
+        return HttpResponse(pdf, content_type='application/pdf')
 
 def copyright_policy(request):
     context = {'segment': 'copyright_policy'}
