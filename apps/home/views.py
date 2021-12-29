@@ -450,11 +450,16 @@ def trip(request):
 def report_analysis(request):
     data =Travels.objects.all()
     category = ItineraryCategory.objects.all()
+
     context = {
         'data': data,
         'category': category,
 
     }
+
+
+
+
 
     html_template = loader.get_template('home/report_analysis.html')
     return HttpResponse(html_template.render(context, request))
