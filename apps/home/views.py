@@ -21,12 +21,15 @@ import pprint
 ######################################################################
 #                          Views Functions                           #
 ######################################################################
-def cookie_policy(request):
+def copyright_policy(request):
+    context = {'segment': 'copyright_policy'}
+    html_template = loader.get_template('home/copyright_policy.html')
+    return HttpResponse(html_template.render(context, request))
 
+def cookie_policy(request):
     context = {'segment': 'cookie_policy'}
     html_template = loader.get_template('home/cookie_policy.html')
     return HttpResponse(html_template.render(context, request))
-
 
 def monthly_inquiries_report(request):
     total, count_total, total_list = ContactUs.objects.all(), 0, []

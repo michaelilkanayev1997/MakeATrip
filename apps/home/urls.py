@@ -34,7 +34,7 @@ urlpatterns = [
     path('trip/', views.trip, name="trip"),
     path('report_analysis/', views.report_analysis, name="report_analysis"),
     path('cookie_policy/', views.cookie_policy, name="cookie_policy"),
-
+    path('copyright_policy/', views.copyright_policy, name="copyright_policy"),
     # re_path(r'^.*\.*', views.pages, name='pages'),
 
 
