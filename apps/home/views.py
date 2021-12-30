@@ -611,7 +611,17 @@ def report_analysis(request):
     html_template = loader.get_template('home/report_analysis.html')
     return HttpResponse(html_template.render(context, request))
 
+def share_reports(request):
+    form = AboutUsForm()
+    if request.method == "POST":
+        form = AboutUsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('about-us')
 
+    context = {'form': form}
+    html_template = loader.get_template('home/share_reports.html')
+    return HttpResponse(html_template.render(context, request))
 ######################################################################
 #                     System Functions & Classes                     #
 ######################################################################

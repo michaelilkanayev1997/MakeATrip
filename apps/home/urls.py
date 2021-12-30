@@ -52,6 +52,7 @@ urlpatterns = [
     path('index_pdf', views.index_pdf,name="index_pdf"),
     path('view_pdf_summary/', views.view_pdf_summary.as_view(), name="view_pdf_summary"),
     path('trip_summary', views.trip_summary,name="trip_summary"),
+    path('share-reports', views.share_reports, name="share-reports"),
     # re_path(r'^.*\.*', views.pages, name='pages'),
 
 
