@@ -34,7 +34,20 @@
 
     <div class="container" >
         {% if privacy %}
+                {% if user.is_superuser %}
+                <a class="btn btn-app" href="{% url 'create-privacy-policy' %}">
+                  <i class="fas fa-edit"></i> Create
+                </a>
+                {% endif %}
             {% for obj in privacy %}
+                {% if user.is_superuser %}
+                <a class="btn btn-app" href="{% url 'update-privacy-policy' obj.id %}">
+                  <i class="fas fa-edit"></i> Edit
+                </a>
+                <a class="btn btn-app" href="{% url 'delete-privacy-policy' obj.id %}">
+                  <i class="fas fa-delete"></i> Delete
+                </a>
+                {% endif %}
                 <h1>{{ obj.subject }} </h1>
                 <br/><br/>
                 <h7>{{ obj.content }} </h7>
