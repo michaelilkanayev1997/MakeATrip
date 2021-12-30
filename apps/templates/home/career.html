@@ -61,6 +61,11 @@
 
                 <tbody>
                 {% if career %}
+                {% if user.is_superuser %}
+                <a class="btn btn-app" href="{% url 'create-career' %}">
+                  <i class="fas fa-edit"></i> Create
+                </a>
+                {% endif %}
                     {% for obj in career %}
                   <tr>
                     <td>
