@@ -373,6 +373,45 @@ def privacy_policy(request):
     return HttpResponse(html_template.render(context, request))
 
 
+def create_privacy_policy(request):
+    form = PrivacyPolicyForm()
+    if request.method == "POST":
+        form = PrivacyPolicyForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('privacy-policy')
+
+    context = {'form': form}
+    html_template = loader.get_template('home/edit-privacy-policy.html')
+    return HttpResponse(html_template.render(context, request))
+
+
+def update_privacy_policy(request, pk):
+    privacy = PrivacyPolicy.objects.get(id=pk)
+    form = PrivacyPolicyForm(instance=privacy)
+    print(pk)
+    if request.method == "POST":
+        form = PrivacyPolicyForm(request.POST, instance=privacy)
+        if form.is_valid():
+            form.save()
+            return redirect('privacy-policy')
+    context = {'form': form}
+    html_template = loader.get_template('home/edit-privacy-policy.html')
+    return HttpResponse(html_template.render(context, request))
+
+
+def delete_privacy_policy(request, pk):
+    privacy = PrivacyPolicy.objects.get(id=pk)
+    if request.method == 'POST':
+        privacy.delete()
+        return redirect('privacy-policy')
+    context = {'privacy': privacy}
+    html_template = loader.get_template('home/edit-privacy-policy.html')
+    return HttpResponse(html_template.render(context, request))
+
+
+
+
 # @login_required(login_url="/login/")
 def index(request):
     all_travels = ItineraryPlanner.objects.all()
