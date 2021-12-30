@@ -322,6 +322,43 @@ def career(request):
     return HttpResponse(html_template.render(context, request))
 
 
+def create_career(request):
+    form = CareerForm()
+    if request.method == "POST":
+        form = CareerForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('career')
+
+    context = {'form': form}
+    html_template = loader.get_template('home/edit-career.html')
+    return HttpResponse(html_template.render(context, request))
+
+
+def update_career(request, pk):
+    career = Career.objects.get(id=pk)
+    form = CareerForm(instance=career)
+    print(pk)
+    if request.method == "POST":
+        form = CareerForm(request.POST, instance=career)
+        if form.is_valid():
+            form.save()
+            return redirect('career')
+    context = {'form': form}
+    html_template = loader.get_template('home/edit-career.html')
+    return HttpResponse(html_template.render(context, request))
+
+
+def delete_career(request, pk):
+    career = Career.objects.get(id=pk)
+    if request.method == 'POST':
+        career.delete()
+        return redirect('career')
+    context = {'career': career}
+    html_template = loader.get_template('home/edit-career.html')
+    return HttpResponse(html_template.render(context, request))
+
+
 def job_detail(request, pk):
     career = Career.objects.get(id=pk)
     context = {'career': career}
