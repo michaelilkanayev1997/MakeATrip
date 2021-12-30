@@ -160,7 +160,11 @@
 
         <!-- Title -->
         {% if about %}
-
+                {% if user.is_superuser %}
+                <a class="btn btn-app" href="{% url 'create-about-us' %}">
+                  <i class="fas fa-edit"></i> Create
+                </a>
+                {% endif %}
             {% for obj in about %}
                 {% if user.is_superuser %}
                 <a class="btn btn-app" href="{% url 'update-about-us' obj.id %}">
@@ -198,7 +202,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
                 <div class="team text-center rounded p-3 py-4">
-                    <img src="https://scontent-mxp1-1.xx.fbcdn.net/v/t1.18169-9/11045021_918998161474494_2370761045624218153_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=rtwLAyyLMuQAX_NoFk8&_nc_ht=scontent-mxp1-1.xx&oh=e575aef8ce8d3d4f689b392d16510549&oe=61C7DE53" class="img-fluid shadow rounded-pill" alt="">
+                    <img src="https://media-exp1.licdn.com/dms/image/C4D03AQFnWRqndrq1ow/profile-displayphoto-shrink_800_800/0/1640036587910?e=1646265600&v=beta&t=TVTxUJFPnpx1ioDDAmyw3U_1tTHLNQUq3jV67ngOXxg" class="img-fluid shadow rounded-pill" alt="">
                     <div class="content mt-3">
                         <h4 class="title mb-0">Marat Zinger</h4>
                         <small class="text-muted">SCE student</small>
