@@ -116,7 +116,7 @@ DATABASES = {
         'NAME': 'make-a-trip',
         'USER': 'admin',
         'PASSWORD': 'Pa$$W0rd',
-        'HOST': 'ec2-3-70-153-51.eu-central-1.compute.amazonaws.com',
+        'HOST': 'ec2-3-66-179-116.eu-central-1.compute.amazonaws.com',
         'PORT': '3306',
         'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
         'TEST': {
