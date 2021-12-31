@@ -26,25 +26,21 @@
 {% block content %}
 
   <div class="limiter">
-	<div class="container-login100" style="background-image: url('../../static/assets/img/bg-01.jpg');">
+	<div class="container-login100" style="background-image: url('../../static/assets/img/auth.jpg');">
 		<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
-            <form autocomplete="off" method="post" action="" class="login100-form validate-form flex-sb flex-w">
+            <form autocomplete="off" method="post" action="">
                 {% csrf_token %}
-                <!--Title-->
+                <center>
                 <span class="login100-form-title p-b-53">
-                    Sign Up With
+                    Sign In With
                 </span>
-
                 <!--Social Login Buttons-->
-                <a href="#" class="btn-face m-b-20">
-                    <i class="fa fa-facebook-official"></i>
-                    Facebook
-                </a>
+
                 <a href="{% provider_login_url 'google' %}" class="btn-google m-b-20">
                     <img src="../../static/assets/img/icons/icon-google.png" alt="GOOGLE">
                     Google
                 </a>
-
+                </center>
                 <!--Username-->
                 <div class="p-t-31 p-b-9">
                     <span class="txt1">
